@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Versión A — Portal Comercial → SOB</title>
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: Arial, sans-serif; background: #f5f5f5; }
+.sc { display: none; }
+.sc.a { display: block; }
+.top-nav { background: #1a1a1a; padding: 8px 18px; display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
+.top-nav-label { font-size: 10px; font-weight: 700; color: #666; text-transform: uppercase; letter-spacing: 0.06em; }
+.step-pill { font-size: 11px; font-weight: 700; padding: 4px 12px; border-radius: 20px; cursor: pointer; border: none; font-family: inherit; background: #2a2a2a; color: #666; }
+.step-pill.active { background: #ff441b; color: #fff; }
+.step-pill.done { background: #166534; color: #fff; }
+.step-arrow { color: #444; font-size: 12px; }
+.version-tag { margin-left: auto; font-size: 11px; font-weight: 700; color: #ff441b; background: rgba(255,68,27,0.15); padding: 3px 10px; border-radius: 20px; }
+/* PC */
+.pc { background: #f0f2f5; min-height: 500px; }
+.pc-topbar { background: #e8192c; height: 5px; }
+.pc-header { background: white; padding: 13px 24px 0; border-bottom: 1px solid #e5e7eb; }
+.pc-title-row { display: flex; align-items: center; gap: 10px; margin-bottom: 5px; }
+.pc-title { font-size: 19px; font-weight: 700; color: #111827; }
+.pc-badge { background: #dcfce7; color: #166534; font-size: 11px; font-weight: 700; padding: 2px 9px; border-radius: 20px; }
+.pc-bc { font-size: 12px; color: #6b7280; margin-bottom: 12px; }
+.pc-bc strong { color: #111827; font-weight: 600; }
+.pc-stepper { display: flex; padding: 13px 24px 11px; background: white; border-bottom: 1px solid #e5e7eb; overflow-x: auto; }
+.pcs { display: flex; flex-direction: column; align-items: center; flex: 1; position: relative; min-width: 55px; }
+.pcsl { position: absolute; top: 12px; left: 50%; width: 100%; height: 2px; z-index: 0; }
+.pcsl.done { background: #2563eb; } .pcsl.pend { background: #d1d5db; }
+.pcsc { width: 24px; height: 24px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 11px; font-weight: 700; z-index: 1; position: relative; }
+.pcsc.done { background: #2563eb; color: #fff; } .pcsc.active { background: #2563eb; color: #fff; } .pcsc.pend { background: #fff; color: #9ca3af; border: 2px solid #d1d5db; }
+.pcsl-lbl { font-size: 9px; color: #6b7280; text-align: center; margin-top: 4px; max-width: 76px; line-height: 1.2; }
+.pcsl-lbl.active { color: #2563eb; font-weight: 700; }
+.pc-content { padding: 20px 24px; }
+.pc-inner { background: white; border: 1px solid #e5e7eb; border-radius: 8px; padding: 18px; }
+.pc-s-title { font-size: 15px; font-weight: 700; color: #111827; margin-bottom: 3px; }
+.pc-s-sub { font-size: 12px; color: #6b7280; margin-bottom: 16px; }
+.pc-field { background: #f9fafb; border: 1px solid #e5e7eb; border-radius: 6px; padding: 9px 12px; }
+.pc-fl { font-size: 10px; color: #9ca3af; margin-bottom: 2px; font-weight: 500; }
+.pc-fv { font-size: 13px; color: #111827; font-weight: 500; }
+.pc-grid2 { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+.pc-col { display: flex; flex-direction: column; gap: 10px; }
+.pc-map { border: 1px solid #e5e7eb; border-radius: 6px; overflow: hidden; }
+.pc-map-top { background: #f9fafb; border-bottom: 1px solid #e5e7eb; padding: 8px 12px; }
+.pc-toggle-row { display: flex; gap: 16px; align-items: center; }
+.pc-tog-item { display: flex; align-items: center; gap: 6px; font-size: 12px; color: #6b7280; }
+.pc-tog-sw { width: 32px; height: 17px; background: #d1d5db; border-radius: 9px; position: relative; flex-shrink: 0; }
+.pc-tog-k { width: 13px; height: 13px; background: white; border-radius: 50%; position: absolute; top: 2px; left: 2px; }
+.pc-footer { display: flex; justify-content: space-between; align-items: center; margin-top: 18px; }
+/* CONFIRM */
+.confirm-wrap { max-width: 580px; margin: 0 auto; padding: 24px; background: #f0f2f5; min-height: 500px; }
+.confirm-card { background: white; border-radius: 12px; border: 1px solid #e5e7eb; overflow: hidden; }
+.confirm-top { background: #2563eb; padding: 20px; text-align: center; }
+.confirm-top h2 { font-size: 17px; font-weight: 700; color: #fff; margin-bottom: 3px; }
+.confirm-top p { font-size: 12px; color: #bfdbfe; }
+.confirm-body { padding: 18px; }
+.confirm-ids { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 14px; }
+.cid { background: #f8faff; border: 1px solid #dbeafe; border-radius: 8px; padding: 10px 12px; }
+.cid-lbl { font-size: 10px; color: #6b7280; font-weight: 600; text-transform: uppercase; margin-bottom: 3px; }
+.cid-val { font-size: 13px; font-weight: 700; color: #1d4ed8; font-family: monospace; }
+.conf-divider { border: none; border-top: 1px solid #f0f0f0; margin: 0 0 13px; }
+.conf-stores-title { font-size: 11px; font-weight: 700; color: #374151; margin-bottom: 8px; text-transform: uppercase; letter-spacing: 0.04em; }
+.conf-chip { display: flex; align-items: center; gap: 8px; border: 1px solid #bbf7d0; border-radius: 8px; padding: 7px 11px; margin-bottom: 6px; background: #f0fdf4; }
+.conf-chip-name { font-weight: 700; color: #166534; flex: 1; font-size: 12px; }
+.conf-chip-id { color: #9ca3af; font-family: monospace; font-size: 11px; }
+/* SLACK */
+.slack-box { background: #fff; border: 1px solid #e5e7eb; border-radius: 10px; padding: 13px; margin-bottom: 14px; }
+.slack-head { display: flex; align-items: center; gap: 8px; margin-bottom: 9px; }
+.slack-logo { width: 24px; height: 24px; background: #4a154b; border-radius: 6px; display: flex; align-items: center; justify-content: center; }
+.slack-logo svg { width: 13px; height: 13px; }
+.slack-head-title { font-size: 12px; font-weight: 700; color: #1a1a1a; }
+.slack-head-sub { font-size: 11px; color: #888; }
+.slack-msg { background: #f9fafb; border-left: 3px solid #4a154b; border-radius: 0 8px 8px 0; padding: 10px 12px; }
+.slack-sender { display: flex; align-items: center; gap: 7px; margin-bottom: 6px; }
+.slack-av { width: 24px; height: 24px; background: #e0f2fe; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 9px; font-weight: 700; color: #0369a1; }
+.slack-sname { font-size: 12px; font-weight: 700; color: #1a1a1a; }
+.slack-app { background: #e8f5e9; color: #2e7d32; font-size: 9px; font-weight: 600; padding: 1px 5px; border-radius: 3px; margin-left: 3px; }
+.slack-time { font-size: 10px; color: #aaa; }
+.slack-body { font-size: 12px; color: #1a1a1a; line-height: 1.6; }
+.slack-body strong { font-weight: 700; }
+.s-code { background: #f0f0f0; border-radius: 3px; padding: 1px 5px; font-family: monospace; font-size: 11px; }
+.slack-link { color: #1264a3; font-weight: 700; text-decoration: underline; cursor: pointer; font-size: 12px; }
+/* SOB */
+.sob { background: #fff; min-height: 500px; font-family: 'Segoe UI', Arial, sans-serif; }
+.sob-nav { display: flex; justify-content: space-between; align-items: center; padding: 12px 26px; border-bottom: 1px solid #f0f0f0; }
+.sob-logo { font-size: 23px; font-weight: 900; color: #ff441b; font-style: italic; letter-spacing: -1px; }
+.sob-hero { padding: 20px 26px 0; display: flex; align-items: center; gap: 14px; }
+.sob-hero h1 { font-size: 20px; font-weight: 900; color: #cc2200; line-height: 1.25; }
+.sob-cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 13px; padding: 16px 26px 24px; }
+.scard { border: 1.5px solid #e8e8e8; border-radius: 14px; padding: 14px; position: relative; display: flex; flex-direction: column; }
+.scard.green { border-color: #b7eac8; background: #f4fef7; }
+.scard.gray  { background: #fff; }
+.scard-lbl { font-size: 11px; font-weight: 700; margin-bottom: 6px; }
+.scard.green .scard-lbl { color: #1a7a4a; }
+.scard.gray  .scard-lbl { color: #888; }
+.scard-img { position: absolute; top: 10px; right: 10px; font-size: 25px; line-height: 1; }
+.scard-title { font-size: 13px; font-weight: 900; color: #1a1a1a; margin-bottom: 8px; padding-right: 32px; line-height: 1.25; }
+.schk { display: flex; align-items: center; gap: 6px; font-size: 11.5px; margin-bottom: 5px; }
+.schk.done { color: #1a7a4a; }
+.sprog { margin-top: 9px; }
+.sprog-track { height: 5px; background: #e8e8e8; border-radius: 3px; overflow: hidden; }
+.sprog-fill { height: 100%; border-radius: 3px; }
+.sprog-fill.gf { background: #4CAF50; }
+.sprog-fill.bf { background: #2563eb; }
+.sprog-fill.gr { background: #d0d0d0; }
+.sextra { display: flex; align-items: flex-start; gap: 7px; margin-bottom: 7px; font-size: 11.5px; color: #444; }
+.sextra-dot { width: 6px; height: 6px; border-radius: 50%; background: #7c3aed; margin-top: 3px; flex-shrink: 0; }
+.sextra-link { color: #7c3aed; font-weight: 600; }
+.sentry { margin-top: 8px; border-top: 1px solid #f0f0f0; padding-top: 7px; display: flex; align-items: center; justify-content: space-between; cursor: pointer; gap: 6px; }
+.sentry:hover .sentry-lbl { color: #ff441b; }
+.sentry-lbl { font-size: 11.5px; font-weight: 700; color: #555; }
+.sentry-arrow { color: #bbb; font-size: 12px; }
+.sentry-badge { font-size: 10px; font-weight: 700; padding: 2px 8px; border-radius: 20px; white-space: nowrap; }
+.b-ok   { background: #e8f5e9; color: #2e7d32; }
+.b-blue { background: #eff6ff; color: #1d4ed8; }
+/* MANAGE */
+.sw { padding: 18px 26px 28px; }
+.sw h2 { font-size: 17px; font-weight: 900; color: #1a1a1a; margin-bottom: 3px; }
+.sw-sub { font-size: 12px; color: #888; margin-bottom: 13px; }
+.banner { border-radius: 10px; padding: 10px 13px; margin-bottom: 13px; display: flex; align-items: flex-start; gap: 9px; font-size: 12px; line-height: 1.5; }
+.banner.blue { background: #f0f7ff; border: 1px solid #bfdbfe; color: #1e40af; }
+.legal-bar { background: #f8faff; border: 1px solid #dbeafe; border-radius: 10px; padding: 9px 13px; margin-bottom: 13px; display: flex; align-items: center; gap: 11px; flex-wrap: wrap; }
+.legal-lbl { font-size: 10px; font-weight: 700; color: #6b7280; text-transform: uppercase; letter-spacing: 0.04em; }
+.chips { display: flex; gap: 7px; }
+.chip { background: #eff6ff; border: 1px solid #bfdbfe; border-radius: 6px; padding: 3px 9px; font-size: 11px; display: flex; align-items: center; gap: 4px; }
+.chip-lbl { color: #6b7280; } .chip-val { color: #1d4ed8; font-weight: 700; } .chip-tag { font-size: 9px; background: #dbeafe; color: #1e40af; padding: 1px 4px; border-radius: 3px; font-weight: 600; }
+.t-wrap { background: #fff; border: 1px solid #e8e8e8; border-radius: 12px; margin-bottom: 13px; overflow: hidden; }
+.t-head { display: flex; align-items: center; gap: 8px; padding: 9px 13px; border-bottom: 1px solid #f0f0f0; background: #fafafa; }
+.t-title { font-size: 13px; font-weight: 700; color: #1a1a1a; }
+.cnt { background: #fff0ec; color: #ff441b; font-size: 11px; font-weight: 700; padding: 2px 8px; border-radius: 20px; }
+table { width: 100%; border-collapse: collapse; font-size: 12px; }
+thead th { text-align: left; padding: 7px 11px; font-size: 10px; font-weight: 700; color: #6b7280; background: #f9fafb; border-bottom: 1px solid #f0f0f0; white-space: nowrap; }
+tbody tr { border-bottom: 1px solid #f3f4f6; } tbody tr:last-child { border-bottom: none; } tbody tr:hover { background: #fafffe; } tbody tr.row-edit { background: #fff9f8; }
+tbody td { padding: 8px 11px; color: #1a1a1a; vertical-align: middle; }
+.p-food { background: #f0fdf4; color: #166534; font-size: 10px; font-weight: 700; padding: 1px 7px; border-radius: 4px; }
+.p-orig { background: #dcfce7; color: #166534; font-size: 10px; font-weight: 700; padding: 1px 7px; border-radius: 20px; }
+.p-new  { background: #e0f2fe; color: #0369a1; font-size: 10px; font-weight: 700; padding: 1px 7px; border-radius: 20px; }
+.h-st { display: flex; align-items: center; gap: 5px; font-size: 11px; }
+.h-dot { width: 7px; height: 7px; border-radius: 50%; flex-shrink: 0; }
+.h-dot.done { background: #4CAF50; } .h-dot.pend { background: #d1d5db; } .h-dot.partial { background: #f97316; }
+.ii { border: 1.5px solid #ff441b; border-radius: 5px; padding: 4px 7px; font-size: 11px; color: #1a1a1a; font-family: inherit; background: #fff; outline: none; }
+.is { border: 1.5px solid #ff441b; border-radius: 5px; padding: 4px 7px; font-size: 11px; color: #1a1a1a; font-family: inherit; background: #fff; outline: none; }
+.add-form { background: #fff; border: 1px solid #e8e8e8; border-radius: 12px; padding: 14px; margin-bottom: 13px; }
+.add-form-title { font-size: 12px; font-weight: 700; color: #1a1a1a; margin-bottom: 11px; }
+.fr { display: grid; gap: 9px; margin-bottom: 9px; } .fr.c2 { grid-template-columns: 1fr 1fr; }
+.ff label { font-size: 9px; font-weight: 700; color: #6b7280; display: block; margin-bottom: 3px; text-transform: uppercase; letter-spacing: 0.03em; }
+.ff input, .ff select { width: 100%; border: 1.5px solid #e8e8e8; border-radius: 7px; padding: 7px 9px; font-size: 12px; color: #1a1a1a; font-family: inherit; background: #fff; outline: none; }
+.ff input:focus, .ff select:focus { border-color: #ff441b; } .ff input::placeholder { color: #c0c4cc; }
+.fl { width: 100%; border: 1.5px solid #e8e8e8; border-radius: 7px; padding: 7px 9px; font-size: 12px; background: #f3f4f6; display: flex; align-items: center; justify-content: space-between; }
+.fl-val { color: #374151; font-weight: 600; } .fl-tag { font-size: 9px; color: #9ca3af; background: #e5e7eb; padding: 2px 5px; border-radius: 4px; }
+.itag { font-size: 9px; color: #ff441b; background: #fff0ec; padding: 1px 5px; border-radius: 4px; margin-left: 3px; font-weight: 600; }
+.fac { display: flex; justify-content: flex-end; margin-top: 9px; }
+.sf { display: flex; justify-content: space-between; align-items: center; margin-top: 14px; }
+/* HORARIO PANEL */
+.overlay { position: fixed; inset: 0; background: rgba(0,0,0,0.42); z-index: 200; display: flex; align-items: flex-end; }
+.h-panel { background: #fff; border-radius: 16px 16px 0 0; padding: 20px 22px 24px; width: 100%; max-height: 85vh; overflow-y: auto; }
+.h-phdr { display: flex; align-items: flex-start; justify-content: space-between; margin-bottom: 4px; }
+.h-ptitle { font-size: 15px; font-weight: 900; color: #1a1a1a; }
+.h-pstore { font-size: 12px; color: #ff441b; font-weight: 700; margin-bottom: 12px; }
+.h-irow { display: flex; align-items: center; justify-content: space-between; margin-bottom: 11px; }
+.h-min { font-size: 12px; color: #374151; background: #f3f4f6; padding: 5px 10px; border-radius: 8px; }
+.h-tot { font-size: 12px; font-weight: 700; color: #374151; }
+.copy-bar { background: #f8faff; border: 1px solid #dbeafe; border-radius: 8px; padding: 8px 12px; margin-bottom: 11px; display: flex; align-items: center; justify-content: space-between; gap: 10px; }
+.dias-wrap { border: 1px solid #e8e8e8; border-radius: 10px; overflow: hidden; margin-bottom: 13px; }
+.dia-row { display: grid; grid-template-columns: 80px 1fr 1fr 32px; align-items: center; gap: 8px; padding: 8px 12px; border-bottom: 1px solid #f3f4f6; }
+.dia-row:last-child { border-bottom: none; } .dia-row.off { background: #fafafa; }
+.dia-name { font-size: 12px; font-weight: 600; color: #374151; } .dia-row.off .dia-name { color: #bbb; }
+.dsel-wrap { display: flex; flex-direction: column; gap: 2px; }
+.dsel-lbl { font-size: 9px; color: #9ca3af; font-weight: 600; text-transform: uppercase; }
+.dsel { border: 1px solid #e5e7eb; border-radius: 6px; padding: 5px 7px; font-size: 11px; color: #1a1a1a; font-family: inherit; background: #fff; outline: none; width: 100%; }
+.dsel:disabled { color: #ccc; background: #fafafa; }
+.tog { width: 30px; height: 16px; border-radius: 9px; position: relative; cursor: pointer; flex-shrink: 0; }
+.tog.on { background: #ff441b; } .tog.off { background: #d1d5db; }
+.tog-k { width: 12px; height: 12px; background: #fff; border-radius: 50%; position: absolute; top: 2px; transition: left 0.15s; }
+.tog.on .tog-k { left: 16px; } .tog.off .tog-k { left: 2px; }
+/* BUTTONS */
+.btn-salir { background-color: #fff !important; border: 2px solid #1a1a1a !important; color: #1a1a1a !important; font-size: 13px !important; font-weight: 700 !important; padding: 7px 17px !important; border-radius: 8px !important; cursor: pointer !important; font-family: inherit !important; }
+.btn-pc-v { background-color: #fff !important; border: 2px solid #d1d5db !important; color: #374151 !important; font-size: 12px !important; font-weight: 600 !important; padding: 8px 18px !important; border-radius: 6px !important; cursor: pointer !important; font-family: inherit !important; }
+.btn-pc-n { background-color: #2563eb !important; border: 2px solid #2563eb !important; color: #fff !important; font-size: 12px !important; font-weight: 700 !important; padding: 8px 22px !important; border-radius: 6px !important; cursor: pointer !important; font-family: inherit !important; }
+.btn-pc-n:hover { background-color: #1d4ed8 !important; }
+.btn-ir-sob { background-color: #ff441b !important; border: none !important; color: #fff !important; font-size: 13px !important; font-weight: 700 !important; padding: 11px !important; border-radius: 10px !important; cursor: pointer !important; font-family: inherit !important; width: 100% !important; }
+.btn-ir-sob:hover { background-color: #e03a14 !important; }
+.btn-sob-ini { background-color: #2563eb !important; border: none !important; color: #fff !important; font-size: 11px !important; font-weight: 700 !important; padding: 7px 14px !important; border-radius: 9px !important; cursor: pointer !important; font-family: inherit !important; display: inline-flex !important; margin-top: 9px !important; align-self: flex-start !important; }
+.btn-ghost { background: none !important; border: none !important; color: #888 !important; font-size: 13px !important; font-weight: 600 !important; cursor: pointer !important; font-family: inherit !important; padding: 0 !important; margin-bottom: 14px !important; display: block !important; }
+.btn-ghost:hover { color: #ff441b !important; }
+.btn-rappi { background-color: #ff441b !important; border: none !important; color: #fff !important; font-size: 13px !important; font-weight: 700 !important; padding: 9px 22px !important; border-radius: 10px !important; cursor: pointer !important; font-family: inherit !important; }
+.btn-rappi:hover { background-color: #e03a14 !important; }
+.btn-rappi-full { width: 100% !important; padding: 12px !important; }
+.btn-rappi-outline { background-color: #fff !important; border: 2px solid #ff441b !important; color: #ff441b !important; font-size: 12px !important; font-weight: 700 !important; padding: 7px 14px !important; border-radius: 8px !important; cursor: pointer !important; font-family: inherit !important; }
+.btn-rappi-outline:disabled { border-color: #e8e8e8 !important; color: #bbb !important; cursor: not-allowed !important; }
+.btn-sec { background-color: #fff !important; border: 1.5px solid #d1d5db !important; color: #374151 !important; font-size: 12px !important; font-weight: 600 !important; padding: 8px 17px !important; border-radius: 8px !important; cursor: pointer !important; font-family: inherit !important; }
+.btn-h-conf { background-color: #fff !important; border: 1.5px solid #f97316 !important; color: #c2410c !important; font-size: 11px !important; font-weight: 700 !important; padding: 4px 9px !important; border-radius: 6px !important; cursor: pointer !important; font-family: inherit !important; white-space: nowrap !important; }
+.btn-h-conf.ok { border-color: #4CAF50 !important; color: #166534 !important; }
+.btn-h-close { background: none !important; border: none !important; cursor: pointer !important; font-size: 20px !important; color: #aaa !important; padding: 0 !important; line-height: 1 !important; }
+.btn-copy { background-color: #fff !important; border: 1px solid #2563eb !important; color: #2563eb !important; font-size: 11px !important; font-weight: 700 !important; padding: 4px 9px !important; border-radius: 6px !important; cursor: pointer !important; font-family: inherit !important; }
+.btn-save-h { background-color: #ff441b !important; border: none !important; color: #fff !important; font-size: 13px !important; font-weight: 700 !important; padding: 10px !important; border-radius: 9px !important; cursor: pointer !important; font-family: inherit !important; width: 100% !important; }
+.btn-save-h:hover { background-color: #e03a14 !important; }
+.btn-del { background: none !important; border: none !important; color: #d1d5db !important; font-size: 13px !important; cursor: pointer !important; padding: 2px 4px !important; border-radius: 4px !important; font-family: inherit !important; }
+.btn-del:hover { color: #ff441b !important; background: #fff0ec !important; }
+.btn-tbl { background: none !important; border: none !important; cursor: pointer !important; font-size: 11px !important; font-weight: 600 !important; padding: 3px 6px !important; border-radius: 4px !important; font-family: inherit !important; white-space: nowrap !important; }
+.btn-tbl-edit { color: #2563eb !important; } .btn-tbl-edit:hover { background: #eff6ff !important; }
+.btn-tbl-save { color: #166534 !important; background: #f0fdf4 !important; border: 1px solid #bbf7d0 !important; }
+.btn-tbl-cancel { color: #6b7280 !important; }
+.acell { display: flex; align-items: center; gap: 3px; }
+.toast { position: fixed; bottom: 18px; left: 50%; transform: translateX(-50%); background: #1a1a1a; color: #fff; font-size: 12px; font-weight: 600; padding: 8px 16px; border-radius: 10px; opacity: 0; transition: opacity 0.25s; pointer-events: none; z-index: 999; white-space: nowrap; font-family: inherit; }
+.toast.show { opacity: 1; }
+</style>
+</head>
+<body>
+
+<div class="top-nav">
+  <span class="top-nav-label">Versión A — Portal → SOB</span>
+  <span class="step-pill active" id="np1">1 · Portal — Formulario</span>
+  <span class="step-arrow">›</span>
+  <span class="step-pill" id="np2">2 · Confirmación + Slack</span>
+  <span class="step-arrow">›</span>
+  <span class="step-pill" id="np3">3 · SOB — Home</span>
+  <span class="step-arrow">›</span>
+  <span class="step-pill" id="np4">4 · SOB — Restaurantes</span>
+  <span class="version-tag">Portal → SOB</span>
+</div>
+
+<!-- SC1: PORTAL -->
+<div class="sc a" id="sc-portal">
+<div class="pc-topbar"></div>
+<div class="pc">
+  <div class="pc-header">
+    <div class="pc-title-row"><span class="pc-title">Proceso Comercial</span><span class="pc-badge">Completado</span><span style="font-size:11px;color:#9ca3af;">v1.17.3</span></div>
+    <div class="pc-bc">Procesos Comerciales › Buscador › <strong>Expansión de negocio</strong></div>
+    <div class="pc-stepper">
+      <div class="pcs"><div class="pcsl done"></div><div class="pcsc done">1</div><div class="pcsl-lbl">Selección de marca</div></div>
+      <div class="pcs"><div class="pcsl done"></div><div class="pcsc active">2</div><div class="pcsl-lbl active">Formulario de tienda básica</div></div>
+      <div class="pcs"><div class="pcsl pend"></div><div class="pcsc pend">3</div><div class="pcsl-lbl">Documentos</div></div>
+      <div class="pcs"><div class="pcsl pend"></div><div class="pcsc pend">4</div><div class="pcsl-lbl">Razón Social</div></div>
+      <div class="pcs"><div class="pcsl pend"></div><div class="pcsc pend">5</div><div class="pcsl-lbl">Cuenta Bancaria</div></div>
+      <div class="pcs"><div class="pcsl pend"></div><div class="pcsc pend">6</div><div class="pcsl-lbl">Condiciones</div></div>
+      <div class="pcs"><div class="pcsl pend"></div><div class="pcsc pend">7</div><div class="pcsl-lbl">Horarios</div></div>
+      <div class="pcs"><div class="pcsc pend">8</div><div class="pcsl-lbl">Confirmación</div></div>
+    </div>
+  </div>
+  <div class="pc-content">
+    <div class="pc-inner">
+      <div class="pc-s-title">Formulario de tienda básica</div>
+      <div class="pc-s-sub">Por favor, ingresa los siguientes datos para continuar con el proceso.</div>
+      <div class="pc-grid2">
+        <div class="pc-col">
+          <div class="pc-field" style="display:flex;justify-content:space-between;align-items:center;"><div><div class="pc-fl">Tipo de documento</div><div class="pc-fv">NIT</div></div><span style="color:#9ca3af;font-size:11px;">▼</span></div>
+          <div class="pc-field"><div class="pc-fl">NIT</div><div class="pc-fv">1030633893</div></div>
+          <div class="pc-field" style="display:flex;justify-content:space-between;align-items:center;"><div><div class="pc-fl">Tipo de comida</div><div class="pc-fv">Comida Rápida</div></div><span style="color:#9ca3af;font-size:11px;">▼</span></div>
+          <div style="display:grid;grid-template-columns:95px 1fr;gap:10px;">
+            <div class="pc-field" style="display:flex;justify-content:space-between;align-items:center;"><div><div class="pc-fl">Prefijo</div><div class="pc-fv">+57</div></div><span style="color:#9ca3af;font-size:10px;">▼</span></div>
+            <div class="pc-field"><div class="pc-fl">Teléfono</div><div class="pc-fv">3134350838</div></div>
+          </div>
+          <div class="pc-field"><div class="pc-fl">Correo electrónico</div><div class="pc-fv">yolimavargas86@gmail.com</div></div>
+          <div class="pc-toggle-row">
+            <div class="pc-tog-item"><div class="pc-tog-sw"><div class="pc-tog-k"></div></div><span>Es cocina oculta</span></div>
+            <div class="pc-tog-item"><div class="pc-tog-sw"><div class="pc-tog-k"></div></div><span>Centro comercial</span></div>
+          </div>
+        </div>
+        <div class="pc-map">
+          <div class="pc-map-top"><div class="pc-fl">Dirección</div><div class="pc-fv" style="font-size:12px;">Carrera 81J 41F S-24, Bogotá, D.C., Colombia</div></div>
+          <svg width="100%" height="220" viewBox="0 0 520 220" xmlns="http://www.w3.org/2000/svg" style="display:block;background:#dde4ec;">
+            <rect width="520" height="220" fill="#dde4ec"/>
+            <rect x="22" y="13" width="70" height="29" rx="2" fill="#c8d5e8" opacity="0.6"/><rect x="104" y="9" width="50" height="25" rx="2" fill="#c8d5e8" opacity="0.6"/><rect x="167" y="15" width="76" height="22" rx="2" fill="#c8d5e8" opacity="0.6"/><rect x="278" y="7" width="60" height="32" rx="2" fill="#c8d5e8" opacity="0.6"/><rect x="355" y="12" width="42" height="22" rx="2" fill="#c8d5e8" opacity="0.6"/><rect x="412" y="8" width="68" height="28" rx="2" fill="#c8d5e8" opacity="0.6"/>
+            <rect x="7" y="60" width="86" height="25" rx="2" fill="#c8d5e8" opacity="0.6"/><rect x="108" y="56" width="47" height="22" rx="2" fill="#c8d5e8" opacity="0.6"/><rect x="183" y="60" width="70" height="25" rx="2" fill="#c8d5e8" opacity="0.6"/><rect x="290" y="56" width="56" height="22" rx="2" fill="#c8d5e8" opacity="0.6"/><rect x="380" y="60" width="78" height="25" rx="2" fill="#c8d5e8" opacity="0.6"/>
+            <rect x="15" y="104" width="60" height="22" rx="2" fill="#c8d5e8" opacity="0.6"/><rect x="96" y="100" width="76" height="25" rx="2" fill="#c8d5e8" opacity="0.6"/><rect x="190" y="104" width="52" height="22" rx="2" fill="#c8d5e8" opacity="0.6"/><rect x="278" y="100" width="84" height="25" rx="2" fill="#c8d5e8" opacity="0.6"/><rect x="390" y="104" width="62" height="22" rx="2" fill="#c8d5e8" opacity="0.6"/>
+            <rect x="22" y="152" width="70" height="23" rx="2" fill="#c8d5e8" opacity="0.6"/><rect x="106" y="155" width="52" height="20" rx="2" fill="#c8d5e8" opacity="0.6"/><rect x="185" y="152" width="76" height="23" rx="2" fill="#c8d5e8" opacity="0.6"/>
+            <path d="M70 0 L80 220" stroke="#b8cbe0" stroke-width="5" opacity="0.5" fill="none"/><path d="M172 0 L182 220" stroke="#b8cbe0" stroke-width="9" opacity="0.5" fill="none"/><path d="M282 0 L277 220" stroke="#b8cbe0" stroke-width="11" opacity="0.5" fill="none"/><path d="M396 0 L400 220" stroke="#b8cbe0" stroke-width="9" opacity="0.5" fill="none"/>
+            <path d="M0 40 L520 37" stroke="#b8cbe0" stroke-width="7" opacity="0.5" fill="none"/><path d="M0 88 L520 85" stroke="#b8cbe0" stroke-width="6" opacity="0.5" fill="none"/><path d="M0 138 L520 135" stroke="#b8cbe0" stroke-width="9" opacity="0.5" fill="none"/>
+            <path d="M0 120 Q108 112 182 105 Q278 93 374 104 L520 110" stroke="#6bb3f0" stroke-width="11" opacity="0.4" fill="none"/>
+            <circle cx="268" cy="110" r="8" fill="#e53935" opacity="0.9"/><circle cx="268" cy="110" r="5" fill="#ef5350"/><circle cx="268" cy="110" r="2" fill="white"/>
+          </svg>
+        </div>
+      </div>
+      <div class="pc-footer">
+        <button class="btn-pc-v">Volver</button>
+        <button class="btn-pc-n" onclick="goConfirm()">Siguiente →</button>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+
+<!-- SC2: CONFIRMACIÓN -->
+<div class="sc" id="sc-confirm">
+<div class="pc-topbar"></div>
+<div class="pc-header" style="padding-bottom:12px;">
+  <div class="pc-title-row"><span class="pc-title">Proceso Comercial</span><span class="pc-badge">Completado</span></div>
+  <div class="pc-bc">Procesos Comerciales › <strong>Expansión de negocio</strong></div>
+  <div class="pc-stepper">
+    <div class="pcs"><div class="pcsl done"></div><div class="pcsc done">1</div><div class="pcsl-lbl">Selección</div></div>
+    <div class="pcs"><div class="pcsl done"></div><div class="pcsc done">2</div><div class="pcsl-lbl">Formulario</div></div>
+    <div class="pcs"><div class="pcsl done"></div><div class="pcsc done">3</div><div class="pcsl-lbl">Documentos</div></div>
+    <div class="pcs"><div class="pcsl done"></div><div class="pcsc done">4</div><div class="pcsl-lbl">Razón Social</div></div>
+    <div class="pcs"><div class="pcsl done"></div><div class="pcsc done">5</div><div class="pcsl-lbl">Cuenta Bancaria</div></div>
+    <div class="pcs"><div class="pcsl done"></div><div class="pcsc done">6</div><div class="pcsl-lbl">Condiciones</div></div>
+    <div class="pcs"><div class="pcsl done"></div><div class="pcsc done">7</div><div class="pcsl-lbl">Horarios</div></div>
+    <div class="pcs"><div class="pcsc active">8</div><div class="pcsl-lbl active">Confirmación</div></div>
+  </div>
+</div>
+<div class="confirm-wrap">
+  <div class="confirm-card">
+    <div class="confirm-top"><div style="font-size:34px;margin-bottom:7px;">🎉</div><h2>¡Proceso completado exitosamente!</h2><p>Las credenciales del Portal de Aliados han sido creadas y enviadas al email.</p></div>
+    <div class="confirm-body">
+      <div class="confirm-ids">
+        <div class="cid"><div class="cid-lbl">Marca (Brand)</div><div class="cid-val">C0351073</div></div>
+        <div class="cid"><div class="cid-lbl">Store ID Creado</div><div class="cid-val">C0000478225</div></div>
+      </div>
+      <hr class="conf-divider">
+      <div class="conf-stores-title">Tienda registrada</div>
+      <div class="conf-chip"><span class="conf-chip-name">La Tagoretta Cocina Bar</span><span class="conf-chip-id">ID: C0000478225</span></div>
+      <hr class="conf-divider" style="margin-top:13px;">
+      <div class="slack-box">
+        <div class="slack-head">
+          <div class="slack-logo"><svg viewBox="0 0 24 24" fill="white"><path d="M6 15a2 2 0 0 1-2 2 2 2 0 0 1-2-2 2 2 0 0 1 2-2h2v2zm1 0a2 2 0 0 1 2-2 2 2 0 0 1 2 2v5a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-5zm2-8a2 2 0 0 1-2-2 2 2 0 0 1 2-2 2 2 0 0 1 2 2v2H9zm0 1a2 2 0 0 1 2 2 2 2 0 0 1-2 2H4a2 2 0 0 1-2-2 2 2 0 0 1 2-2h5zm8 2a2 2 0 0 1 2-2 2 2 0 0 1 2 2 2 2 0 0 1-2 2h-2v-2zm-1 0a2 2 0 0 1-2 2 2 2 0 0 1-2-2V5a2 2 0 0 1 2-2 2 2 0 0 1 2 2v5zm-2 8a2 2 0 0 1 2 2 2 2 0 0 1-2 2 2 2 0 0 1-2-2v-2h2zm0-1a2 2 0 0 1-2-2 2 2 0 0 1 2-2h5a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-5z"/></svg></div>
+          <div><div class="slack-head-title">Notificación enviada por Slack</div><div class="slack-head-sub">El aliado recibe este mensaje y entra al SOB</div></div>
+        </div>
+        <div class="slack-msg">
+          <div class="slack-sender"><div class="slack-av">ZC</div><span class="slack-sname">Zoho CRM Notifications <span class="slack-app">APP</span></span><span class="slack-time" style="margin-left:6px;">Ahora</span></div>
+          <div class="slack-body">🚀 <strong>¡ALERTA! Tu Nuevo Aliado Está Listo para Onboarding</strong><br>🎉 <strong>¡La Cuenta de Tu Aliado Está Lista!</strong><br><br>El proceso legal ha concluido. Credenciales de <strong>Portal Partners</strong> enviadas.<br><br><strong>Marca:</strong> <span class="s-code">C0351073</span> &nbsp; <strong>Store ID:</strong> <span class="s-code">C0000478225</span><br><br>➡️ <strong>ACCIÓN REQUERIDA:</strong> Completá el onboarding y gestioná tus tiendas:<br><br><span class="slack-link" onclick="goSOB()">👉 Ir al Portal SOB →</span></div>
+        </div>
+      </div>
+      <button class="btn-ir-sob" onclick="goSOB()">Ir al Portal de Onboarding (SOB) →</button>
+    </div>
+  </div>
+</div>
+</div>
+
+<!-- SC3: SOB HOME -->
+<div class="sc" id="sc-sob-home">
+<div class="sob">
+  <nav class="sob-nav"><span class="sob-logo">Rappi</span><button class="btn-salir">Salir</button></nav>
+  <div class="sob-hero"><div style="font-size:56px;line-height:1;">🧢</div><h1>¡Bienvenido de vuelta!<br>Completá tu onboarding.</h1></div>
+  <div class="sob-cards">
+    <div class="scard green"><div class="scard-lbl">Paso 1</div><div class="scard-img">🤌💵</div><div class="scard-title">Información bancaria, legal y tipo de entrega</div><div class="schk done">✅ Información legal</div><div class="schk done">✅ Información bancaria</div><div class="schk done">✅ Tipo de entrega</div><div class="sprog"><div class="sprog-track"><div class="sprog-fill gf" style="width:100%;"></div></div></div><button class="btn-sob-ini">Ver detalle →</button></div>
+    <div class="scard green"><div class="scard-lbl">Paso 2</div><div class="scard-img">👨</div><div class="scard-title">Logo y horario</div><div class="schk done">✅ Logo</div><div class="schk done">✅ Horario comercial</div><div class="sprog"><div class="sprog-track"><div class="sprog-fill" id="c2prog" style="width:100%;background:#4CAF50;"></div></div></div>
+      <div class="sentry" id="sobEntry"><span class="sentry-lbl">Gestionar restaurantes</span><span class="sentry-badge b-ok" id="sobBadge">✓ 1 restaurante</span><span class="sentry-arrow">›</span></div>
+      <button class="btn-sob-ini">Iniciar →</button></div>
+    <div class="scard gray"><div class="scard-lbl">Último paso</div><div class="scard-img">🍽️</div><div class="scard-title">Menú y gestión de órdenes</div><p style="font-size:11.5px;color:#555;margin-bottom:8px;">Crea el menú que van a ver tus consumidores</p><div class="sextra"><div class="sextra-dot"></div><span class="sextra-link">Usa IA y carga para ahorrar tiempo</span></div><div class="sextra"><span style="font-size:14px;">💬</span><span>Recibe y gestiona tus órdenes en WhatsApp</span></div><div class="sprog"><div class="sprog-track"><div class="sprog-fill gr" style="width:5%;"></div></div></div><button class="btn-sob-ini">Iniciar →</button></div>
+  </div>
+</div>
+</div>
+
+<!-- SC4: SOB GESTIONAR -->
+<div class="sc" id="sc-sob-manage">
+<div class="sob">
+  <nav class="sob-nav"><span class="sob-logo">Rappi</span><button class="btn-salir">Salir</button></nav>
+  <div class="sw">
+    <button class="btn-ghost" id="manageBackBtn">← Volver</button>
+    <h2>Mis restaurantes</h2>
+    <div class="sw-sub">La tienda registrada en el Proceso Comercial ya está aquí con horario pre-configurado. Podés agregar sucursales adicionales.</div>
+    <div class="banner blue"><div style="font-size:17px;flex-shrink:0;">🔗</div><div><strong>La Tagoretta Cocina Bar</strong> (Store ID: C0000478225) fue sincronizada desde el Portal Comercial con horarios ya configurados. Editá o agregá sucursales según necesites.</div></div>
+    <div class="legal-bar"><span class="legal-lbl">Datos legales</span><div class="chips"><div class="chip"><span class="chip-lbl">Tipo doc.</span><span class="chip-val">NIT</span><span class="chip-tag">bloqueado</span></div><div class="chip"><span class="chip-lbl">Número</span><span class="chip-val">1030633893</span><span class="chip-tag">bloqueado</span></div></div></div>
+    <div class="t-wrap"><div class="t-head"><span class="t-title">Restaurantes</span><span class="cnt" id="tCnt">1</span></div><table><thead><tr><th>#</th><th>Nombre</th><th>Tipo de comida</th><th>Dirección</th><th>Horario</th><th>Configurar</th><th></th></tr></thead><tbody id="tBody"></tbody></table></div>
+    <div class="add-form">
+      <div class="add-form-title">Agregar restaurante adicional</div>
+      <div class="fr c2"><div class="ff"><label>Nombre del restaurante</label><input id="fN" type="text" placeholder="Ej. La Tagoretta — Zona Norte"></div><div class="ff"><label>Tipo de comida <span class="itag" id="fCTag" style="display:none;">↩ heredado</span></label><select id="fC"><option>Comida rápida</option><option>Desayunos</option><option>Almuerzos</option><option>Cenas</option><option>Postres</option></select></div></div>
+      <div class="fr c2"><div class="ff"><label>Tipo de documento</label><div class="fl"><span class="fl-val">NIT</span><span class="fl-tag">Info legal</span></div></div><div class="ff"><label>Número de documento</label><div class="fl"><span class="fl-val">1030633893</span><span class="fl-tag">Info legal</span></div></div></div>
+      <div class="fr c2" style="margin-bottom:0;"><div class="ff"><label>Dirección</label><input id="fD" type="text" placeholder="Ej. Carrera 7 # 45-20, Bogotá"></div><div class="ff"><label>Correo electrónico</label><input id="fE" type="email" placeholder="correo@restaurante.com"></div></div>
+      <div class="fac"><button class="btn-rappi-outline" id="btnAdd" onclick="addStore()" disabled>+ Agregar restaurante</button></div>
+    </div>
+    <div class="sf"><button class="btn-sec" id="manageFooterBack">Volver</button><button class="btn-rappi" onclick="confirmManage()">Confirmar y continuar →</button></div>
+  </div>
+</div>
+</div>
+
+<div class="overlay" id="hOverlay" style="display:none;" onclick="closeH(event)">
+  <div class="h-panel" onclick="event.stopPropagation()">
+    <div class="h-phdr"><div><div class="h-ptitle">Horarios de operación</div><div class="h-pstore" id="hStore"></div></div><button class="btn-h-close" onclick="closeH()">✕</button></div>
+    <div class="h-irow"><div class="h-min">Mín. horas semanales: <strong>40</strong></div><div class="h-tot">Horas: <span id="hTot" style="font-size:16px;font-weight:900;color:#2563eb;">0</span></div></div>
+    <div class="copy-bar" id="copyBar" style="display:none;"><span style="font-size:12px;color:#374151;">Copiar horarios de otra sucursal</span><button class="btn-copy" onclick="copyH()">Copiar</button></div>
+    <div class="dias-wrap" id="diasWrap"></div>
+    <button class="btn-save-h" onclick="saveH()">Guardar horarios →</button>
+  </div>
+</div>
+<div class="toast" id="toast"></div>
+
+<script>
+var HORAS=['06:00','07:00','08:00','09:00','10:00','11:00','12:00','13:00','14:00','15:00','16:00','17:00','18:00','19:00','20:00','21:00','22:00','23:00','00:00'];
+var DIAS=['Lunes','Martes','Miércoles','Jueves','Viernes','Sábado','Domingo'];
+var COMIDA=['Comida rápida','Desayunos','Almuerzos','Cenas','Postres'];
+function mkH(a,c,act){return DIAS.map(function(d){return{dia:d,activo:act,abre:a,cierra:c};});}
+function calcH(h){return h.reduce(function(acc,x){if(!x.activo)return acc;var a=parseInt(x.abre),c=parseInt(x.cierra);if(isNaN(a)||isNaN(c))return acc;if(c<=a)c+=24;return acc+(c-a);},0);}
+function hSt(s){if(!s.horarios)return'pend';var d=s.horarios.filter(function(x){return x.activo;}).length,h=calcH(s.horarios);if(d===0)return'pend';if(h>=40)return'done';return'partial';}
+function hLbl(s){var st=hSt(s);if(st==='pend')return{cls:'pend',txt:'Sin configurar'};var h=calcH(s.horarios),d=s.horarios.filter(function(x){return x.activo;}).length;if(st==='done')return{cls:'done',txt:d+' días · '+h+' hs/sem'};return{cls:'partial',txt:h+' hs — mín 40'};}
+var stores=[{id:1,nombre:'La Tagoretta Cocina Bar',comida:'Comida rápida',direccion:'Calle 6C 9, Valledupar',type:'original',horarios:mkH('12:00','22:00',true)}];
+var nextId=2,editHId=null,editRId=null,tmpH=null;
+function goTo(id){document.querySelectorAll('.sc').forEach(function(s){s.classList.remove('a');});document.getElementById(id).classList.add('a');}
+function setNav(active){['np1','np2','np3','np4'].forEach(function(id,i){var el=document.getElementById(id);if(i+1<active)el.className='step-pill done';else if(i+1===active)el.className='step-pill active';else el.className='step-pill';});}
+function goConfirm(){goTo('sc-confirm');setNav(2);}
+function goSOB(){goTo('sc-sob-home');setNav(3);renderTable();updateBadge();}
+function renderTable(){
+  document.getElementById('tCnt').textContent=stores.length;
+  var html='';
+  stores.forEach(function(s,i){var hl=hLbl(s);var pill=s.type==='original'?'<span class="p-orig">principal</span>':'<span class="p-new">nueva</span>';var hBtnCls=hl.cls==='done'?'btn-h-conf ok':'btn-h-conf';var hBtnTxt=hl.cls==='done'?'✓ Editar':'Configurar';var isEdit=(editRId===s.id);html+='<tr'+(isEdit?' class="row-edit"':'')+'>'; html+='<td style="color:#aaa;font-weight:700;">'+(i+1)+'</td>';
+    if(isEdit){html+='<td><input class="ii" id="ei-n-'+s.id+'" value="'+esc(s.nombre)+'" style="width:100px;"></td><td><select class="is" id="ei-c-'+s.id+'">'+COMIDA.map(function(o){return'<option'+(o===s.comida?' selected':'')+'>'+o+'</option>';}).join('')+'</select></td><td><input class="ii" id="ei-d-'+s.id+'" value="'+esc(s.direccion)+'" style="width:100px;"></td><td colspan="2"><div class="acell"><button class="btn-tbl btn-tbl-save" onclick="saveRowEdit('+s.id+')">Guardar</button><button class="btn-tbl btn-tbl-cancel" onclick="cancelEdit()">Cancelar</button></div></td><td></td>';}
+    else{html+='<td><div style="font-weight:700;font-size:12px;">'+s.nombre+'</div>'+pill+'</td><td><span class="p-food">'+s.comida+'</span></td><td style="color:#555;font-size:11px;max-width:100px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;">'+s.direccion+'</td><td><div class="h-st"><div class="h-dot '+hl.cls+'"></div><span style="font-size:11px;color:'+(hl.cls==='done'?'#166534':hl.cls==='partial'?'#c2410c':'#9ca3af')+';">'+hl.txt+'</span></div></td><td><button class="'+hBtnCls+'" onclick="openH('+s.id+')">'+hBtnTxt+'</button></td><td><div class="acell"><button class="btn-tbl btn-tbl-edit" onclick="startRowEdit('+s.id+')">Editar</button>'+(s.type!=='original'?'<button class="btn-del" onclick="delStore('+s.id+')">✕</button>':'')+'</div></td>';}
+    html+='</tr>';});
+  document.getElementById('tBody').innerHTML=html;updateBadge();}
+function esc(s){return s?s.replace(/"/g,'&quot;'):'';}
+function startRowEdit(id){editRId=id;renderTable();}
+function cancelEdit(){editRId=null;renderTable();}
+function saveRowEdit(id){var s=stores.find(function(x){return x.id===id;});var n=document.getElementById('ei-n-'+id).value.trim(),d=document.getElementById('ei-d-'+id).value.trim();if(!n||!d){showToast('Nombre y dirección son obligatorios');return;}s.nombre=n;s.comida=document.getElementById('ei-c-'+id).value;s.direccion=d;editRId=null;renderTable();showToast('Cambios guardados');}
+function delStore(id){stores=stores.filter(function(x){return x.id!==id;});if(editRId===id)editRId=null;renderTable();showToast('Restaurante eliminado');}
+function chkForm(){var ok=document.getElementById('fN').value.trim()&&document.getElementById('fD').value.trim()&&document.getElementById('fE').value.trim();document.getElementById('btnAdd').disabled=!ok;}
+function addStore(){var n=document.getElementById('fN').value.trim(),d=document.getElementById('fD').value.trim(),e=document.getElementById('fE').value.trim();if(!n||!d||!e){showToast('Completá nombre, dirección y correo');return;}var last=stores[stores.length-1];stores.push({id:nextId++,nombre:n,comida:document.getElementById('fC').value,direccion:d,email:e,type:'new',horarios:null});document.getElementById('fC').value=last.comida;document.getElementById('fCTag').style.display='inline';document.getElementById('fN').value='';document.getElementById('fD').value='';document.getElementById('fE').value='';document.getElementById('btnAdd').disabled=true;renderTable();showToast('"'+n+'" agregado — configurá sus horarios');}
+function updateBadge(){var total=stores.length,hOk=stores.filter(function(s){return hSt(s)==='done';}).length;var badge=document.getElementById('sobBadge'),prog=document.getElementById('c2prog');if(hOk===total&&total>0){badge.textContent='✓ '+total+' restaurant'+(total===1?'e':'es');badge.className='sentry-badge b-ok';prog.style.width='100%';prog.style.background='#4CAF50';}else if(hOk>0||total>1){badge.textContent=hOk+'/'+total+' con horario';badge.className='sentry-badge b-blue';prog.style.width=Math.round(((hOk+1)/(total+1))*80+20)+'%';prog.style.background='#2563eb';}}
+function confirmManage(){var pend=stores.filter(function(s){return hSt(s)!=='done';});if(pend.length>0){showToast('Falta configurar horarios en '+pend.length+' tienda'+(pend.length>1?'s':''));return;}updateBadge();goTo('sc-sob-home');setNav(3);showToast('✓ Restaurantes y horarios confirmados');}
+function openH(id){var s=stores.find(function(x){return x.id===id;});if(!s.horarios)s.horarios=mkH('12:00','22:00',true);editHId=id;tmpH=s.horarios.map(function(h){return Object.assign({},h);});document.getElementById('hStore').textContent='🏪 '+s.nombre;var hasCopy=stores.some(function(x){return x.id!==id&&hSt(x)==='done';});document.getElementById('copyBar').style.display=hasCopy?'flex':'none';renderDias();document.getElementById('hOverlay').style.display='flex';}
+function closeH(e){if(!e||e.target===document.getElementById('hOverlay')){document.getElementById('hOverlay').style.display='none';editHId=null;tmpH=null;}}
+function renderDias(){var tot=calcH(tmpH),el=document.getElementById('hTot');el.textContent=tot;el.style.color=tot>=40?'#166534':'#dc2626';var html='';tmpH.forEach(function(h,i){var off=!h.activo;html+='<div class="dia-row'+(off?' off':'')+'">';html+='<span class="dia-name">'+h.dia+'</span>';html+='<div class="dsel-wrap"><div class="dsel-lbl">Abre</div><select class="dsel" id="a'+i+'" onchange="upH('+i+',\'abre\',this.value)"'+(off?' disabled':'')+'>'+HORAS.map(function(r){return'<option'+(h.abre===r?' selected':'')+'>'+r+'</option>';}).join('')+'</select></div>';html+='<div class="dsel-wrap"><div class="dsel-lbl">Cierra</div><select class="dsel" id="c'+i+'" onchange="upH('+i+',\'cierra\',this.value)"'+(off?' disabled':'')+'>'+HORAS.map(function(r){return'<option'+(h.cierra===r?' selected':'')+'>'+r+'</option>';}).join('')+'</select></div>';html+='<div class="tog '+(h.activo?'on':'off')+'" onclick="togD('+i+')"><div class="tog-k"></div></div>';html+='</div>';});document.getElementById('diasWrap').innerHTML=html;}
+function upH(i,f,v){tmpH[i][f]=v;var t=calcH(tmpH),el=document.getElementById('hTot');el.textContent=t;el.style.color=t>=40?'#166534':'#dc2626';}
+function togD(i){tmpH[i].activo=!tmpH[i].activo;renderDias();}
+function copyH(){var donor=stores.find(function(s){return s.id!==editHId&&hSt(s)==='done';});if(!donor){showToast('No hay otra tienda con horarios completos');return;}tmpH=donor.horarios.map(function(h){return Object.assign({},h);});renderDias();showToast('Horarios copiados');}
+function saveH(){var s=stores.find(function(x){return x.id===editHId;});s.horarios=tmpH.slice();document.getElementById('hOverlay').style.display='none';editHId=null;tmpH=null;renderTable();updateBadge();showToast('✓ Horarios de "'+s.nombre.split(' — ')[0]+'" guardados');}
+function showToast(msg){var t=document.getElementById('toast');t.textContent=msg;t.classList.add('show');setTimeout(function(){t.classList.remove('show');},2600);}
+document.getElementById('sobEntry').addEventListener('click',function(){goTo('sc-sob-manage');setNav(4);renderTable();});
+document.getElementById('manageBackBtn').onclick=function(){goTo('sc-sob-home');setNav(3);};
+document.getElementById('manageFooterBack').onclick=function(){goTo('sc-sob-home');setNav(3);};
+document.getElementById('fN').addEventListener('input',chkForm);
+document.getElementById('fD').addEventListener('input',chkForm);
+document.getElementById('fE').addEventListener('input',chkForm);
+renderTable();setNav(1);
+</script>
+</body>
+</html>
