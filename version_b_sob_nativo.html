@@ -9,12 +9,13 @@
 body { font-family: 'Segoe UI', Arial, sans-serif; background: #f5f5f5; }
 .sc { display: none; } .sc.a { display: block; }
 .top-nav { background: #1a1a1a; padding: 8px 18px; display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
-.top-nav-label { font-size: 10px; font-weight: 700; color: #666; text-transform: uppercase; letter-spacing: 0.06em; }
-.step-pill { font-size: 11px; font-weight: 700; padding: 4px 12px; border-radius: 20px; cursor: pointer; border: none; font-family: inherit; background: #2a2a2a; color: #666; }
-.step-pill.active { background: #ff441b; color: #fff; }
-.step-pill.done { background: #166534; color: #fff; }
-.step-arrow { color: #444; font-size: 12px; }
-.version-tag { margin-left: auto; font-size: 11px; font-weight: 700; color: #2563eb; background: rgba(37,99,235,0.12); padding: 3px 10px; border-radius: 20px; }
+.tnl { font-size: 10px; font-weight: 700; color: #666; text-transform: uppercase; letter-spacing: 0.06em; }
+.nsp { font-size: 11px; font-weight: 700; padding: 4px 12px; border-radius: 20px; border: none; font-family: inherit; background: #2a2a2a; color: #666; }
+.nsp.active { background: #ff441b; color: #fff; }
+.nsp.done { background: #166534; color: #fff; }
+.nsa { color: #444; font-size: 12px; }
+.vtag { margin-left: auto; font-size: 11px; font-weight: 700; color: #2563eb; background: rgba(37,99,235,0.12); padding: 3px 10px; border-radius: 20px; }
+/* SOB */
 .sob { background: #fff; min-height: 500px; }
 .sob-nav { display: flex; justify-content: space-between; align-items: center; padding: 12px 26px; border-bottom: 1px solid #f0f0f0; }
 .sob-logo { font-size: 23px; font-weight: 900; color: #ff441b; font-style: italic; letter-spacing: -1px; }
@@ -26,7 +27,7 @@ body { font-family: 'Segoe UI', Arial, sans-serif; background: #f5f5f5; }
 .scard.green { border-color: #b7eac8; background: #f4fef7; }
 .scard.plain { background: #fff; border-color: #e8e8e8; }
 .scard-lbl { font-size: 11px; font-weight: 700; margin-bottom: 6px; }
-.scard.red   .scard-lbl { color: #cc2200; }
+.scard.red .scard-lbl { color: #cc2200; }
 .scard.green .scard-lbl { color: #1a7a4a; }
 .scard.plain .scard-lbl { color: #888; }
 .scard-img { position: absolute; top: 10px; right: 10px; font-size: 25px; line-height: 1; }
@@ -36,7 +37,7 @@ body { font-family: 'Segoe UI', Arial, sans-serif; background: #f5f5f5; }
 .sprog { margin-top: 9px; }
 .sprog-track { height: 5px; background: #e8e8e8; border-radius: 3px; overflow: hidden; }
 .sprog-fill { height: 100%; border-radius: 3px; transition: width 0.5s, background 0.3s; }
-.sprog-fill.gf { background: #4CAF50; } .sprog-fill.bf { background: #2563eb; } .sprog-fill.gr { background: #d0d0d0; }
+.sprog-fill.gf { background: #4CAF50; } .sprog-fill.gr { background: #d0d0d0; }
 .sextra { display: flex; align-items: flex-start; gap: 7px; margin-bottom: 7px; font-size: 11.5px; color: #444; }
 .sextra-dot { width: 6px; height: 6px; border-radius: 50%; background: #7c3aed; margin-top: 3px; flex-shrink: 0; }
 .sextra-link { color: #7c3aed; font-weight: 600; }
@@ -48,6 +49,7 @@ body { font-family: 'Segoe UI', Arial, sans-serif; background: #f5f5f5; }
 .b-ok   { background: #e8f5e9; color: #2e7d32; }
 .b-blue { background: #eff6ff; color: #1d4ed8; }
 .b-gray { background: #f5f5f5; color: #888; }
+/* CHOICE */
 .choice-wrap { padding: 28px 26px; max-width: 520px; margin: 0 auto; }
 .choice-wrap h2 { font-size: 20px; font-weight: 900; color: #1a1a1a; margin-bottom: 5px; }
 .choice-wrap p { font-size: 13px; color: #666; margin-bottom: 22px; }
@@ -59,6 +61,7 @@ body { font-family: 'Segoe UI', Arial, sans-serif; background: #f5f5f5; }
 .choice-card-title { font-size: 14px; font-weight: 900; color: #1a1a1a; margin-bottom: 5px; }
 .choice-card-sub { font-size: 12px; color: #888; line-height: 1.4; }
 .choice-actions { margin-top: 20px; display: flex; justify-content: flex-end; }
+/* MANAGE SCREEN */
 .sw { padding: 18px 26px 28px; }
 .sw h2 { font-size: 17px; font-weight: 900; color: #1a1a1a; margin-bottom: 3px; }
 .sw-sub { font-size: 12px; color: #888; margin-bottom: 13px; }
@@ -80,7 +83,7 @@ tbody td { padding: 8px 11px; color: #1a1a1a; vertical-align: middle; }
 .p-new  { background: #e0f2fe; color: #0369a1; font-size: 10px; font-weight: 700; padding: 1px 7px; border-radius: 20px; }
 .h-st { display: flex; align-items: center; gap: 5px; font-size: 11px; }
 .h-dot { width: 7px; height: 7px; border-radius: 50%; flex-shrink: 0; }
-.h-dot.done { background: #4CAF50; } .h-dot.pend { background: #d1d5db; } .h-dot.partial { background: #f97316; }
+.h-dot.done { background: #4CAF50; } .h-dot.pend { background: #d1d5db; }
 .add-form { background: #fff; border: 1px solid #e8e8e8; border-radius: 12px; padding: 14px; margin-bottom: 13px; }
 .add-form-title { font-size: 12px; font-weight: 700; color: #1a1a1a; margin-bottom: 11px; }
 .fr { display: grid; gap: 9px; margin-bottom: 9px; } .fr.c2 { grid-template-columns: 1fr 1fr; }
@@ -92,20 +95,22 @@ tbody td { padding: 8px 11px; color: #1a1a1a; vertical-align: middle; }
 .itag { font-size: 9px; color: #ff441b; background: #fff0ec; padding: 1px 5px; border-radius: 4px; margin-left: 3px; font-weight: 600; }
 .fac { display: flex; justify-content: flex-end; margin-top: 9px; }
 .sf { display: flex; justify-content: space-between; align-items: center; margin-top: 14px; }
+/* MAP */
 .mini-map-wrap { margin-top: 6px; border-radius: 8px; overflow: hidden; border: 1px solid #e8e8e8; display: none; position: relative; }
 .mini-map-wrap.vis { display: block; }
-.map-search-overlay { position: absolute; inset: 0; background: rgba(255,255,255,0.8); display: flex; align-items: center; justify-content: center; font-size: 11px; color: #888; }
-.map-aws-badge { position: absolute; bottom: 5px; right: 7px; background: rgba(255,255,255,0.92); font-size: 8px; color: #555; padding: 2px 6px; border-radius: 4px; font-weight: 600; }
-.map-pin-abs { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -100%); }
+.map-srch { position: absolute; inset: 0; background: rgba(255,255,255,0.8); display: flex; align-items: center; justify-content: center; font-size: 11px; color: #888; }
+.map-aws { position: absolute; bottom: 4px; right: 6px; background: rgba(255,255,255,0.92); font-size: 8px; color: #555; padding: 2px 5px; border-radius: 3px; font-weight: 600; }
+.map-pin { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -100%); }
+/* PANEL */
 .overlay { position: fixed; inset: 0; background: rgba(0,0,0,0.42); z-index: 200; display: flex; align-items: flex-end; }
 .panel { background: #fff; border-radius: 16px 16px 0 0; width: 100%; max-height: 90vh; overflow-y: auto; }
-.panel-header { padding: 18px 22px 0; display: flex; align-items: flex-start; justify-content: space-between; margin-bottom: 4px; }
-.panel-title { font-size: 15px; font-weight: 900; color: #1a1a1a; }
-.panel-store { font-size: 12px; color: #ff441b; font-weight: 700; }
-.panel-tabs { display: flex; border-bottom: 2px solid #f0f0f0; margin: 12px 22px 0; }
+.ph { padding: 18px 22px 0; display: flex; align-items: flex-start; justify-content: space-between; margin-bottom: 4px; }
+.ph-title { font-size: 15px; font-weight: 900; color: #1a1a1a; }
+.ph-store { font-size: 12px; color: #ff441b; font-weight: 700; }
+.p-tabs { display: flex; border-bottom: 2px solid #f0f0f0; margin: 12px 22px 0; }
 .ptab { font-size: 12px; font-weight: 700; padding: 8px 16px; cursor: pointer; border-bottom: 2px solid transparent; margin-bottom: -2px; color: #9ca3af; font-family: inherit; background: none; border-top: none; border-left: none; border-right: none; }
 .ptab.active { color: #ff441b; border-bottom-color: #ff441b; }
-.panel-body { padding: 16px 22px 24px; }
+.p-body { padding: 16px 22px 24px; }
 .pff label { font-size: 9px; font-weight: 700; color: #6b7280; display: block; margin-bottom: 3px; text-transform: uppercase; letter-spacing: 0.03em; }
 .pff input, .pff select { width: 100%; border: 1.5px solid #e8e8e8; border-radius: 7px; padding: 8px 10px; font-size: 12px; color: #1a1a1a; font-family: inherit; background: #fff; outline: none; }
 .pff input:focus, .pff select:focus { border-color: #ff441b; } .pff input::placeholder { color: #c0c4cc; }
@@ -128,6 +133,92 @@ tbody td { padding: 8px 11px; color: #1a1a1a; vertical-align: middle; }
 .tog.on { background: #ff441b; } .tog.off { background: #d1d5db; }
 .tog-k { width: 12px; height: 12px; background: #fff; border-radius: 50%; position: absolute; top: 2px; transition: left 0.15s; }
 .tog.on .tog-k { left: 16px; } .tog.off .tog-k { left: 2px; }
+
+/* ── MENU STORE SELECTOR ── */
+.menu-selector-wrap { padding: 22px 26px 28px; }
+.menu-selector-wrap h2 { font-size: 18px; font-weight: 900; color: #1a1a1a; margin-bottom: 4px; }
+.menu-selector-sub { font-size: 12px; color: #888; margin-bottom: 20px; }
+.store-select-grid { display: flex; flex-direction: column; gap: 10px; margin-bottom: 22px; }
+.store-select-card { border: 2px solid #e8e8e8; border-radius: 12px; padding: 14px 16px; cursor: pointer; background: #fff; display: flex; align-items: center; justify-content: space-between; transition: all 0.15s; }
+.store-select-card:hover { border-color: #ff441b; background: #fff9f8; }
+.store-select-card.done-card { border-color: #b7eac8; background: #f4fef7; }
+.ssc-left { display: flex; flex-direction: column; gap: 3px; }
+.ssc-name { font-size: 14px; font-weight: 700; color: #1a1a1a; }
+.ssc-sub  { font-size: 11px; color: #888; }
+.ssc-right { display: flex; align-items: center; gap: 8px; }
+.menu-status-badge { font-size: 10px; font-weight: 700; padding: 3px 9px; border-radius: 20px; white-space: nowrap; }
+.msb-done    { background: #e8f5e9; color: #2e7d32; }
+.msb-pending { background: #fff5f3; color: #cc2200; }
+.msb-partial { background: #fffbeb; color: #92400e; }
+
+/* ── MENU SCREEN ── */
+.menu-wrap { padding: 0; background: #fff; min-height: 500px; }
+.menu-topbar { padding: 14px 24px; border-bottom: 1px solid #f0f0f0; display: flex; align-items: center; justify-content: space-between; background: #fff; }
+.menu-topbar-left { display: flex; flex-direction: column; gap: 2px; }
+.menu-store-name { font-size: 16px; font-weight: 900; color: #1a1a1a; }
+.menu-store-sub   { font-size: 11px; color: #888; }
+.menu-tabs { display: flex; border-bottom: 2px solid #f0f0f0; padding: 0 24px; background: #fff; }
+.mtab { font-size: 12px; font-weight: 700; padding: 9px 16px; cursor: pointer; border-bottom: 2px solid transparent; margin-bottom: -2px; color: #9ca3af; font-family: inherit; background: none; border-top: none; border-left: none; border-right: none; white-space: nowrap; }
+.mtab.active { color: #ff441b; border-bottom-color: #ff441b; }
+.menu-body { padding: 16px 24px 28px; }
+
+/* Perfect Store Score */
+.pss-card { border: 1.5px dashed #7c3aed; border-radius: 12px; padding: 14px 16px; margin-bottom: 16px; background: #fafafe; position: relative; }
+.pss-badge { position: absolute; top: -9px; left: 14px; background: #7c3aed; color: #fff; font-size: 9px; font-weight: 700; padding: 2px 8px; border-radius: 20px; letter-spacing: 0.04em; }
+.pss-header { display: flex; align-items: center; justify-content: space-between; margin-bottom: 12px; }
+.pss-title { font-size: 13px; font-weight: 700; color: #1a1a1a; display: flex; align-items: center; gap: 6px; }
+.pss-score { font-size: 26px; font-weight: 900; }
+.pss-score.green { color: #166534; } .pss-score.yellow { color: #92400e; } .pss-score.red { color: #cc2200; }
+.pss-bars { display: flex; gap: 10px; flex-wrap: wrap; }
+.pss-bar { flex: 1; min-width: 120px; background: #f3f4f6; border-radius: 8px; padding: 8px 10px; }
+.pss-bar-label { font-size: 10px; font-weight: 600; color: #6b7280; margin-bottom: 4px; }
+.pss-bar-track { height: 5px; background: #e8e8e8; border-radius: 3px; overflow: hidden; margin-bottom: 3px; }
+.pss-bar-fill { height: 100%; border-radius: 3px; transition: width 0.5s; }
+.pss-bar-fill.gf { background: #4CAF50; } .pss-bar-fill.yf { background: #f97316; } .pss-bar-fill.rf { background: #dc2626; }
+.pss-bar-pct { font-size: 10px; font-weight: 700; color: #374151; }
+
+/* Quality filters */
+.q-filters { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 14px; }
+.qf { font-size: 11px; font-weight: 600; padding: 5px 12px; border-radius: 20px; cursor: pointer; border: 1px solid; transition: all 0.15s; white-space: nowrap; }
+.qf.ok   { background: #f0fdf4; color: #166534; border-color: #bbf7d0; }
+.qf.warn { background: #f5f5f5; color: #374151; border-color: #e8e8e8; }
+.qf.warn:hover { background: #fff5f3; border-color: #ffccc7; color: #cc2200; }
+.qf.active-filter { background: #1a1a1a; color: #fff; border-color: #1a1a1a; }
+
+/* Category + products */
+.cat-section { margin-bottom: 8px; border: 1px solid #e8e8e8; border-radius: 10px; overflow: hidden; }
+.cat-header { display: flex; align-items: center; justify-content: space-between; padding: 10px 14px; background: #fafafa; cursor: pointer; user-select: none; }
+.cat-header:hover { background: #f3f4f6; }
+.cat-name { font-size: 13px; font-weight: 700; color: #1a1a1a; }
+.cat-count { font-size: 11px; color: #9ca3af; margin-left: 6px; }
+.cat-chevron { font-size: 10px; color: #9ca3af; transition: transform 0.2s; }
+.cat-chevron.open { transform: rotate(180deg); }
+.prod-list { border-top: 1px solid #f0f0f0; }
+.prod-row { display: flex; align-items: center; gap: 10px; padding: 9px 14px; border-bottom: 1px solid #f3f4f6; }
+.prod-row:last-child { border-bottom: none; }
+.prod-img { width: 38px; height: 38px; border-radius: 8px; object-fit: cover; background: #f3f4f6; display: flex; align-items: center; justify-content: center; font-size: 18px; flex-shrink: 0; overflow: hidden; }
+.prod-info { flex: 1; min-width: 0; }
+.prod-name { font-size: 12px; font-weight: 700; color: #1a1a1a; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; cursor: text; }
+.prod-name.editing { outline: none; border-bottom: 2px solid #ff441b; background: #fff9f8; padding: 1px 3px; border-radius: 3px; white-space: normal; }
+.prod-desc { font-size: 11px; color: #888; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; cursor: text; }
+.prod-desc.editing { outline: none; border-bottom: 2px solid #ff441b; background: #fff9f8; padding: 1px 3px; border-radius: 3px; white-space: normal; }
+.prod-price { font-size: 12px; font-weight: 700; color: #1a1a1a; cursor: text; white-space: nowrap; }
+.prod-price.editing { outline: none; border-bottom: 2px solid #ff441b; background: #fff9f8; padding: 1px 4px; border-radius: 3px; width: 70px; }
+.prod-flags { display: flex; gap: 4px; align-items: center; margin-top: 3px; }
+.pflag { font-size: 9px; padding: 1px 5px; border-radius: 4px; font-weight: 600; }
+.pflag.ok   { background: #f0fdf4; color: #166534; }
+.pflag.miss { background: #fff5f3; color: #cc2200; }
+.prod-toggle { width: 28px; height: 15px; border-radius: 8px; position: relative; cursor: pointer; flex-shrink: 0; }
+.prod-toggle.on { background: #ff441b; } .prod-toggle.off { background: #d1d5db; }
+.pt-k { width: 11px; height: 11px; background: #fff; border-radius: 50%; position: absolute; top: 2px; transition: left 0.15s; }
+.prod-toggle.on .pt-k { left: 15px; } .prod-toggle.off .pt-k { left: 2px; }
+.cat-add-btn { display: flex; align-items: center; gap: 5px; padding: 8px 14px; font-size: 11px; font-weight: 600; color: #6b7280; cursor: pointer; border-top: 1px dashed #e8e8e8; background: #fafafa; transition: color 0.15s; }
+.cat-add-btn:hover { color: #ff441b; background: #fff9f8; }
+
+/* No products banner */
+.no-prods { text-align: center; padding: 32px 20px; color: #9ca3af; font-size: 13px; }
+
+/* BUTTONS */
 .btn-salir { background:#fff !important; border:2px solid #1a1a1a !important; color:#1a1a1a !important; font-size:13px !important; font-weight:700 !important; padding:7px 17px !important; border-radius:8px !important; cursor:pointer !important; font-family:inherit !important; }
 .btn-sob-ini { background:#2563eb !important; border:none !important; color:#fff !important; font-size:11px !important; font-weight:700 !important; padding:7px 14px !important; border-radius:9px !important; cursor:pointer !important; font-family:inherit !important; display:inline-flex !important; margin-top:9px !important; align-self:flex-start !important; }
 .btn-ghost { background:none !important; border:none !important; color:#888 !important; font-size:13px !important; font-weight:600 !important; cursor:pointer !important; font-family:inherit !important; padding:0 !important; margin-bottom:14px !important; display:block !important; }
@@ -141,25 +232,28 @@ tbody td { padding: 8px 11px; color: #1a1a1a; vertical-align: middle; }
 .btn-next { background:#ff441b !important; border:none !important; color:#fff !important; font-size:14px !important; font-weight:700 !important; padding:10px 26px !important; border-radius:10px !important; cursor:pointer !important; font-family:inherit !important; }
 .btn-next:disabled { background:#ffccc7 !important; cursor:not-allowed !important; }
 .btn-blue { background:#2563eb !important; border:none !important; color:#fff !important; font-size:11px !important; font-weight:700 !important; padding:5px 11px !important; border-radius:7px !important; cursor:pointer !important; font-family:inherit !important; white-space:nowrap !important; }
-.btn-blue:hover { background:#1d4ed8 !important; }
 .btn-del { background:none !important; border:none !important; color:#d1d5db !important; font-size:14px !important; cursor:pointer !important; padding:2px 4px !important; border-radius:4px !important; font-family:inherit !important; }
 .btn-del:hover { color:#ff441b !important; background:#fff0ec !important; }
-.btn-h-close { background:none !important; border:none !important; cursor:pointer !important; font-size:20px !important; color:#aaa !important; padding:0 !important; line-height:1 !important; }
+.btn-hc { background:none !important; border:none !important; cursor:pointer !important; font-size:20px !important; color:#aaa !important; padding:0 !important; line-height:1 !important; }
 .btn-copy { background:#fff !important; border:1px solid #2563eb !important; color:#2563eb !important; font-size:11px !important; font-weight:700 !important; padding:4px 9px !important; border-radius:6px !important; cursor:pointer !important; font-family:inherit !important; }
-.btn-save-panel { background:#ff441b !important; border:none !important; color:#fff !important; font-size:13px !important; font-weight:700 !important; padding:10px !important; border-radius:9px !important; cursor:pointer !important; font-family:inherit !important; width:100% !important; }
-.btn-save-panel:hover { background:#e03a14 !important; }
+.btn-save-p { background:#ff441b !important; border:none !important; color:#fff !important; font-size:13px !important; font-weight:700 !important; padding:10px !important; border-radius:9px !important; cursor:pointer !important; font-family:inherit !important; width:100% !important; }
+.btn-menu-action { background:#fff !important; border:1.5px solid #e8e8e8 !important; color:#374151 !important; font-size:12px !important; font-weight:600 !important; padding:7px 14px !important; border-radius:8px !important; cursor:pointer !important; font-family:inherit !important; }
+.btn-menu-action:hover { border-color:#ff441b !important; color:#ff441b !important; }
+.btn-menu-primary { background:#ff441b !important; border:none !important; color:#fff !important; font-size:12px !important; font-weight:700 !important; padding:7px 16px !important; border-radius:8px !important; cursor:pointer !important; font-family:inherit !important; }
+
 .toast { position:fixed; bottom:18px; left:50%; transform:translateX(-50%); background:#1a1a1a; color:#fff; font-size:12px; font-weight:600; padding:8px 16px; border-radius:10px; opacity:0; transition:opacity 0.25s; pointer-events:none; z-index:999; white-space:nowrap; }
 .toast.show { opacity:1; }
 </style>
 </head>
 <body>
+
 <div class="top-nav">
-  <span class="top-nav-label">Versión B — SOB Nativo</span>
-  <span class="step-pill active" id="np1">1 · Home</span><span class="step-arrow">›</span>
-  <span class="step-pill" id="np2">2 · ¿1 o varias?</span><span class="step-arrow">›</span>
-  <span class="step-pill" id="np3">3 · Restaurantes y horarios</span><span class="step-arrow">›</span>
-  <span class="step-pill" id="np4">4 · Confirmado</span>
-  <span class="version-tag">SOB Nativo</span>
+  <span class="tnl">Versión B — SOB Nativo</span>
+  <span class="nsp active" id="np1">1 · Home</span><span class="nsa">›</span>
+  <span class="nsp" id="np2">2 · ¿1 o varias?</span><span class="nsa">›</span>
+  <span class="nsp" id="np3">3 · Restaurantes + horarios</span><span class="nsa">›</span>
+  <span class="nsp" id="np4">4 · Menú</span>
+  <span class="vtag">SOB Nativo</span>
 </div>
 
 <!-- SC1: HOME -->
@@ -169,10 +263,25 @@ tbody td { padding: 8px 11px; color: #1a1a1a; vertical-align: middle; }
   <div class="sob-hero"><div style="font-size:56px;line-height:1;">🧢</div><h1>¡Tu información aún no coincide<br>para el registro!</h1></div>
   <div class="sob-cards">
     <div class="scard red"><div class="scard-lbl">Paso 1</div><div class="scard-img">🤌💵</div><div class="scard-title">Información bancaria, legal y tipo de entrega</div><div class="schk done">✅ Información legal</div><div class="schk warn">⚠️ Información bancaria</div><div class="schk done">✅ Tipo de entrega</div><div class="sprog"><div class="sprog-track"><div class="sprog-fill gf" style="width:66%;"></div></div></div><button class="btn-sob-ini">Iniciar →</button></div>
-    <div class="scard plain" id="card2"><div class="scard-lbl" id="c2lbl">Paso 2</div><div class="scard-img">👨</div><div class="scard-title">Logo y horario</div><div class="schk pend" id="c2logo">⬜ Logo</div><div class="schk pend" id="c2horario">⬜ Horario comercial</div><div class="sprog"><div class="sprog-track"><div class="sprog-fill gr" id="c2prog" style="width:0%;"></div></div></div>
+    <div class="scard plain" id="card2">
+      <div class="scard-lbl" id="c2lbl">Paso 2</div><div class="scard-img">👨</div>
+      <div class="scard-title">Logo y horario</div>
+      <div class="schk pend" id="c2logo">⬜ Logo</div>
+      <div class="schk pend" id="c2horario">⬜ Horario comercial</div>
+      <div class="sprog"><div class="sprog-track"><div class="sprog-fill gr" id="c2prog" style="width:0%;"></div></div></div>
       <div class="sentry" id="entryGestionar"><span class="sentry-lbl">Gestionar restaurantes</span><span class="sentry-badge b-gray" id="manageBadge">Pendiente</span><span class="sentry-arrow">›</span></div>
-      <button class="btn-sob-ini">Iniciar →</button></div>
-    <div class="scard plain"><div class="scard-lbl">Último paso</div><div class="scard-img">🍽️</div><div class="scard-title">Menú y gestión de órdenes</div><p style="font-size:11.5px;color:#555;margin-bottom:8px;">Crea el menú que van a ver tus consumidores</p><div class="sextra"><div class="sextra-dot"></div><span class="sextra-link">Usa IA y carga para ahorrar tiempo</span></div><div class="sextra"><span style="font-size:14px;">💬</span><span>Recibe y gestiona tus órdenes en WhatsApp</span></div><div class="sprog"><div class="sprog-track"><div class="sprog-fill gr" style="width:5%;"></div></div></div><button class="btn-sob-ini">Iniciar →</button></div>
+      <button class="btn-sob-ini">Iniciar →</button>
+    </div>
+    <div class="scard plain" id="card3">
+      <div class="scard-lbl" id="c3lbl">Último paso</div><div class="scard-img">🍽️</div>
+      <div class="scard-title">Menú y gestión de órdenes</div>
+      <p style="font-size:11.5px;color:#555;margin-bottom:8px;">Crea el menú que van a ver tus consumidores</p>
+      <div class="sextra"><div class="sextra-dot"></div><span class="sextra-link">Usa IA y carga para ahorrar tiempo</span></div>
+      <div class="sextra"><span style="font-size:14px;">💬</span><span>Recibe y gestiona tus órdenes en WhatsApp</span></div>
+      <div class="sprog"><div class="sprog-track"><div class="sprog-fill gr" id="c3prog" style="width:5%;"></div></div></div>
+      <div class="sentry" id="entryMenu"><span class="sentry-lbl">Configurar menú</span><span class="sentry-badge b-gray" id="menuBadge">Pendiente</span><span class="sentry-arrow">›</span></div>
+      <button class="btn-sob-ini">Iniciar →</button>
+    </div>
   </div>
 </div>
 </div>
@@ -182,14 +291,14 @@ tbody td { padding: 8px 11px; color: #1a1a1a; vertical-align: middle; }
 <div class="sob">
   <nav class="sob-nav"><span class="sob-logo">Rappi</span><button class="btn-salir">Salir</button></nav>
   <div class="choice-wrap">
-    <button class="btn-ghost" onclick="goTo('sc-home');setNav(1);">← Volver</button>
+    <button class="btn-ghost" id="btnChoiceBack">← Volver</button>
     <h2>¿Cuántos restaurantes tenés?</h2>
     <p>Completaste el logo y el horario comercial. Decinos cuántas ubicaciones querés registrar.</p>
     <div class="choice-grid">
-      <div class="choice-card" id="ch-single" onclick="selectChoice('single')"><div class="choice-card-icon">🏠</div><div class="choice-card-title">Solo un restaurante</div><div class="choice-card-sub">Tengo una única ubicación</div></div>
-      <div class="choice-card" id="ch-multi"  onclick="selectChoice('multi')"><div class="choice-card-icon">🏘️</div><div class="choice-card-title">Varios restaurantes</div><div class="choice-card-sub">Tengo múltiples sucursales</div></div>
+      <div class="choice-card" id="ch-single" data-choice="single"><div class="choice-card-icon">🏠</div><div class="choice-card-title">Solo un restaurante</div><div class="choice-card-sub">Tengo una única ubicación</div></div>
+      <div class="choice-card" id="ch-multi"  data-choice="multi"><div class="choice-card-icon">🏘️</div><div class="choice-card-title">Varios restaurantes</div><div class="choice-card-sub">Tengo múltiples sucursales</div></div>
     </div>
-    <div class="choice-actions"><button class="btn-next" id="btnNext" disabled onclick="confirmChoice()">Continuar →</button></div>
+    <div class="choice-actions"><button class="btn-next" id="btnNext" disabled>Continuar →</button></div>
   </div>
 </div>
 </div>
@@ -199,23 +308,23 @@ tbody td { padding: 8px 11px; color: #1a1a1a; vertical-align: middle; }
 <div class="sob">
   <nav class="sob-nav"><span class="sob-logo">Rappi</span><button class="btn-salir">Salir</button></nav>
   <div class="sw">
-    <button class="btn-ghost" onclick="goTo('sc-choice');setNav(2);">← Volver</button>
+    <button class="btn-ghost" id="btnSingleBack">← Volver</button>
     <div style="text-align:center;padding:28px 20px;max-width:420px;margin:0 auto;">
       <div style="font-size:48px;margin-bottom:12px;">✅</div>
       <div style="font-size:17px;font-weight:900;color:#1a7a4a;margin-bottom:6px;">¡Perfecto, un solo restaurante!</div>
-      <div style="font-size:13px;color:#666;margin-bottom:22px;">Tu restaurante está registrado con logo y horario. Podés continuar con la configuración del menú.</div>
-      <button class="btn-rappi btn-rappi-full" onclick="doneSingle()">Continuar con el menú →</button>
+      <div style="font-size:13px;color:#666;margin-bottom:22px;">Tu restaurante está registrado. Ahora configurá su menú.</div>
+      <button class="btn-rappi btn-rappi-full" id="btnSingleToMenu">Configurar menú →</button>
     </div>
   </div>
 </div>
 </div>
 
-<!-- SC3b: VARIOS -->
+<!-- SC3b: GESTIONAR VARIOS -->
 <div class="sc" id="sc-manage">
 <div class="sob">
   <nav class="sob-nav"><span class="sob-logo">Rappi</span><button class="btn-salir">Salir</button></nav>
   <div class="sw">
-    <button class="btn-ghost" onclick="goTo('sc-choice');setNav(2);">← Volver</button>
+    <button class="btn-ghost" id="btnManageBack">← Volver</button>
     <h2>Mis restaurantes</h2>
     <div class="sw-sub">Registrá sucursales adicionales y configurá los horarios de cada una de forma independiente.</div>
     <div class="legal-bar"><span class="legal-lbl">Datos legales</span><div class="chips"><div class="chip"><span class="chip-lbl">Tipo doc.</span><span class="chip-val">NIT</span><span class="chip-tag">bloqueado</span></div><div class="chip"><span class="chip-lbl">Número</span><span class="chip-val">1030633893</span><span class="chip-tag">bloqueado</span></div></div></div>
@@ -223,95 +332,454 @@ tbody td { padding: 8px 11px; color: #1a1a1a; vertical-align: middle; }
     <table><thead><tr><th>#</th><th>Nombre</th><th>Tipo de comida</th><th>Dirección</th><th>Horario</th><th></th></tr></thead><tbody id="tBody"></tbody></table></div>
     <div class="add-form">
       <div class="add-form-title">Agregar restaurante adicional</div>
-      <div class="fr c2">
-        <div class="ff"><label>Nombre del restaurante</label><input id="fN" type="text" placeholder="Ej. Mi Restaurante — Norte"></div>
-        <div class="ff"><label>Tipo de comida <span class="itag" id="fCTag" style="display:none;">↩ heredado</span></label><select id="fC"><option>Comida rápida</option><option>Desayunos</option><option>Almuerzos</option><option>Cenas</option><option>Postres</option></select></div>
-      </div>
-      <div class="fr c2">
-        <div class="ff"><label>Tipo de documento</label><div class="fl"><span class="fl-val">NIT</span><span class="fl-tag">Info legal</span></div></div>
-        <div class="ff"><label>Número de documento</label><div class="fl"><span class="fl-val">1030633893</span><span class="fl-tag">Info legal</span></div></div>
-      </div>
-      <div class="fr" style="grid-template-columns:1fr;">
-        <div class="ff">
-          <label>Dirección <span style="font-size:9px;color:#9ca3af;font-weight:400;text-transform:none;letter-spacing:0;">· geocodificación AWS</span></label>
-          <div style="position:relative;"><input id="fD" type="text" placeholder="Ej. Carrera 7 # 45-20, Bogotá" style="padding-right:28px;"><div style="position:absolute;right:9px;top:50%;transform:translateY(-50%);pointer-events:none;"><svg width="13" height="13" viewBox="0 0 16 16" fill="none"><path d="M8 1C5.24 1 3 3.24 3 6c0 3.75 5 9 5 9s5-5.25 5-9c0-2.76-2.24-5-5-5zm0 6.5A1.5 1.5 0 1 1 8 4a1.5 1.5 0 0 1 0 3.5z" fill="#9ca3af"/></svg></div></div>
-          <div class="mini-map-wrap" id="fMap"><svg width="100%" height="110" viewBox="0 0 560 110" xmlns="http://www.w3.org/2000/svg" style="display:block;background:#dde4ec;"><rect width="560" height="110" fill="#dde4ec"/><rect x="10" y="8" width="74" height="19" rx="2" fill="#c8d5e8" opacity="0.7"/><rect x="95" y="5" width="54" height="16" rx="2" fill="#c8d5e8" opacity="0.6"/><rect x="162" y="9" width="80" height="18" rx="2" fill="#c8d5e8" opacity="0.6"/><rect x="268" y="4" width="62" height="22" rx="2" fill="#c8d5e8" opacity="0.6"/><rect x="346" y="8" width="48" height="17" rx="2" fill="#c8d5e8" opacity="0.6"/><rect x="7" y="40" width="88" height="20" rx="2" fill="#c8d5e8" opacity="0.6"/><rect x="106" y="37" width="50" height="17" rx="2" fill="#c8d5e8" opacity="0.6"/><rect x="170" y="40" width="70" height="20" rx="2" fill="#c8d5e8" opacity="0.6"/><rect x="260" y="37" width="84" height="20" rx="2" fill="#c8d5e8" opacity="0.6"/><rect x="12" y="74" width="66" height="16" rx="2" fill="#c8d5e8" opacity="0.6"/><rect x="94" y="70" width="82" height="19" rx="2" fill="#c8d5e8" opacity="0.6"/><rect x="192" y="74" width="56" height="16" rx="2" fill="#c8d5e8" opacity="0.6"/><path d="M0 27 L560 25" stroke="#b8cbe0" stroke-width="7" opacity="0.5" fill="none"/><path d="M0 62 L560 60" stroke="#b8cbe0" stroke-width="9" opacity="0.5" fill="none"/><path d="M148 0 L143 110" stroke="#b8cbe0" stroke-width="6" opacity="0.5" fill="none"/><path d="M330 0 L335 110" stroke="#b8cbe0" stroke-width="9" opacity="0.5" fill="none"/></svg><div class="map-pin-abs"><svg width="22" height="30" viewBox="0 0 24 32" fill="none"><path d="M12 0C5.37 0 0 5.37 0 12c0 9 12 20 12 20s12-11 12-20C24 5.37 18.63 0 12 0zm0 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8z" fill="#ff441b"/></svg></div><div class="map-aws-badge">Powered by AWS Location</div><div class="map-search-overlay" id="fMapSearch" style="display:none;">Buscando dirección...</div></div>
-        </div>
-      </div>
+      <div class="fr c2"><div class="ff"><label>Nombre del restaurante</label><input id="fN" type="text" placeholder="Ej. Mi Restaurante — Norte"></div><div class="ff"><label>Tipo de comida <span class="itag" id="fCTag" style="display:none;">↩ heredado</span></label><select id="fC"><option>Comida rápida</option><option>Desayunos</option><option>Almuerzos</option><option>Cenas</option><option>Postres</option></select></div></div>
+      <div class="fr c2"><div class="ff"><label>Tipo de documento</label><div class="fl"><span class="fl-val">NIT</span><span class="fl-tag">Info legal</span></div></div><div class="ff"><label>Número de documento</label><div class="fl"><span class="fl-val">1030633893</span><span class="fl-tag">Info legal</span></div></div></div>
+      <div class="fr" style="grid-template-columns:1fr;"><div class="ff">
+        <label>Dirección <span style="font-size:9px;color:#9ca3af;font-weight:400;text-transform:none;letter-spacing:0;">· geocodificación AWS</span></label>
+        <div style="position:relative;"><input id="fD" type="text" placeholder="Ej. Carrera 7 # 45-20, Bogotá" style="padding-right:28px;"><div style="position:absolute;right:9px;top:50%;transform:translateY(-50%);pointer-events:none;"><svg width="13" height="13" viewBox="0 0 16 16" fill="none"><path d="M8 1C5.24 1 3 3.24 3 6c0 3.75 5 9 5 9s5-5.25 5-9c0-2.76-2.24-5-5-5zm0 6.5A1.5 1.5 0 1 1 8 4a1.5 1.5 0 0 1 0 3.5z" fill="#9ca3af"/></svg></div></div>
+        <div class="mini-map-wrap" id="fMap"><svg width="100%" height="90" viewBox="0 0 520 90" xmlns="http://www.w3.org/2000/svg" style="display:block;background:#dde4ec;"><rect width="520" height="90" fill="#dde4ec"/><rect x="10" y="7" width="68" height="15" rx="2" fill="#c8d5e8" opacity="0.7"/><rect x="90" y="5" width="50" height="13" rx="2" fill="#c8d5e8" opacity="0.6"/><rect x="155" y="8" width="72" height="14" rx="2" fill="#c8d5e8" opacity="0.6"/><rect x="250" y="4" width="58" height="18" rx="2" fill="#c8d5e8" opacity="0.6"/><rect x="7" y="35" width="80" height="16" rx="2" fill="#c8d5e8" opacity="0.6"/><rect x="98" y="32" width="46" height="14" rx="2" fill="#c8d5e8" opacity="0.6"/><rect x="158" y="35" width="64" height="16" rx="2" fill="#c8d5e8" opacity="0.6"/><rect x="242" y="32" width="76" height="16" rx="2" fill="#c8d5e8" opacity="0.6"/><rect x="10" y="62" width="60" height="13" rx="2" fill="#c8d5e8" opacity="0.6"/><rect x="86" y="59" width="74" height="15" rx="2" fill="#c8d5e8" opacity="0.6"/><path d="M0 23 L520 21" stroke="#b8cbe0" stroke-width="6" opacity="0.5" fill="none"/><path d="M0 53 L520 51" stroke="#b8cbe0" stroke-width="7" opacity="0.5" fill="none"/><path d="M138 0 L134 90" stroke="#b8cbe0" stroke-width="5" opacity="0.5" fill="none"/><path d="M305 0 L308 90" stroke="#b8cbe0" stroke-width="8" opacity="0.5" fill="none"/></svg><div class="map-pin"><svg width="20" height="27" viewBox="0 0 24 32" fill="none"><path d="M12 0C5.37 0 0 5.37 0 12c0 9 12 20 12 20s12-11 12-20C24 5.37 18.63 0 12 0zm0 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8z" fill="#ff441b"/></svg></div><div class="map-aws">Powered by AWS Location</div><div class="map-srch" id="fMapSrch" style="display:none;">Buscando...</div></div>
+      </div></div>
       <div class="fr c2" style="margin-bottom:0;"><div class="ff"><label>Correo electrónico</label><input id="fE" type="email" placeholder="correo@restaurante.com"></div><div class="ff"><label>Móvil <span style="font-size:9px;color:#9ca3af;font-weight:400;text-transform:none;">WhatsApp</span></label><input id="fM" type="tel" placeholder="Ej. 3134350838"></div></div>
-      <div class="fac"><button class="btn-rappi-outline" id="btnAdd" onclick="addStore()" disabled>+ Agregar restaurante</button></div>
+      <div class="fac"><button class="btn-rappi-outline" id="btnAdd" disabled>+ Agregar restaurante</button></div>
     </div>
-    <div class="sf"><button class="btn-sec" onclick="goTo('sc-choice');setNav(2);">Volver</button><button class="btn-rappi" onclick="confirmManage()">Confirmar y continuar →</button></div>
+    <div class="sf"><button class="btn-sec" id="btnManageFooter">Volver</button><button class="btn-rappi" id="btnConfirmManage">Confirmar y configurar menús →</button></div>
   </div>
 </div>
 </div>
 
-<!-- PANEL -->
-<div class="overlay" id="panelOverlay" style="display:none;" onclick="closePanelOuter(event)">
-  <div class="panel" onclick="event.stopPropagation()">
-    <div class="panel-header"><div><div class="panel-title">Configurar restaurante</div><div class="panel-store" id="panelStore"></div></div><button class="btn-h-close" onclick="closePanel()">✕</button></div>
-    <div class="panel-tabs"><button class="ptab active" id="ptab-info" onclick="switchTab('info')">📋 Información</button><button class="ptab" id="ptab-horario" onclick="switchTab('horario')">🕐 Horarios</button></div>
-    <div class="panel-body" id="tab-info">
+<!-- SC4: SELECTOR DE TIENDA PARA MENÚ -->
+<div class="sc" id="sc-menu-select">
+<div class="sob">
+  <nav class="sob-nav"><span class="sob-logo">Rappi</span><button class="btn-salir">Salir</button></nav>
+  <div class="menu-selector-wrap">
+    <button class="btn-ghost" id="btnMenuSelectBack">← Volver</button>
+    <h2>Configurar menú</h2>
+    <p class="menu-selector-sub">Seleccioná el restaurante al que querés configurarle el menú. Cada uno puede tener su propio catálogo de productos.</p>
+    <div class="store-select-grid" id="storeSelectGrid"></div>
+    <div style="display:flex;justify-content:flex-end;">
+      <button class="btn-rappi" id="btnMenuSelectDone">Finalizar onboarding →</button>
+    </div>
+  </div>
+</div>
+</div>
+
+<!-- SC5: MENÚ DE UNA TIENDA -->
+<div class="sc" id="sc-menu">
+<div class="sob">
+  <nav class="sob-nav"><span class="sob-logo">Rappi</span><button class="btn-salir">Salir</button></nav>
+  <div class="menu-wrap">
+    <div class="menu-topbar">
+      <div class="menu-topbar-left">
+        <div class="menu-store-name" id="menuStoreName">Restaurante</div>
+        <div class="menu-store-sub" id="menuStoreSub">Menú principal</div>
+      </div>
+      <div style="display:flex;gap:8px;align-items:center;">
+        <button class="btn-menu-action" id="btnMenuBack">← Volver</button>
+        <button class="btn-menu-primary" id="btnAddCat">+ Categoría</button>
+        <button class="btn-menu-primary">Publicar menú</button>
+      </div>
+    </div>
+    <div class="menu-tabs">
+      <button class="mtab active" id="mtab-prods">Productos</button>
+      <button class="mtab" id="mtab-custom">Personalizaciones</button>
+    </div>
+    <div class="menu-body" id="menuBody"></div>
+  </div>
+</div>
+</div>
+
+<!-- PANEL HORARIO/INFO -->
+<div class="overlay" id="panelOverlay" style="display:none;">
+  <div class="panel">
+    <div class="ph"><div><div class="ph-title">Configurar restaurante</div><div class="ph-store" id="panelStore"></div></div><button class="btn-hc" id="btnClosePanel">✕</button></div>
+    <div class="p-tabs"><button class="ptab active" id="ptab-info">📋 Información</button><button class="ptab" id="ptab-horario">🕐 Horarios</button></div>
+    <div class="p-body" id="tab-info">
       <div class="pfr c2"><div class="pff"><label>Nombre del restaurante</label><input id="pe-n" type="text"></div><div class="pff"><label>Tipo de comida</label><select id="pe-c"><option>Comida rápida</option><option>Desayunos</option><option>Almuerzos</option><option>Cenas</option><option>Postres</option></select></div></div>
       <div class="pfr c2"><div class="pff"><label>Tipo de documento</label><div class="pfl"><span class="pfl-val">NIT</span><span class="pfl-tag">Info legal</span></div></div><div class="pff"><label>Número de documento</label><div class="pfl"><span class="pfl-val">1030633893</span><span class="pfl-tag">Info legal</span></div></div></div>
-      <div class="pfr" style="grid-template-columns:1fr;margin-bottom:10px;">
-        <div class="pff"><label>Dirección <span style="font-size:9px;color:#9ca3af;font-weight:400;text-transform:none;letter-spacing:0;">· geocodificación AWS</span></label>
-          <div style="position:relative;"><input id="pe-d" type="text" placeholder="Ej. Carrera 7 # 45-20, Bogotá" style="padding-right:28px;"><div style="position:absolute;right:9px;top:50%;transform:translateY(-50%);pointer-events:none;"><svg width="13" height="13" viewBox="0 0 16 16" fill="none"><path d="M8 1C5.24 1 3 3.24 3 6c0 3.75 5 9 5 9s5-5.25 5-9c0-2.76-2.24-5-5-5zm0 6.5A1.5 1.5 0 1 1 8 4a1.5 1.5 0 0 1 0 3.5z" fill="#9ca3af"/></svg></div></div>
-          <div class="mini-map-wrap" id="peMap"><svg width="100%" height="110" viewBox="0 0 560 110" xmlns="http://www.w3.org/2000/svg" style="display:block;background:#dde4ec;"><rect width="560" height="110" fill="#dde4ec"/><rect x="10" y="8" width="74" height="19" rx="2" fill="#c8d5e8" opacity="0.7"/><rect x="95" y="5" width="54" height="16" rx="2" fill="#c8d5e8" opacity="0.6"/><rect x="162" y="9" width="80" height="18" rx="2" fill="#c8d5e8" opacity="0.6"/><rect x="268" y="4" width="62" height="22" rx="2" fill="#c8d5e8" opacity="0.6"/><rect x="7" y="40" width="88" height="20" rx="2" fill="#c8d5e8" opacity="0.6"/><rect x="106" y="37" width="50" height="17" rx="2" fill="#c8d5e8" opacity="0.6"/><rect x="170" y="40" width="70" height="20" rx="2" fill="#c8d5e8" opacity="0.6"/><rect x="260" y="37" width="84" height="20" rx="2" fill="#c8d5e8" opacity="0.6"/><rect x="12" y="74" width="66" height="16" rx="2" fill="#c8d5e8" opacity="0.6"/><rect x="94" y="70" width="82" height="19" rx="2" fill="#c8d5e8" opacity="0.6"/><path d="M0 27 L560 25" stroke="#b8cbe0" stroke-width="7" opacity="0.5" fill="none"/><path d="M0 62 L560 60" stroke="#b8cbe0" stroke-width="9" opacity="0.5" fill="none"/><path d="M148 0 L143 110" stroke="#b8cbe0" stroke-width="6" opacity="0.5" fill="none"/><path d="M330 0 L335 110" stroke="#b8cbe0" stroke-width="9" opacity="0.5" fill="none"/></svg><div class="map-pin-abs"><svg width="22" height="30" viewBox="0 0 24 32" fill="none"><path d="M12 0C5.37 0 0 5.37 0 12c0 9 12 20 12 20s12-11 12-20C24 5.37 18.63 0 12 0zm0 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8z" fill="#ff441b"/></svg></div><div class="map-aws-badge">Powered by AWS Location</div><div class="map-search-overlay" id="peMapSearch" style="display:none;">Buscando dirección...</div></div>
-        </div>
-      </div>
-      <div class="pfr c2" style="margin-bottom:14px;"><div class="pff"><label>Correo electrónico</label><input id="pe-e" type="email" placeholder="correo@restaurante.com"></div><div class="pff"><label>Móvil <span style="font-size:9px;color:#9ca3af;font-weight:400;text-transform:none;">WhatsApp</span></label><input id="pe-m" type="tel" placeholder="Ej. 3134350838"></div></div>
-      <button class="btn-save-panel" onclick="saveInfo()">Guardar información →</button>
+      <div class="pfr" style="grid-template-columns:1fr;margin-bottom:10px;"><div class="pff">
+        <label>Dirección · <span style="font-size:9px;color:#9ca3af;font-weight:400;text-transform:none;">geocodificación AWS</span></label>
+        <div style="position:relative;"><input id="pe-d" type="text" style="padding-right:28px;"><div style="position:absolute;right:9px;top:50%;transform:translateY(-50%);pointer-events:none;"><svg width="13" height="13" viewBox="0 0 16 16" fill="none"><path d="M8 1C5.24 1 3 3.24 3 6c0 3.75 5 9 5 9s5-5.25 5-9c0-2.76-2.24-5-5-5zm0 6.5A1.5 1.5 0 1 1 8 4a1.5 1.5 0 0 1 0 3.5z" fill="#9ca3af"/></svg></div></div>
+        <div class="mini-map-wrap" id="peMap"><svg width="100%" height="90" viewBox="0 0 520 90" xmlns="http://www.w3.org/2000/svg" style="display:block;background:#dde4ec;"><rect width="520" height="90" fill="#dde4ec"/><rect x="10" y="7" width="68" height="15" rx="2" fill="#c8d5e8" opacity="0.7"/><rect x="90" y="5" width="50" height="13" rx="2" fill="#c8d5e8" opacity="0.6"/><rect x="7" y="35" width="80" height="16" rx="2" fill="#c8d5e8" opacity="0.6"/><rect x="98" y="32" width="46" height="14" rx="2" fill="#c8d5e8" opacity="0.6"/><path d="M0 23 L520 21" stroke="#b8cbe0" stroke-width="6" opacity="0.5" fill="none"/><path d="M0 53 L520 51" stroke="#b8cbe0" stroke-width="7" opacity="0.5" fill="none"/><path d="M138 0 L134 90" stroke="#b8cbe0" stroke-width="5" opacity="0.5" fill="none"/></svg><div class="map-pin"><svg width="20" height="27" viewBox="0 0 24 32" fill="none"><path d="M12 0C5.37 0 0 5.37 0 12c0 9 12 20 12 20s12-11 12-20C24 5.37 18.63 0 12 0zm0 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8z" fill="#ff441b"/></svg></div><div class="map-aws">Powered by AWS Location</div><div class="map-srch" id="peMapSrch" style="display:none;">Buscando...</div></div>
+      </div></div>
+      <div class="pfr c2" style="margin-bottom:14px;"><div class="pff"><label>Correo electrónico</label><input id="pe-e" type="email"></div><div class="pff"><label>Móvil <span style="font-size:9px;color:#9ca3af;font-weight:400;text-transform:none;">WhatsApp</span></label><input id="pe-m" type="tel"></div></div>
+      <button class="btn-save-p" id="btnSaveInfo">Guardar información →</button>
     </div>
-    <div class="panel-body" id="tab-horario" style="display:none;">
+    <div class="p-body" id="tab-horario" style="display:none;">
       <div class="h-irow"><div class="h-min">Mín. horas semanales: <strong>40</strong></div><div class="h-tot">Horas: <span id="hTot" style="font-size:16px;font-weight:900;color:#2563eb;">0</span></div></div>
-      <div class="copy-bar" id="copyBar" style="display:none;"><span style="font-size:12px;color:#374151;">Copiar horarios de otra sucursal</span><button class="btn-copy" onclick="copyH()">Copiar</button></div>
+      <div class="copy-bar" id="copyBar" style="display:none;"><span style="font-size:12px;color:#374151;">Copiar horarios de otra sucursal</span><button class="btn-copy" id="btnCopyH">Copiar</button></div>
       <div class="dias-wrap" id="diasWrap"></div>
-      <button class="btn-save-panel" onclick="saveHorario()">Guardar horarios →</button>
+      <button class="btn-save-p" id="btnSaveH">Guardar horarios →</button>
     </div>
   </div>
 </div>
 <div class="toast" id="toast"></div>
 
 <script>
+// ─── CONSTANTS ───
 var HORAS=['06:00','07:00','08:00','09:00','10:00','11:00','12:00','13:00','14:00','15:00','16:00','17:00','18:00','19:00','20:00','21:00','22:00','23:00','00:00'];
 var DIAS=['Lunes','Martes','Miércoles','Jueves','Viernes','Sábado','Domingo'];
 var COMIDA=['Comida rápida','Desayunos','Almuerzos','Cenas','Postres'];
+var EMOJIS={'Comida rápida':'🍔','Desayunos':'🍳','Almuerzos':'🍱','Cenas':'🌮','Postres':'🍰','default':'🍽️'};
+
+// Sample menu data per store
+var SAMPLE_MENUS = {
+  'default': {
+    cats: [
+      { id:'c1', name:'Entradas', products:[
+        {id:'p1',name:'Ensalada César',desc:'Lechuga romana, crutones, parmesano',price:18000,photo:true,on:true},
+        {id:'p2',name:'Sopa del día',desc:'',price:12000,photo:false,on:true},
+      ]},
+      { id:'c2', name:'Platos principales', products:[
+        {id:'p3',name:'Hamburguesa clásica',desc:'Carne 200g, lechuga, tomate, cebolla',price:32000,photo:true,on:true},
+        {id:'p4',name:'Pollo a la plancha',desc:'',price:28000,photo:false,on:true},
+        {id:'p5',name:'Pasta al pesto',desc:'Espagueti, albahaca, parmesano',price:26000,photo:false,on:false},
+      ]},
+      { id:'c3', name:'Bebidas', products:[
+        {id:'p6',name:'Limonada de coco',desc:'Limón, coco, azúcar',price:9000,photo:true,on:true},
+        {id:'p7',name:'Jugo natural',desc:'',price:7000,photo:false,on:true},
+      ]},
+    ]
+  }
+};
+
+// ─── STATE ───
 function mkH(a,c,act){return DIAS.map(function(d){return{dia:d,activo:act,abre:a,cierra:c};});}
+var stores=[{id:1,nombre:'Mi Restaurante Principal',comida:'Comida rápida',direccion:'Carrera 7 # 45-20, Bogotá',email:'',movil:'',type:'original',horarios:mkH('12:00','22:00',true),menuDone:false}];
+var nextId=2,editId=null,tmpH=null,choice=null,currentMenuStore=null,mapTimers={};
+var openCats={};  // track which cats are open per store
+var menuData={};  // store id → {cats:[{id,name,products:[]}]}
+function getMenu(storeId){if(!menuData[storeId]){menuData[storeId]={cats:JSON.parse(JSON.stringify(SAMPLE_MENUS['default'].cats))};menuData[storeId].cats.forEach(function(c){openCats[c.id]=true;});}return menuData[storeId];}
+
+// ─── HELPERS ───
 function calcH(h){return h.reduce(function(acc,x){if(!x.activo)return acc;var a=parseInt(x.abre),c=parseInt(x.cierra);if(isNaN(a)||isNaN(c))return acc;if(c<=a)c+=24;return acc+(c-a);},0);}
 function hSt(s){if(!s.horarios)return'pend';var d=s.horarios.filter(function(x){return x.activo;}).length,h=calcH(s.horarios);if(d===0)return'pend';if(h>=40)return'done';return'partial';}
 function hLbl(s){var st=hSt(s);if(st==='pend')return{cls:'pend',txt:'Sin configurar'};var h=calcH(s.horarios),d=s.horarios.filter(function(x){return x.activo;}).length;if(st==='done')return{cls:'done',txt:d+' días · '+h+' hs/sem'};return{cls:'partial',txt:h+' hs — mín 40'};}
-var stores=[{id:1,nombre:'Mi Restaurante Principal',comida:'Comida rápida',direccion:'Carrera 7 # 45-20, Bogotá',email:'',movil:'',type:'original',horarios:mkH('12:00','22:00',true)}];
-var nextId=2,editId=null,tmpH=null,choice=null,mapTimers={};
+function menuScore(storeId){var m=getMenu(storeId);var allP=m.cats.flatMap(function(c){return c.products;});if(allP.length===0)return{photo:0,desc:0,overall:0};var photo=allP.filter(function(p){return p.photo;}).length/allP.length*100;var desc=allP.filter(function(p){return p.desc&&p.desc.trim();}).length/allP.length*100;var overall=(100+photo+desc)/3;return{photo:Math.round(photo),desc:Math.round(desc),overall:Math.round(overall)};}
+
 function goTo(id){document.querySelectorAll('.sc').forEach(function(s){s.classList.remove('a');});document.getElementById(id).classList.add('a');}
-function setNav(active){['np1','np2','np3','np4'].forEach(function(id,i){var el=document.getElementById(id);if(i+1<active)el.className='step-pill done';else if(i+1===active)el.className='step-pill active';else el.className='step-pill';});}
-function activarCard2(){var c=document.getElementById('card2');c.className='scard green';document.getElementById('c2lbl').style.color='#1a7a4a';document.getElementById('c2logo').className='schk done';document.getElementById('c2logo').textContent='✅ Logo';document.getElementById('c2horario').className='schk done';document.getElementById('c2horario').textContent='✅ Horario comercial';var p=document.getElementById('c2prog');p.style.width='100%';p.className='sprog-fill gf';}
-function selectChoice(c){choice=c;document.getElementById('ch-single').classList.toggle('sel',c==='single');document.getElementById('ch-multi').classList.toggle('sel',c==='multi');document.getElementById('btnNext').disabled=false;}
-function confirmChoice(){if(choice==='single'){goTo('sc-single');setNav(3);}else{renderTable();goTo('sc-manage');setNav(3);}}
-function doneSingle(){document.getElementById('manageBadge').textContent='✓ 1 restaurante';document.getElementById('manageBadge').className='sentry-badge b-ok';goTo('sc-home');setNav(4);showToast('✓ Restaurante confirmado. ¡Continuá con el menú!');}
+function setNav(n){['np1','np2','np3','np4'].forEach(function(id,i){var el=document.getElementById(id);if(i+1<n)el.className='nsp done';else if(i+1===n)el.className='nsp active';else el.className='nsp';});}
+
+function dirInput(inputId,mapId,srchId){var val=document.getElementById(inputId).value.trim();var map=document.getElementById(mapId),srch=document.getElementById(srchId);if(val.length<4){map.classList.remove('vis');return;}map.classList.add('vis');srch.style.display='flex';clearTimeout(mapTimers[inputId]);mapTimers[inputId]=setTimeout(function(){srch.style.display='none';},900);}
 function chkForm(){var ok=document.getElementById('fN').value.trim()&&document.getElementById('fD').value.trim()&&document.getElementById('fE').value.trim();document.getElementById('btnAdd').disabled=!ok;}
-function dirInput(inputId,mapId,searchId){var val=document.getElementById(inputId).value.trim();var map=document.getElementById(mapId),srch=document.getElementById(searchId);if(val.length<4){map.classList.remove('vis');return;}map.classList.add('vis');srch.style.display='flex';clearTimeout(mapTimers[inputId]);mapTimers[inputId]=setTimeout(function(){srch.style.display='none';},900);if(inputId==='fD')chkForm();}
-function addStore(){var n=document.getElementById('fN').value.trim(),d=document.getElementById('fD').value.trim(),e=document.getElementById('fE').value.trim();if(!n||!d||!e){showToast('Completá nombre, dirección y correo');return;}var last=stores[stores.length-1];var newId=nextId++;stores.push({id:newId,nombre:n,comida:document.getElementById('fC').value,direccion:d,email:e,movil:document.getElementById('fM').value.trim(),type:'new',horarios:null});document.getElementById('fC').value=last.comida;document.getElementById('fCTag').style.display='inline';document.getElementById('fN').value='';document.getElementById('fD').value='';document.getElementById('fE').value='';document.getElementById('fM').value='';document.getElementById('fMap').classList.remove('vis');document.getElementById('btnAdd').disabled=true;renderTable();showToast('"'+n+'" agregado');setTimeout(function(){openPanel(newId,'horario');},180);}
-function renderTable(){document.getElementById('tCnt').textContent=stores.length;var html='';stores.forEach(function(s,i){var hl=hLbl(s);var pill=s.type==='original'?'<span class="p-orig">principal</span>':'<span class="p-new">nueva</span>';var hColor=hl.cls==='done'?'#166534':hl.cls==='partial'?'#c2410c':'#9ca3af';html+='<tr><td style="color:#aaa;font-weight:700;">'+(i+1)+'</td><td><div style="font-weight:700;font-size:12px;">'+s.nombre+'</div>'+pill+'</td><td><span class="p-food">'+s.comida+'</span></td><td style="color:#555;font-size:11px;max-width:110px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;">'+s.direccion+'</td><td><div class="h-st"><div class="h-dot '+hl.cls+'"></div><span style="font-size:11px;color:'+hColor+';">'+hl.txt+'</span></div></td><td><div style="display:flex;align-items:center;gap:5px;"><button class="btn-blue" onclick="openPanel('+s.id+',\'info\')">Editar</button>'+(s.type!=='original'?'<button class="btn-del" onclick="delStore('+s.id+')">✕</button>':'')+'</div></td></tr>';});document.getElementById('tBody').innerHTML=html;updateBadge();}
-function delStore(id){stores=stores.filter(function(x){return x.id!==id;});renderTable();showToast('Restaurante eliminado');}
-function updateBadge(){var total=stores.length,hOk=stores.filter(function(s){return hSt(s)==='done';}).length;var badge=document.getElementById('manageBadge'),prog=document.getElementById('c2prog');if(hOk===total&&total>0){badge.textContent='✓ '+total+' restaurant'+(total===1?'e':'es');badge.className='sentry-badge b-ok';prog.style.width='100%';prog.className='sprog-fill gf';}else if(hOk>0||total>1){badge.textContent=hOk+'/'+total+' con horario';badge.className='sentry-badge b-blue';prog.style.width=Math.round(((hOk+1)/(total+1))*80+20)+'%';prog.className='sprog-fill bf';}}
-function confirmManage(){var pend=stores.filter(function(s){return hSt(s)!=='done';});if(pend.length>0){showToast('Falta configurar horarios en '+pend.length+' tienda'+(pend.length>1?'s':''));return;}updateBadge();goTo('sc-home');setNav(4);showToast('✓ Restaurantes y horarios confirmados');}
-function openPanel(id,tab){var s=stores.find(function(x){return x.id===id;});editId=id;if(!s.horarios)s.horarios=mkH('12:00','22:00',true);tmpH=s.horarios.map(function(h){return Object.assign({},h);});document.getElementById('panelStore').textContent='🏪 '+s.nombre;document.getElementById('pe-n').value=s.nombre;document.getElementById('pe-c').value=s.comida;document.getElementById('pe-d').value=s.direccion;document.getElementById('pe-e').value=s.email||'';document.getElementById('pe-m').value=s.movil||'';var peMap=document.getElementById('peMap');if(s.direccion&&s.direccion.length>3)peMap.classList.add('vis');else peMap.classList.remove('vis');var hasCopy=stores.some(function(x){return x.id!==id&&hSt(x)==='done';});document.getElementById('copyBar').style.display=hasCopy?'flex':'none';renderDias();switchTab(tab||'info');document.getElementById('panelOverlay').style.display='flex';}
-function switchTab(tab){document.getElementById('tab-info').style.display=tab==='info'?'block':'none';document.getElementById('tab-horario').style.display=tab==='horario'?'block':'none';document.getElementById('ptab-info').className='ptab'+(tab==='info'?' active':'');document.getElementById('ptab-horario').className='ptab'+(tab==='horario'?' active':'');}
-function closePanelOuter(e){if(e.target===document.getElementById('panelOverlay'))closePanel();}
+
+// ─── CARD2 ACTIVATE ───
+function activarCard2(){var c=document.getElementById('card2');c.className='scard green';document.getElementById('c2lbl').style.color='#1a7a4a';document.getElementById('c2logo').className='schk done';document.getElementById('c2logo').textContent='✅ Logo';document.getElementById('c2horario').className='schk done';document.getElementById('c2horario').textContent='✅ Horario comercial';var p=document.getElementById('c2prog');p.style.width='100%';p.className='sprog-fill gf';}
+
+// ─── MANAGE TABLE ───
+function renderTable(){
+  document.getElementById('tCnt').textContent=stores.length;
+  var html='';
+  stores.forEach(function(s,i){
+    var hl=hLbl(s);var pill=s.type==='original'?'<span class="p-orig">principal</span>':'<span class="p-new">nueva</span>';
+    var hc=hl.cls==='done'?'#166534':hl.cls==='partial'?'#c2410c':'#9ca3af';
+    html+='<tr><td style="color:#aaa;font-weight:700;">'+(i+1)+'</td>';
+    html+='<td><div style="font-weight:700;font-size:12px;">'+s.nombre+'</div>'+pill+'</td>';
+    html+='<td><span class="p-food">'+s.comida+'</span></td>';
+    html+='<td style="color:#555;font-size:11px;max-width:100px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;">'+s.direccion+'</td>';
+    html+='<td><div class="h-st"><div class="h-dot '+hl.cls+'"></div><span style="font-size:11px;color:'+hc+';">'+hl.txt+'</span></div></td>';
+    html+='<td><div style="display:flex;align-items:center;gap:5px;"><button class="btn-blue" data-id="'+s.id+'">Editar</button>'+(s.type!=='original'?'<button class="btn-del" data-del="'+s.id+'">✕</button>':'')+'</div></td>';
+    html+='</tr>';
+  });
+  document.getElementById('tBody').innerHTML=html;
+  document.querySelectorAll('[data-id]').forEach(function(b){b.addEventListener('click',function(){openPanel(parseInt(b.getAttribute('data-id')),'info');});});
+  document.querySelectorAll('[data-del]').forEach(function(b){b.addEventListener('click',function(){var id=parseInt(b.getAttribute('data-del'));stores=stores.filter(function(x){return x.id!==id;});renderTable();showToast('Restaurante eliminado');});});
+  updateHomeBadges();
+}
+
+function updateHomeBadges(){
+  var total=stores.length,hOk=stores.filter(function(s){return hSt(s)==='done';}).length;
+  var badge=document.getElementById('manageBadge'),prog=document.getElementById('c2prog');
+  if(hOk===total&&total>0){badge.textContent='✓ '+total+' restaurant'+(total===1?'e':'es');badge.className='sentry-badge b-ok';prog.style.width='100%';prog.className='sprog-fill gf';}
+  else if(hOk>0||total>1){badge.textContent=hOk+'/'+total+' con horario';badge.className='sentry-badge b-blue';prog.style.width=Math.round(((hOk+1)/(total+1))*80+20)+'%';prog.className='sprog-fill gf';}
+  // menu badge
+  var menuOk=stores.filter(function(s){return s.menuDone;}).length;
+  var mb=document.getElementById('menuBadge'),c3p=document.getElementById('c3prog');
+  if(menuOk===total&&total>0){mb.textContent='✓ '+total+' menú'+(total===1?'':'s')+' listos';mb.className='sentry-badge b-ok';c3p.style.width='100%';c3p.className='sprog-fill gf';document.getElementById('card3').className='scard green';document.getElementById('c3lbl').style.color='#1a7a4a';}
+  else if(menuOk>0){mb.textContent=menuOk+'/'+total+' con menú';mb.className='sentry-badge b-blue';c3p.style.width=Math.round((menuOk/total)*80+20)+'%';}
+}
+
+// ─── STORE SELECTOR FOR MENU ───
+function renderStoreSelector(){
+  var html='';
+  stores.forEach(function(s){
+    var sc=menuScore(s.id);var cls=s.menuDone?'store-select-card done-card':'store-select-card';
+    var badge=s.menuDone?'<span class="menu-status-badge msb-done">✓ Menú listo</span>':'<span class="menu-status-badge msb-pending">Configurar</span>';
+    if(!s.menuDone&&sc.overall>20)badge='<span class="menu-status-badge msb-partial">En progreso</span>';
+    var emoji=EMOJIS[s.comida]||EMOJIS['default'];
+    html+='<div class="'+cls+'" data-store-id="'+s.id+'">';
+    html+='<div class="ssc-left"><div class="ssc-name">'+emoji+' '+s.nombre+'</div>';
+    html+='<div class="ssc-sub">'+s.direccion+' · '+s.comida+'</div></div>';
+    html+='<div class="ssc-right">'+badge+'<span style="color:#bbb;font-size:14px;">›</span></div>';
+    html+='</div>';
+  });
+  document.getElementById('storeSelectGrid').innerHTML=html;
+  document.querySelectorAll('[data-store-id]').forEach(function(card){
+    card.addEventListener('click',function(){openMenu(parseInt(card.getAttribute('data-store-id')));});
+  });
+}
+
+// ─── MENU SCREEN ───
+function openMenu(storeId){
+  currentMenuStore=storeId;
+  var s=stores.find(function(x){return x.id===storeId;});
+  document.getElementById('menuStoreName').textContent=(EMOJIS[s.comida]||'🍽️')+' '+s.nombre;
+  document.getElementById('menuStoreSub').textContent=s.direccion;
+  renderMenuBody();
+  goTo('sc-menu');
+  setNav(4);
+}
+
+function renderMenuBody(){
+  var s=stores.find(function(x){return x.id===currentMenuStore;});
+  var m=getMenu(currentMenuStore);
+  var allP=m.cats.flatMap(function(c){return c.products;});
+  var sc=menuScore(currentMenuStore);
+  var scoreColor=sc.overall>=70?'green':sc.overall>=40?'yellow':'red';
+
+  // Compute filter counts
+  var noPh=allP.filter(function(p){return!p.photo;}).length;
+  var noDe=allP.filter(function(p){return!p.desc||!p.desc.trim();}).length;
+  var noOn=allP.filter(function(p){return!p.on;}).length;
+
+  var html='';
+  // Perfect Store Score
+  html+='<div class="pss-card"><div class="pss-badge">✦ Perfect Store Score</div>';
+  html+='<div class="pss-header"><div class="pss-title"><span>📊</span>Calidad del menú</div>';
+  html+='<span class="pss-score '+scoreColor+'">'+sc.overall+'%</span></div>';
+  html+='<div class="pss-bars">';
+  html+='<div class="pss-bar"><div class="pss-bar-label">Menú Completo</div><div class="pss-bar-track"><div class="pss-bar-fill gf" style="width:100%;"></div></div><div class="pss-bar-pct">100%</div></div>';
+  html+='<div class="pss-bar"><div class="pss-bar-label">Fotos de Calidad</div><div class="pss-bar-track"><div class="pss-bar-fill '+(sc.photo>=70?'gf':sc.photo>=40?'yf':'rf')+'" style="width:'+sc.photo+'%;"></div></div><div class="pss-bar-pct">'+sc.photo+'%</div></div>';
+  html+='<div class="pss-bar"><div class="pss-bar-label">Descripciones</div><div class="pss-bar-track"><div class="pss-bar-fill '+(sc.desc>=70?'gf':sc.desc>=40?'yf':'rf')+'" style="width:'+sc.desc+'%;"></div></div><div class="pss-bar-pct">'+sc.desc+'%</div></div>';
+  html+='</div></div>';
+
+  // Quality filters
+  html+='<div class="q-filters">';
+  html+='<span class="qf ok">✓ Menú completo</span>';
+  html+=(noPh>0?'<span class="qf warn" data-filter="noPhoto">('+noPh+') Sin fotos</span>':'<span class="qf ok">✓ Todas con foto</span>');
+  html+=(noDe>0?'<span class="qf warn" data-filter="noDesc">('+noDe+') Sin descripción</span>':'<span class="qf ok">✓ Todas con descripción</span>');
+  html+=(noOn>0?'<span class="qf warn" data-filter="off">('+noOn+') Apagados</span>':'');
+  html+='</div>';
+
+  // Categories
+  m.cats.forEach(function(cat){
+    var isOpen=openCats[cat.id]!==false;
+    html+='<div class="cat-section">';
+    html+='<div class="cat-header" data-cat="'+cat.id+'">';
+    html+='<span><span class="cat-name">'+cat.name+'</span><span class="cat-count">'+cat.products.length+' productos</span></span>';
+    html+='<span class="cat-chevron'+(isOpen?' open':'')+'">▼</span>';
+    html+='</div>';
+    if(isOpen){
+      html+='<div class="prod-list">';
+      cat.products.forEach(function(p){
+        var missingPhoto=!p.photo;var missingDesc=!p.desc||!p.desc.trim();
+        html+='<div class="prod-row" data-prod="'+p.id+'" data-cat="'+cat.id+'">';
+        html+='<div class="prod-img">'+(p.photo?'<div style="width:38px;height:38px;background:#f97316;border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:16px;">'+EMOJIS[p.comida||s.comida]+'</div>':'<span style="font-size:18px;">📷</span>')+'</div>';
+        html+='<div class="prod-info">';
+        html+='<div class="prod-name" contenteditable="true" data-field="name" data-prod="'+p.id+'" data-cat="'+cat.id+'">'+p.name+'</div>';
+        html+='<div class="prod-desc" contenteditable="true" data-field="desc" data-prod="'+p.id+'" data-cat="'+cat.id+'" style="'+(missingDesc?'color:#cc2200;font-style:italic;':'')+'">'+( missingDesc?'+ Agregar descripción':p.desc)+'</div>';
+        html+='<div class="prod-flags">';
+        html+=(missingPhoto?'<span class="pflag miss">Sin foto</span>':'<span class="pflag ok">Foto ✓</span>');
+        html+=(missingDesc?'<span class="pflag miss">Sin descripción</span>':'');
+        html+='</div></div>';
+        html+='<div style="display:flex;flex-direction:column;align-items:flex-end;gap:6px;">';
+        html+='<div class="prod-price" contenteditable="true" data-field="price" data-prod="'+p.id+'" data-cat="'+cat.id+'">${'+p.price.toLocaleString('es-CO')+'}</div>';
+        html+='<div class="prod-toggle '+(p.on?'on':'off')+'" data-toggle="'+p.id+'" data-cat="'+cat.id+'"><div class="pt-k"></div></div>';
+        html+='</div></div>';
+      });
+      html+='<div class="cat-add-btn" data-add-cat="'+cat.id+'"><span>+</span> Agregar producto</div>';
+      html+='</div>';
+    }
+    html+='</div>';
+  });
+
+  if(m.cats.length===0){html+='<div class="no-prods">📋 No hay categorías todavía. Creá la primera usando el botón de arriba.</div>';}
+
+  document.getElementById('menuBody').innerHTML=html;
+
+  // Wire up events
+  document.querySelectorAll('[data-cat]').forEach(function(el){
+    if(el.classList.contains('cat-header')){
+      el.addEventListener('click',function(){var cid=el.getAttribute('data-cat');openCats[cid]=!openCats[cid];renderMenuBody();});
+    }
+  });
+  document.querySelectorAll('[data-add-cat]').forEach(function(el){
+    el.addEventListener('click',function(e){e.stopPropagation();var cid=el.getAttribute('data-add-cat');addProductTocat(cid);});
+  });
+  document.querySelectorAll('[data-toggle]').forEach(function(el){
+    el.addEventListener('click',function(){var pid=el.getAttribute('data-toggle'),cid=el.getAttribute('data-cat');var m2=getMenu(currentMenuStore);m2.cats.forEach(function(c){if(c.id===cid)c.products.forEach(function(p){if(p.id===pid)p.on=!p.on;});});updateMenuScore();renderMenuBody();});
+  });
+  // Inline editing
+  document.querySelectorAll('[contenteditable="true"]').forEach(function(el){
+    var orig=el.textContent;
+    el.addEventListener('focus',function(){if(el.getAttribute('data-field')==='desc'&&el.textContent==='+ Agregar descripción'){el.textContent='';el.style.color='';el.style.fontStyle='';}});
+    el.addEventListener('blur',function(){saveProdField(el);});
+    el.addEventListener('keydown',function(e){if(e.key==='Enter'){e.preventDefault();el.blur();}if(e.key==='Escape'){el.textContent=orig;el.blur();}});
+  });
+}
+
+function saveProdField(el){
+  var field=el.getAttribute('data-field'),pid=el.getAttribute('data-prod'),cid=el.getAttribute('data-cat');
+  var m=getMenu(currentMenuStore);
+  m.cats.forEach(function(c){if(c.id===cid)c.products.forEach(function(p){
+    if(p.id===pid){
+      if(field==='name'&&el.textContent.trim())p.name=el.textContent.trim();
+      else if(field==='desc')p.desc=el.textContent.trim()==='+ Agregar descripción'?'':el.textContent.trim();
+      else if(field==='price'){var n=parseInt(el.textContent.replace(/\D/g,''));if(!isNaN(n)&&n>0)p.price=n;}
+    }
+  });});
+  updateMenuScore();
+  renderMenuBody();
+}
+
+function addProductTocat(catId){
+  var m=getMenu(currentMenuStore);var nid='p'+(Date.now());
+  m.cats.forEach(function(c){if(c.id===catId)c.products.push({id:nid,name:'Nuevo producto',desc:'',price:15000,photo:false,on:true});});
+  openCats[catId]=true;
+  renderMenuBody();
+  showToast('Producto agregado — editá el nombre y precio');
+}
+
+function updateMenuScore(){
+  var s=stores.find(function(x){return x.id===currentMenuStore;});
+  var sc=menuScore(currentMenuStore);
+  if(sc.overall>30){s.menuDone=true;}
+  updateHomeBadges();
+}
+
+// ─── PANEL ───
+function openPanel(id,tab){
+  var s=stores.find(function(x){return x.id===id;});
+  editId=id;
+  if(!s.horarios)s.horarios=mkH('12:00','22:00',true);
+  tmpH=s.horarios.map(function(h){return Object.assign({},h);});
+  document.getElementById('panelStore').textContent='🏪 '+s.nombre;
+  document.getElementById('pe-n').value=s.nombre;
+  document.getElementById('pe-c').value=s.comida;
+  document.getElementById('pe-d').value=s.direccion;
+  document.getElementById('pe-e').value=s.email||'';
+  document.getElementById('pe-m').value=s.movil||'';
+  var pm=document.getElementById('peMap');
+  if(s.direccion&&s.direccion.length>3)pm.classList.add('vis');else pm.classList.remove('vis');
+  var hasCopy=stores.some(function(x){return x.id!==id&&hSt(x)==='done';});
+  document.getElementById('copyBar').style.display=hasCopy?'flex':'none';
+  renderDias();switchTab(tab||'info');
+  document.getElementById('panelOverlay').style.display='flex';
+}
+function switchTab(tab){
+  document.getElementById('tab-info').style.display=tab==='info'?'block':'none';
+  document.getElementById('tab-horario').style.display=tab==='horario'?'block':'none';
+  document.getElementById('ptab-info').className='ptab'+(tab==='info'?' active':'');
+  document.getElementById('ptab-horario').className='ptab'+(tab==='horario'?' active':'');
+}
 function closePanel(){document.getElementById('panelOverlay').style.display='none';editId=null;tmpH=null;}
-function saveInfo(){var s=stores.find(function(x){return x.id===editId;});var n=document.getElementById('pe-n').value.trim(),d=document.getElementById('pe-d').value.trim();if(!n||!d){showToast('Nombre y dirección son obligatorios');return;}s.nombre=n;s.comida=document.getElementById('pe-c').value;s.direccion=d;s.email=document.getElementById('pe-e').value.trim();s.movil=document.getElementById('pe-m').value.trim();renderTable();closePanel();showToast('✓ Información de "'+n+'" guardada');}
-function renderDias(){var tot=calcH(tmpH),el=document.getElementById('hTot');el.textContent=tot;el.style.color=tot>=40?'#166534':'#dc2626';var html='';tmpH.forEach(function(h,i){var off=!h.activo;html+='<div class="dia-row'+(off?' off':'')+'">';html+='<span class="dia-name">'+h.dia+'</span>';html+='<div class="dsel-wrap"><div class="dsel-lbl">Abre</div><select class="dsel" id="a'+i+'" onchange="upH('+i+',\'abre\',this.value)"'+(off?' disabled':'')+'>'+HORAS.map(function(r){return'<option'+(h.abre===r?' selected':'')+'>'+r+'</option>';}).join('')+'</select></div>';html+='<div class="dsel-wrap"><div class="dsel-lbl">Cierra</div><select class="dsel" id="c'+i+'" onchange="upH('+i+',\'cierra\',this.value)"'+(off?' disabled':'')+'>'+HORAS.map(function(r){return'<option'+(h.cierra===r?' selected':'')+'>'+r+'</option>';}).join('')+'</select></div>';html+='<div class="tog '+(h.activo?'on':'off')+'" onclick="togD('+i+')"><div class="tog-k"></div></div></div>';});document.getElementById('diasWrap').innerHTML=html;}
-function upH(i,f,v){tmpH[i][f]=v;var t=calcH(tmpH),el=document.getElementById('hTot');el.textContent=t;el.style.color=t>=40?'#166534':'#dc2626';}
-function togD(i){tmpH[i].activo=!tmpH[i].activo;renderDias();}
-function copyH(){var donor=stores.find(function(s){return s.id!==editId&&hSt(s)==='done';});if(!donor){showToast('No hay otra tienda con horarios completos');return;}tmpH=donor.horarios.map(function(h){return Object.assign({},h);});renderDias();showToast('Horarios copiados');}
-function saveHorario(){var s=stores.find(function(x){return x.id===editId;});s.horarios=tmpH.slice();renderTable();closePanel();showToast('✓ Horarios de "'+s.nombre.split(' — ')[0]+'" guardados');}
+function saveInfo(){
+  var s=stores.find(function(x){return x.id===editId;});
+  var n=document.getElementById('pe-n').value.trim(),d=document.getElementById('pe-d').value.trim();
+  if(!n||!d){showToast('Nombre y dirección son obligatorios');return;}
+  s.nombre=n;s.comida=document.getElementById('pe-c').value;s.direccion=d;
+  s.email=document.getElementById('pe-e').value.trim();s.movil=document.getElementById('pe-m').value.trim();
+  renderTable();closePanel();showToast('✓ Información de "'+n+'" guardada');
+}
+function renderDias(){
+  var tot=calcH(tmpH),el=document.getElementById('hTot');
+  el.textContent=tot;el.style.color=tot>=40?'#166534':'#dc2626';
+  var html='';
+  tmpH.forEach(function(h,i){
+    var off=!h.activo;
+    html+='<div class="dia-row'+(off?' off':'')+'">';
+    html+='<span class="dia-name">'+h.dia+'</span>';
+    html+='<div class="dsel-wrap"><div class="dsel-lbl">Abre</div><select class="dsel" data-i="'+i+'" data-f="abre"'+(off?' disabled':'')+'>'+HORAS.map(function(r){return'<option'+(h.abre===r?' selected':'')+'>'+r+'</option>';}).join('')+'</select></div>';
+    html+='<div class="dsel-wrap"><div class="dsel-lbl">Cierra</div><select class="dsel" data-i="'+i+'" data-f="cierra"'+(off?' disabled':'')+'>'+HORAS.map(function(r){return'<option'+(h.cierra===r?' selected':'')+'>'+r+'</option>';}).join('')+'</select></div>';
+    html+='<div class="tog '+(h.activo?'on':'off')+'" data-ti="'+i+'"><div class="tog-k"></div></div>';
+    html+='</div>';
+  });
+  document.getElementById('diasWrap').innerHTML=html;
+  document.querySelectorAll('.dsel').forEach(function(sel){sel.addEventListener('change',function(){var i=parseInt(sel.getAttribute('data-i')),f=sel.getAttribute('data-f');tmpH[i][f]=sel.value;var t=calcH(tmpH),el=document.getElementById('hTot');el.textContent=t;el.style.color=t>=40?'#166534':'#dc2626';});});
+  document.querySelectorAll('[data-ti]').forEach(function(tog){tog.addEventListener('click',function(){var i=parseInt(tog.getAttribute('data-ti'));tmpH[i].activo=!tmpH[i].activo;renderDias();});});
+}
+function saveHorario(){var s=stores.find(function(x){return x.id===editId;});s.horarios=tmpH.slice();renderTable();closePanel();showToast('✓ Horarios guardados');}
+
+function addStore(){
+  var n=document.getElementById('fN').value.trim(),d=document.getElementById('fD').value.trim(),e=document.getElementById('fE').value.trim();
+  if(!n||!d||!e){showToast('Completá nombre, dirección y correo');return;}
+  var last=stores[stores.length-1];var nid=nextId++;
+  stores.push({id:nid,nombre:n,comida:document.getElementById('fC').value,direccion:d,email:e,movil:document.getElementById('fM').value.trim(),type:'new',horarios:null,menuDone:false});
+  document.getElementById('fC').value=last.comida;document.getElementById('fCTag').style.display='inline';
+  document.getElementById('fN').value='';document.getElementById('fD').value='';document.getElementById('fE').value='';document.getElementById('fM').value='';
+  document.getElementById('fMap').classList.remove('vis');document.getElementById('btnAdd').disabled=true;
+  renderTable();showToast('"'+n+'" agregado');setTimeout(function(){openPanel(nid,'horario');},180);
+}
+
 function showToast(msg){var t=document.getElementById('toast');t.textContent=msg;t.classList.add('show');setTimeout(function(){t.classList.remove('show');},2600);}
+
+// ─── WIRE UP ───
+// Home entries
 document.getElementById('entryGestionar').addEventListener('click',function(){activarCard2();goTo('sc-choice');setNav(2);});
+document.getElementById('entryMenu').addEventListener('click',function(){goTo('sc-menu-select');setNav(4);renderStoreSelector();});
+
+// Choice
+document.getElementById('btnChoiceBack').addEventListener('click',function(){goTo('sc-home');setNav(1);});
+var choiceCards=document.querySelectorAll('[data-choice]');
+choiceCards.forEach(function(c){c.addEventListener('click',function(){choice=c.getAttribute('data-choice');choiceCards.forEach(function(x){x.classList.remove('sel');});c.classList.add('sel');document.getElementById('btnNext').disabled=false;});});
+document.getElementById('btnNext').addEventListener('click',function(){
+  if(choice==='single'){goTo('sc-single');setNav(3);}
+  else{renderTable();goTo('sc-manage');setNav(3);}
+});
+
+// Single
+document.getElementById('btnSingleBack').addEventListener('click',function(){goTo('sc-choice');setNav(2);});
+document.getElementById('btnSingleToMenu').addEventListener('click',function(){
+  var badge=document.getElementById('manageBadge');badge.textContent='✓ 1 restaurante';badge.className='sentry-badge b-ok';
+  goTo('sc-menu-select');setNav(4);renderStoreSelector();
+});
+
+// Manage
+document.getElementById('btnManageBack').addEventListener('click',function(){goTo('sc-choice');setNav(2);});
+document.getElementById('btnManageFooter').addEventListener('click',function(){goTo('sc-choice');setNav(2);});
+document.getElementById('btnAdd').addEventListener('click',addStore);
+document.getElementById('btnConfirmManage').addEventListener('click',function(){
+  var pend=stores.filter(function(s){return hSt(s)!=='done';});
+  if(pend.length>0){showToast('Falta configurar horarios en '+pend.length+' tienda'+(pend.length>1?'s':''));return;}
+  updateHomeBadges();goTo('sc-menu-select');setNav(4);renderStoreSelector();
+});
+
+// Menu selector
+document.getElementById('btnMenuSelectBack').addEventListener('click',function(){goTo('sc-home');setNav(3);updateHomeBadges();});
+document.getElementById('btnMenuSelectDone').addEventListener('click',function(){
+  var pending=stores.filter(function(s){return !s.menuDone;});
+  if(pending.length>0){showToast(pending.length+' restaurante'+(pending.length>1?'s siguen':'  sigue')+' sin menú configurado');return;}
+  goTo('sc-home');setNav(4);updateHomeBadges();showToast('✓ ¡Onboarding completado!');
+});
+
+// Menu back
+document.getElementById('btnMenuBack').addEventListener('click',function(){goTo('sc-menu-select');renderStoreSelector();});
+
+// Add category
+document.getElementById('btnAddCat').addEventListener('click',function(){
+  var m=getMenu(currentMenuStore);var nid='c'+(Date.now());
+  m.cats.push({id:nid,name:'Nueva categoría',products:[]});openCats[nid]=true;
+  renderMenuBody();showToast('Categoría creada — hacé clic en el nombre para editarla');
+});
+
+// Panel
+document.getElementById('btnClosePanel').addEventListener('click',closePanel);
+document.getElementById('panelOverlay').addEventListener('click',function(e){if(e.target===document.getElementById('panelOverlay'))closePanel();});
+document.getElementById('ptab-info').addEventListener('click',function(){switchTab('info');});
+document.getElementById('ptab-horario').addEventListener('click',function(){switchTab('horario');});
+document.getElementById('btnSaveInfo').addEventListener('click',saveInfo);
+document.getElementById('btnSaveH').addEventListener('click',saveHorario);
+document.getElementById('btnCopyH').addEventListener('click',function(){var donor=stores.find(function(s){return s.id!==editId&&hSt(s)==='done';});if(!donor){showToast('No hay otra tienda con horarios completos');return;}tmpH=donor.horarios.map(function(h){return Object.assign({},h);});renderDias();showToast('Horarios copiados');});
+
+// Form
 document.getElementById('fN').addEventListener('input',chkForm);
 document.getElementById('fE').addEventListener('input',chkForm);
-document.getElementById('fD').addEventListener('input',function(){dirInput('fD','fMap','fMapSearch');});
-document.getElementById('pe-d').addEventListener('input',function(){dirInput('pe-d','peMap','peMapSearch');});
+document.getElementById('fD').addEventListener('input',function(){dirInput('fD','fMap','fMapSrch');chkForm();});
+document.getElementById('pe-d').addEventListener('input',function(){dirInput('pe-d','peMap','peMapSrch');});
+
+// Menu tabs
+document.getElementById('mtab-prods').addEventListener('click',function(){document.getElementById('mtab-prods').className='mtab active';document.getElementById('mtab-custom').className='mtab';renderMenuBody();});
+document.getElementById('mtab-custom').addEventListener('click',function(){document.getElementById('mtab-prods').className='mtab';document.getElementById('mtab-custom').className='mtab active';document.getElementById('menuBody').innerHTML='<div style="padding:28px 0;text-align:center;color:#9ca3af;font-size:13px;">Personalizaciones — templates de complementos por categoría (próximamente)</div>';});
+
 setNav(1);
 </script>
 </body>

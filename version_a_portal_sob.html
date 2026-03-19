@@ -209,6 +209,116 @@ tbody td { padding: 8px 11px; color: #1a1a1a; vertical-align: middle; }
 .btn-save-p:hover { background:#e03a14 !important; }
 .toast { position:fixed; bottom:18px; left:50%; transform:translateX(-50%); background:#1a1a1a; color:#fff; font-size:12px; font-weight:600; padding:8px 16px; border-radius:10px; opacity:0; transition:opacity 0.25s; pointer-events:none; z-index:999; white-space:nowrap; }
 .toast.show { opacity:1; }
+/* ── MENU STORE SELECTOR ── */
+.menu-selector-wrap { padding: 22px 26px 28px; }
+.menu-selector-wrap h2 { font-size: 18px; font-weight: 900; color: #1a1a1a; margin-bottom: 4px; }
+.menu-selector-sub { font-size: 12px; color: #888; margin-bottom: 20px; }
+.store-select-grid { display: flex; flex-direction: column; gap: 10px; margin-bottom: 22px; }
+.store-select-card { border: 2px solid #e8e8e8; border-radius: 12px; padding: 14px 16px; cursor: pointer; background: #fff; display: flex; align-items: center; justify-content: space-between; transition: all 0.15s; }
+.store-select-card:hover { border-color: #ff441b; background: #fff9f8; }
+.store-select-card.done-card { border-color: #b7eac8; background: #f4fef7; }
+.ssc-left { display: flex; flex-direction: column; gap: 3px; }
+.ssc-name { font-size: 14px; font-weight: 700; color: #1a1a1a; }
+.ssc-sub  { font-size: 11px; color: #888; }
+.ssc-right { display: flex; align-items: center; gap: 8px; }
+.menu-status-badge { font-size: 10px; font-weight: 700; padding: 3px 9px; border-radius: 20px; white-space: nowrap; }
+.msb-done    { background: #e8f5e9; color: #2e7d32; }
+.msb-pending { background: #fff5f3; color: #cc2200; }
+.msb-partial { background: #fffbeb; color: #92400e; }
+
+/* ── MENU SCREEN ── */
+.menu-wrap { padding: 0; background: #fff; min-height: 500px; }
+.menu-topbar { padding: 14px 24px; border-bottom: 1px solid #f0f0f0; display: flex; align-items: center; justify-content: space-between; background: #fff; }
+.menu-topbar-left { display: flex; flex-direction: column; gap: 2px; }
+.menu-store-name { font-size: 16px; font-weight: 900; color: #1a1a1a; }
+.menu-store-sub   { font-size: 11px; color: #888; }
+.menu-tabs { display: flex; border-bottom: 2px solid #f0f0f0; padding: 0 24px; background: #fff; }
+.mtab { font-size: 12px; font-weight: 700; padding: 9px 16px; cursor: pointer; border-bottom: 2px solid transparent; margin-bottom: -2px; color: #9ca3af; font-family: inherit; background: none; border-top: none; border-left: none; border-right: none; white-space: nowrap; }
+.mtab.active { color: #ff441b; border-bottom-color: #ff441b; }
+.menu-body { padding: 16px 24px 28px; }
+
+/* Perfect Store Score */
+.pss-card { border: 1.5px dashed #7c3aed; border-radius: 12px; padding: 14px 16px; margin-bottom: 16px; background: #fafafe; position: relative; }
+.pss-badge { position: absolute; top: -9px; left: 14px; background: #7c3aed; color: #fff; font-size: 9px; font-weight: 700; padding: 2px 8px; border-radius: 20px; letter-spacing: 0.04em; }
+.pss-header { display: flex; align-items: center; justify-content: space-between; margin-bottom: 12px; }
+.pss-title { font-size: 13px; font-weight: 700; color: #1a1a1a; display: flex; align-items: center; gap: 6px; }
+.pss-score { font-size: 26px; font-weight: 900; }
+.pss-score.green { color: #166534; } .pss-score.yellow { color: #92400e; } .pss-score.red { color: #cc2200; }
+.pss-bars { display: flex; gap: 10px; flex-wrap: wrap; }
+.pss-bar { flex: 1; min-width: 120px; background: #f3f4f6; border-radius: 8px; padding: 8px 10px; }
+.pss-bar-label { font-size: 10px; font-weight: 600; color: #6b7280; margin-bottom: 4px; }
+.pss-bar-track { height: 5px; background: #e8e8e8; border-radius: 3px; overflow: hidden; margin-bottom: 3px; }
+.pss-bar-fill { height: 100%; border-radius: 3px; transition: width 0.5s; }
+.pss-bar-fill.gf { background: #4CAF50; } .pss-bar-fill.yf { background: #f97316; } .pss-bar-fill.rf { background: #dc2626; }
+.pss-bar-pct { font-size: 10px; font-weight: 700; color: #374151; }
+
+/* Quality filters */
+.q-filters { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 14px; }
+.qf { font-size: 11px; font-weight: 600; padding: 5px 12px; border-radius: 20px; cursor: pointer; border: 1px solid; transition: all 0.15s; white-space: nowrap; }
+.qf.ok   { background: #f0fdf4; color: #166534; border-color: #bbf7d0; }
+.qf.warn { background: #f5f5f5; color: #374151; border-color: #e8e8e8; }
+.qf.warn:hover { background: #fff5f3; border-color: #ffccc7; color: #cc2200; }
+.qf.active-filter { background: #1a1a1a; color: #fff; border-color: #1a1a1a; }
+
+/* Category + products */
+.cat-section { margin-bottom: 8px; border: 1px solid #e8e8e8; border-radius: 10px; overflow: hidden; }
+.cat-header { display: flex; align-items: center; justify-content: space-between; padding: 10px 14px; background: #fafafa; cursor: pointer; user-select: none; }
+.cat-header:hover { background: #f3f4f6; }
+.cat-name { font-size: 13px; font-weight: 700; color: #1a1a1a; }
+.cat-count { font-size: 11px; color: #9ca3af; margin-left: 6px; }
+.cat-chevron { font-size: 10px; color: #9ca3af; transition: transform 0.2s; }
+.cat-chevron.open { transform: rotate(180deg); }
+.prod-list { border-top: 1px solid #f0f0f0; }
+.prod-row { display: flex; align-items: center; gap: 10px; padding: 9px 14px; border-bottom: 1px solid #f3f4f6; }
+.prod-row:last-child { border-bottom: none; }
+.prod-img { width: 38px; height: 38px; border-radius: 8px; object-fit: cover; background: #f3f4f6; display: flex; align-items: center; justify-content: center; font-size: 18px; flex-shrink: 0; overflow: hidden; }
+.prod-info { flex: 1; min-width: 0; }
+.prod-name { font-size: 12px; font-weight: 700; color: #1a1a1a; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; cursor: text; }
+.prod-name.editing { outline: none; border-bottom: 2px solid #ff441b; background: #fff9f8; padding: 1px 3px; border-radius: 3px; white-space: normal; }
+.prod-desc { font-size: 11px; color: #888; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; cursor: text; }
+.prod-desc.editing { outline: none; border-bottom: 2px solid #ff441b; background: #fff9f8; padding: 1px 3px; border-radius: 3px; white-space: normal; }
+.prod-price { font-size: 12px; font-weight: 700; color: #1a1a1a; cursor: text; white-space: nowrap; }
+.prod-price.editing { outline: none; border-bottom: 2px solid #ff441b; background: #fff9f8; padding: 1px 4px; border-radius: 3px; width: 70px; }
+.prod-flags { display: flex; gap: 4px; align-items: center; margin-top: 3px; }
+.pflag { font-size: 9px; padding: 1px 5px; border-radius: 4px; font-weight: 600; }
+.pflag.ok   { background: #f0fdf4; color: #166534; }
+.pflag.miss { background: #fff5f3; color: #cc2200; }
+.prod-toggle { width: 28px; height: 15px; border-radius: 8px; position: relative; cursor: pointer; flex-shrink: 0; }
+.prod-toggle.on { background: #ff441b; } .prod-toggle.off { background: #d1d5db; }
+.pt-k { width: 11px; height: 11px; background: #fff; border-radius: 50%; position: absolute; top: 2px; transition: left 0.15s; }
+.prod-toggle.on .pt-k { left: 15px; } .prod-toggle.off .pt-k { left: 2px; }
+.cat-add-btn { display: flex; align-items: center; gap: 5px; padding: 8px 14px; font-size: 11px; font-weight: 600; color: #6b7280; cursor: pointer; border-top: 1px dashed #e8e8e8; background: #fafafa; transition: color 0.15s; }
+.cat-add-btn:hover { color: #ff441b; background: #fff9f8; }
+
+/* No products banner */
+.no-prods { text-align: center; padding: 32px 20px; color: #9ca3af; font-size: 13px; }
+
+/* BUTTONS */
+.btn-salir { background:#fff !important; border:2px solid #1a1a1a !important; color:#1a1a1a !important; font-size:13px !important; font-weight:700 !important; padding:7px 17px !important; border-radius:8px !important; cursor:pointer !important; font-family:inherit !important; }
+.btn-sob-ini { background:#2563eb !important; border:none !important; color:#fff !important; font-size:11px !important; font-weight:700 !important; padding:7px 14px !important; border-radius:9px !important; cursor:pointer !important; font-family:inherit !important; display:inline-flex !important; margin-top:9px !important; align-self:flex-start !important; }
+.btn-ghost { background:none !important; border:none !important; color:#888 !important; font-size:13px !important; font-weight:600 !important; cursor:pointer !important; font-family:inherit !important; padding:0 !important; margin-bottom:14px !important; display:block !important; }
+.btn-ghost:hover { color:#ff441b !important; }
+.btn-rappi { background:#ff441b !important; border:none !important; color:#fff !important; font-size:13px !important; font-weight:700 !important; padding:9px 22px !important; border-radius:10px !important; cursor:pointer !important; font-family:inherit !important; }
+.btn-rappi:hover { background:#e03a14 !important; }
+.btn-rappi-full { width:100% !important; padding:12px !important; }
+.btn-rappi-outline { background:#fff !important; border:2px solid #ff441b !important; color:#ff441b !important; font-size:12px !important; font-weight:700 !important; padding:7px 14px !important; border-radius:8px !important; cursor:pointer !important; font-family:inherit !important; }
+.btn-rappi-outline:disabled { border-color:#e8e8e8 !important; color:#bbb !important; cursor:not-allowed !important; }
+.btn-sec { background:#fff !important; border:1.5px solid #d1d5db !important; color:#374151 !important; font-size:12px !important; font-weight:600 !important; padding:8px 17px !important; border-radius:8px !important; cursor:pointer !important; font-family:inherit !important; }
+.btn-next { background:#ff441b !important; border:none !important; color:#fff !important; font-size:14px !important; font-weight:700 !important; padding:10px 26px !important; border-radius:10px !important; cursor:pointer !important; font-family:inherit !important; }
+.btn-next:disabled { background:#ffccc7 !important; cursor:not-allowed !important; }
+.btn-blue { background:#2563eb !important; border:none !important; color:#fff !important; font-size:11px !important; font-weight:700 !important; padding:5px 11px !important; border-radius:7px !important; cursor:pointer !important; font-family:inherit !important; white-space:nowrap !important; }
+.btn-del { background:none !important; border:none !important; color:#d1d5db !important; font-size:14px !important; cursor:pointer !important; padding:2px 4px !important; border-radius:4px !important; font-family:inherit !important; }
+.btn-del:hover { color:#ff441b !important; background:#fff0ec !important; }
+.btn-hc { background:none !important; border:none !important; cursor:pointer !important; font-size:20px !important; color:#aaa !important; padding:0 !important; line-height:1 !important; }
+.btn-copy { background:#fff !important; border:1px solid #2563eb !important; color:#2563eb !important; font-size:11px !important; font-weight:700 !important; padding:4px 9px !important; border-radius:6px !important; cursor:pointer !important; font-family:inherit !important; }
+.btn-save-p { background:#ff441b !important; border:none !important; color:#fff !important; font-size:13px !important; font-weight:700 !important; padding:10px !important; border-radius:9px !important; cursor:pointer !important; font-family:inherit !important; width:100% !important; }
+.btn-menu-action { background:#fff !important; border:1.5px solid #e8e8e8 !important; color:#374151 !important; font-size:12px !important; font-weight:600 !important; padding:7px 14px !important; border-radius:8px !important; cursor:pointer !important; font-family:inherit !important; }
+.btn-menu-action:hover { border-color:#ff441b !important; color:#ff441b !important; }
+.btn-menu-primary { background:#ff441b !important; border:none !important; color:#fff !important; font-size:12px !important; font-weight:700 !important; padding:7px 16px !important; border-radius:8px !important; cursor:pointer !important; font-family:inherit !important; }
+
+.toast { position:fixed; bottom:18px; left:50%; transform:translateX(-50%); background:#1a1a1a; color:#fff; font-size:12px; font-weight:600; padding:8px 16px; border-radius:10px; opacity:0; transition:opacity 0.25s; pointer-events:none; z-index:999; white-space:nowrap; }
+.toast.show { opacity:1; }
+
 </style>
 </head>
 <body>
@@ -253,7 +363,7 @@ tbody td { padding: 8px 11px; color: #1a1a1a; vertical-align: middle; }
             <div class="pc-field" style="display:flex;justify-content:space-between;align-items:center;"><div><div class="pc-fl">Prefijo</div><div class="pc-fv">+57</div></div><span style="color:#9ca3af;font-size:10px;">▼</span></div>
             <div class="pc-field"><div class="pc-fl">Teléfono</div><div class="pc-fv">3134350838</div></div>
           </div>
-          <div class="pc-field"><div class="pc-fl">Correo electrónico</div><div class="pc-fv">yolimavargas86@gmail.com</div></div>
+          <div class="pc-field"><div class="pc-fl">Correo electrónico</div><div class="pc-fv"><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="ff86909396929e899e8d989e8cc7c9bf98929e9693d19c9092">[email&#160;protected]</a></div></div>
           <div class="pc-tog-row">
             <div class="pc-tog"><div class="pc-tog-sw"><div class="pc-tog-k"></div></div><span>Es cocina oculta</span></div>
             <div class="pc-tog"><div class="pc-tog-sw"><div class="pc-tog-k"></div></div><span>Centro comercial</span></div>
@@ -328,7 +438,7 @@ tbody td { padding: 8px 11px; color: #1a1a1a; vertical-align: middle; }
     <div class="scard green"><div class="scard-lbl">Paso 2</div><div class="scard-img">👨</div><div class="scard-title">Logo y horario</div><div class="schk done">✅ Logo</div><div class="schk done">✅ Horario comercial</div><div class="sprog"><div class="sprog-track"><div class="sprog-fill" id="c2prog" style="width:100%;background:#4CAF50;"></div></div></div>
       <div class="sentry" id="sobEntry"><span class="sentry-lbl">Gestionar restaurantes</span><span class="sentry-badge b-ok" id="sobBadge">✓ 1 restaurante</span><span class="sentry-arrow">›</span></div>
       <button class="btn-sob-ini">Iniciar →</button></div>
-    <div class="scard gray"><div class="scard-lbl">Último paso</div><div class="scard-img">🍽️</div><div class="scard-title">Menú y gestión de órdenes</div><p style="font-size:11.5px;color:#555;margin-bottom:8px;">Crea el menú que van a ver tus consumidores</p><div class="sextra"><div class="sextra-dot"></div><span class="sextra-link">Usa IA y carga para ahorrar tiempo</span></div><div class="sextra"><span style="font-size:14px;">💬</span><span>Recibe y gestiona tus órdenes en WhatsApp</span></div><div class="sprog"><div class="sprog-track"><div class="sprog-fill gr" style="width:5%;"></div></div></div><button class="btn-sob-ini">Iniciar →</button></div>
+    <div class="scard plain" id="card3"><div class="scard-lbl" id="c3lbl">Último paso</div><div class="scard-img">🍽️</div><div class="scard-title">Menú y gestión de órdenes</div><p style="font-size:11.5px;color:#555;margin-bottom:8px;">Crea el menú que van a ver tus consumidores</p><div class="sextra"><div class="sextra-dot"></div><span class="sextra-link">Usa IA y carga para ahorrar tiempo</span></div><div class="sextra"><span style="font-size:14px;">💬</span><span>Recibe y gestiona tus órdenes en WhatsApp</span></div><div class="sprog"><div class="sprog-track"><div class="sprog-fill gr" id="c3prog" style="width:5%;"></div></div></div><div class="sentry" id="entryMenu"><span class="sentry-lbl">Configurar menú</span><span class="sentry-badge b-gray" id="menuBadge">Pendiente</span><span class="sentry-arrow">›</span></div><button class="btn-sob-ini">Iniciar →</button></div>
   </div>
 </div>
 </div>
@@ -369,6 +479,47 @@ tbody td { padding: 8px 11px; color: #1a1a1a; vertical-align: middle; }
 </div>
 </div>
 
+<!-- SC4: SELECTOR DE TIENDA PARA MENÚ -->
+<div class="sc" id="sc-menu-select">
+<div class="sob">
+  <nav class="sob-nav"><span class="sob-logo">Rappi</span><button class="btn-salir">Salir</button></nav>
+  <div class="menu-selector-wrap">
+    <button class="btn-ghost" id="btnMenuSelectBack">← Volver</button>
+    <h2>Configurar menú</h2>
+    <p class="menu-selector-sub">Seleccioná el restaurante al que querés configurarle el menú. Cada uno puede tener su propio catálogo de productos.</p>
+    <div class="store-select-grid" id="storeSelectGrid"></div>
+    <div style="display:flex;justify-content:flex-end;">
+      <button class="btn-rappi" id="btnMenuSelectDone">Finalizar onboarding →</button>
+    </div>
+  </div>
+</div>
+</div>
+
+<!-- SC5: MENÚ DE UNA TIENDA -->
+<div class="sc" id="sc-menu">
+<div class="sob">
+  <nav class="sob-nav"><span class="sob-logo">Rappi</span><button class="btn-salir">Salir</button></nav>
+  <div class="menu-wrap">
+    <div class="menu-topbar">
+      <div class="menu-topbar-left">
+        <div class="menu-store-name" id="menuStoreName">Restaurante</div>
+        <div class="menu-store-sub" id="menuStoreSub">Menú principal</div>
+      </div>
+      <div style="display:flex;gap:8px;align-items:center;">
+        <button class="btn-menu-action" id="btnMenuBack">← Volver</button>
+        <button class="btn-menu-primary" id="btnAddCat">+ Categoría</button>
+        <button class="btn-menu-primary">Publicar menú</button>
+      </div>
+    </div>
+    <div class="menu-tabs">
+      <button class="mtab active" id="mtab-prods">Productos</button>
+      <button class="mtab" id="mtab-custom">Personalizaciones</button>
+    </div>
+    <div class="menu-body" id="menuBody"></div>
+  </div>
+</div>
+</div>
+
 <!-- PANEL -->
 <div class="overlay" id="panelOverlay" style="display:none;">
   <div class="panel" id="panelInner">
@@ -391,15 +542,39 @@ tbody td { padding: 8px 11px; color: #1a1a1a; vertical-align: middle; }
 </div>
 <div class="toast" id="toast"></div>
 
-<script>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
 var HORAS=['06:00','07:00','08:00','09:00','10:00','11:00','12:00','13:00','14:00','15:00','16:00','17:00','18:00','19:00','20:00','21:00','22:00','23:00','00:00'];
 var DIAS=['Lunes','Martes','Miércoles','Jueves','Viernes','Sábado','Domingo'];
 var COMIDA=['Comida rápida','Desayunos','Almuerzos','Cenas','Postres'];
+var EMOJIS={'Comida rápida':'🍔','Desayunos':'🍳','Almuerzos':'🍱','Cenas':'🌮','Postres':'🍰','default':'🍽️'};
+// Sample menu data per store
+var SAMPLE_MENUS = {
+  'default': {
+    cats: [
+      { id:'c1', name:'Entradas', products:[
+        {id:'p1',name:'Ensalada César',desc:'Lechuga romana, crutones, parmesano',price:18000,photo:true,on:true},
+        {id:'p2',name:'Sopa del día',desc:'',price:12000,photo:false,on:true},
+      ]},
+      { id:'c2', name:'Platos principales', products:[
+        {id:'p3',name:'Hamburguesa clásica',desc:'Carne 200g, lechuga, tomate, cebolla',price:32000,photo:true,on:true},
+        {id:'p4',name:'Pollo a la plancha',desc:'',price:28000,photo:false,on:true},
+        {id:'p5',name:'Pasta al pesto',desc:'Espagueti, albahaca, parmesano',price:26000,photo:false,on:false},
+      ]},
+      { id:'c3', name:'Bebidas', products:[
+        {id:'p6',name:'Limonada de coco',desc:'Limón, coco, azúcar',price:9000,photo:true,on:true},
+        {id:'p7',name:'Jugo natural',desc:'',price:7000,photo:false,on:true},
+      ]},
+    ]
+  }
+};
 function mkH(a,c,act){return DIAS.map(function(d){return{dia:d,activo:act,abre:a,cierra:c};});}
 function calcH(h){return h.reduce(function(acc,x){if(!x.activo)return acc;var a=parseInt(x.abre),c=parseInt(x.cierra);if(isNaN(a)||isNaN(c))return acc;if(c<=a)c+=24;return acc+(c-a);},0);}
 function hSt(s){if(!s.horarios)return'pend';var d=s.horarios.filter(function(x){return x.activo;}).length,h=calcH(s.horarios);if(d===0)return'pend';if(h>=40)return'done';return'partial';}
 function hLbl(s){var st=hSt(s);if(st==='pend')return{cls:'pend',txt:'Sin configurar'};var h=calcH(s.horarios),d=s.horarios.filter(function(x){return x.activo;}).length;if(st==='done')return{cls:'done',txt:d+' días · '+h+' hs/sem'};return{cls:'partial',txt:h+' hs — mín 40'};}
-var stores=[{id:1,nombre:'La Tagoretta Cocina Bar',comida:'Comida rápida',direccion:'Calle 6C 9, Valledupar',email:'yolima@gmail.com',movil:'',type:'original',horarios:mkH('12:00','22:00',true)}];
+var currentMenuStore=null;var openCats={};var menuData={};
+function getMenu(storeId){if(!menuData[storeId]){menuData[storeId]={cats:JSON.parse(JSON.stringify(SAMPLE_MENUS['default'].cats))};menuData[storeId].cats.forEach(function(c){openCats[c.id]=true;});}return menuData[storeId];}
+
+var stores=[{id:1,nombre:'La Tagoretta Cocina Bar',comida:'Comida rápida',direccion:'Calle 6C 9, Valledupar',email:'yolima@gmail.com',movil:'',type:'original',horarios:mkH('12:00','22:00',true),menuDone:false}];
 var nextId=2,editId=null,tmpH=null,mapTimers={};
 function goTo(id){document.querySelectorAll('.sc').forEach(function(s){s.classList.remove('a');});document.getElementById(id).classList.add('a');}
 function setNav(n){['np1','np2','np3','np4'].forEach(function(id,i){var el=document.getElementById(id);if(i+1<n)el.className='sp done';else if(i+1===n)el.className='sp active';else el.className='sp';});}
@@ -407,16 +582,240 @@ function goConfirm(){goTo('sc-confirm');setNav(2);}
 function goSOB(){goTo('sc-sob-home');setNav(3);renderTable();updateBadge();}
 function dirInput(inputId,mapId,srchId){var val=document.getElementById(inputId).value.trim();var map=document.getElementById(mapId),srch=document.getElementById(srchId);if(val.length<4){map.classList.remove('vis');return;}map.classList.add('vis');srch.style.display='flex';clearTimeout(mapTimers[inputId]);mapTimers[inputId]=setTimeout(function(){srch.style.display='none';},900);}
 function chkForm(){var ok=document.getElementById('fN').value.trim()&&document.getElementById('fD').value.trim()&&document.getElementById('fE').value.trim();document.getElementById('btnAdd').disabled=!ok;}
-function addStore(){var n=document.getElementById('fN').value.trim(),d=document.getElementById('fD').value.trim(),e=document.getElementById('fE').value.trim();if(!n||!d||!e){showToast('Completá nombre, dirección y correo');return;}var last=stores[stores.length-1];var nid=nextId++;stores.push({id:nid,nombre:n,comida:document.getElementById('fC').value,direccion:d,email:e,movil:document.getElementById('fM').value.trim(),type:'new',horarios:null});document.getElementById('fC').value=last.comida;document.getElementById('fCTag').style.display='inline';document.getElementById('fN').value='';document.getElementById('fD').value='';document.getElementById('fE').value='';document.getElementById('fM').value='';document.getElementById('fMap').classList.remove('vis');document.getElementById('btnAdd').disabled=true;renderTable();showToast('"'+n+'" agregado');setTimeout(function(){openPanel(nid,'horario');},180);}
+function addStore(){var n=document.getElementById('fN').value.trim(),d=document.getElementById('fD').value.trim(),e=document.getElementById('fE').value.trim();if(!n||!d||!e){showToast('Completá nombre, dirección y correo');return;}var last=stores[stores.length-1];var nid=nextId++;stores.push({id:nid,nombre:n,comida:document.getElementById('fC').value,direccion:d,email:e,movil:document.getElementById('fM').value.trim(),type:'new',horarios:null,menuDone:false});document.getElementById('fC').value=last.comida;document.getElementById('fCTag').style.display='inline';document.getElementById('fN').value='';document.getElementById('fD').value='';document.getElementById('fE').value='';document.getElementById('fM').value='';document.getElementById('fMap').classList.remove('vis');document.getElementById('btnAdd').disabled=true;renderTable();showToast('"'+n+'" agregado');setTimeout(function(){openPanel(nid,'horario');},180);}
 function renderTable(){document.getElementById('tCnt').textContent=stores.length;var html='';stores.forEach(function(s,i){var hl=hLbl(s);var pill=s.type==='original'?'<span class="p-orig">principal</span>':'<span class="p-new">nueva</span>';var hc=hl.cls==='done'?'#166534':hl.cls==='partial'?'#c2410c':'#9ca3af';html+='<tr><td style="color:#aaa;font-weight:700;">'+(i+1)+'</td><td><div style="font-weight:700;font-size:12px;">'+s.nombre+'</div>'+pill+'</td><td><span class="p-food">'+s.comida+'</span></td><td style="color:#555;font-size:11px;max-width:110px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;">'+s.direccion+'</td><td><div class="h-st"><div class="h-dot '+hl.cls+'"></div><span style="font-size:11px;color:'+hc+';">'+hl.txt+'</span></div></td><td><div style="display:flex;align-items:center;gap:5px;"><button class="btn-blue" data-id="'+s.id+'">Editar</button>'+(s.type!=='original'?'<button class="btn-del" data-del="'+s.id+'">✕</button>':'')+'</div></td></tr>';});document.getElementById('tBody').innerHTML=html;document.querySelectorAll('[data-id]').forEach(function(b){b.addEventListener('click',function(){openPanel(parseInt(b.getAttribute('data-id')),'info');});});document.querySelectorAll('[data-del]').forEach(function(b){b.addEventListener('click',function(){var id=parseInt(b.getAttribute('data-del'));stores=stores.filter(function(x){return x.id!==id;});renderTable();showToast('Restaurante eliminado');});});updateBadge();}
 function updateBadge(){var total=stores.length,hOk=stores.filter(function(s){return hSt(s)==='done';}).length;var badge=document.getElementById('sobBadge'),prog=document.getElementById('c2prog');if(hOk===total&&total>0){badge.textContent='✓ '+total+' restaurant'+(total===1?'e':'es');badge.className='sentry-badge b-ok';prog.style.width='100%';prog.style.background='#4CAF50';}else if(hOk>0||total>1){badge.textContent=hOk+'/'+total+' con horario';badge.className='sentry-badge b-blue';prog.style.width=Math.round(((hOk+1)/(total+1))*80+20)+'%';prog.style.background='#2563eb';}}
 function openPanel(id,tab){var s=stores.find(function(x){return x.id===id;});editId=id;if(!s.horarios)s.horarios=mkH('12:00','22:00',true);tmpH=s.horarios.map(function(h){return Object.assign({},h);});document.getElementById('panelStore').textContent='🏪 '+s.nombre;document.getElementById('pe-n').value=s.nombre;document.getElementById('pe-c').value=s.comida;document.getElementById('pe-d').value=s.direccion;document.getElementById('pe-e').value=s.email||'';document.getElementById('pe-m').value=s.movil||'';var pm=document.getElementById('peMap');if(s.direccion&&s.direccion.length>3)pm.classList.add('vis');else pm.classList.remove('vis');var hasCopy=stores.some(function(x){return x.id!==id&&hSt(x)==='done';});document.getElementById('copyBar').style.display=hasCopy?'flex':'none';renderDias();switchTab(tab||'info');document.getElementById('panelOverlay').style.display='flex';}
 function switchTab(tab){document.getElementById('tab-info').style.display=tab==='info'?'block':'none';document.getElementById('tab-horario').style.display=tab==='horario'?'block':'none';document.getElementById('ptab-info').className='ptab'+(tab==='info'?' active':'');document.getElementById('ptab-horario').className='ptab'+(tab==='horario'?' active':'');}
 function closePanel(){document.getElementById('panelOverlay').style.display='none';editId=null;tmpH=null;}
 function saveInfo(){var s=stores.find(function(x){return x.id===editId;});var n=document.getElementById('pe-n').value.trim(),d=document.getElementById('pe-d').value.trim();if(!n||!d){showToast('Nombre y dirección son obligatorios');return;}s.nombre=n;s.comida=document.getElementById('pe-c').value;s.direccion=d;s.email=document.getElementById('pe-e').value.trim();s.movil=document.getElementById('pe-m').value.trim();renderTable();closePanel();showToast('✓ Información de "'+n+'" guardada');}
+function menuScore(storeId){var m=getMenu(storeId);var allP=m.cats.flatMap(function(c){return c.products;});if(allP.length===0)return{photo:0,desc:0,overall:0};var photo=allP.filter(function(p){return p.photo;}).length/allP.length*100;var desc=allP.filter(function(p){return p.desc&&p.desc.trim();}).length/allP.length*100;var overall=(100+photo+desc)/3;return{photo:Math.round(photo),desc:Math.round(desc),overall:Math.round(overall)};}
 function renderDias(){var tot=calcH(tmpH),el=document.getElementById('hTot');el.textContent=tot;el.style.color=tot>=40?'#166534':'#dc2626';var html='';tmpH.forEach(function(h,i){var off=!h.activo;html+='<div class="dia-row'+(off?' off':'')+'">';html+='<span class="dia-name">'+h.dia+'</span>';html+='<div class="dsel-wrap"><div class="dsel-lbl">Abre</div><select class="dsel" data-i="'+i+'" data-f="abre"'+(off?' disabled':'')+'>'+HORAS.map(function(r){return'<option'+(h.abre===r?' selected':'')+'>'+r+'</option>';}).join('')+'</select></div>';html+='<div class="dsel-wrap"><div class="dsel-lbl">Cierra</div><select class="dsel" data-i="'+i+'" data-f="cierra"'+(off?' disabled':'')+'>'+HORAS.map(function(r){return'<option'+(h.cierra===r?' selected':'')+'>'+r+'</option>';}).join('')+'</select></div>';html+='<div class="tog '+(h.activo?'on':'off')+'" data-ti="'+i+'"><div class="tog-k"></div></div>';html+='</div>';});document.getElementById('diasWrap').innerHTML=html;document.querySelectorAll('.dsel').forEach(function(sel){sel.addEventListener('change',function(){var i=parseInt(sel.getAttribute('data-i')),f=sel.getAttribute('data-f');tmpH[i][f]=sel.value;var t=calcH(tmpH),el=document.getElementById('hTot');el.textContent=t;el.style.color=t>=40?'#166534':'#dc2626';});});document.querySelectorAll('.tog').forEach(function(tog){tog.addEventListener('click',function(){var i=parseInt(tog.getAttribute('data-ti'));tmpH[i].activo=!tmpH[i].activo;renderDias();});});}
 function saveHorario(){var s=stores.find(function(x){return x.id===editId;});s.horarios=tmpH.slice();renderTable();closePanel();showToast('✓ Horarios de "'+s.nombre.split(' — ')[0]+'" guardados');}
-function confirmManage(){var pend=stores.filter(function(s){return hSt(s)!=='done';});if(pend.length>0){showToast('Falta configurar horarios en '+pend.length+' tienda'+(pend.length>1?'s':''));return;}updateBadge();goTo('sc-sob-home');setNav(3);showToast('✓ Restaurantes y horarios confirmados');}
+function confirmManage(){var pend=stores.filter(function(s){return hSt(s)!=='done';});if(pend.length>0){showToast('Falta configurar horarios en '+pend.length+' tienda'+(pend.length>1?'s':''));return;}updateBadge();goTo('sc-menu-select');setNav(4);renderStoreSelector();showToast('✓ Horarios confirmados — configurá el menú');}
+// ─── STORE SELECTOR FOR MENU ───
+function renderStoreSelector(){
+  var html='';
+  stores.forEach(function(s){
+    var sc=menuScore(s.id);var cls=s.menuDone?'store-select-card done-card':'store-select-card';
+    var badge=s.menuDone?'<span class="menu-status-badge msb-done">✓ Menú listo</span>':'<span class="menu-status-badge msb-pending">Configurar</span>';
+    if(!s.menuDone&&sc.overall>20)badge='<span class="menu-status-badge msb-partial">En progreso</span>';
+    var emoji=EMOJIS[s.comida]||EMOJIS['default'];
+    html+='<div class="'+cls+'" data-store-id="'+s.id+'">';
+    html+='<div class="ssc-left"><div class="ssc-name">'+emoji+' '+s.nombre+'</div>';
+    html+='<div class="ssc-sub">'+s.direccion+' · '+s.comida+'</div></div>';
+    html+='<div class="ssc-right">'+badge+'<span style="color:#bbb;font-size:14px;">›</span></div>';
+    html+='</div>';
+  });
+  document.getElementById('storeSelectGrid').innerHTML=html;
+  document.querySelectorAll('[data-store-id]').forEach(function(card){
+    card.addEventListener('click',function(){openMenu(parseInt(card.getAttribute('data-store-id')));});
+  });
+}
+
+// ─── MENU SCREEN ───
+function openMenu(storeId){
+  currentMenuStore=storeId;
+  var s=stores.find(function(x){return x.id===storeId;});
+  document.getElementById('menuStoreName').textContent=(EMOJIS[s.comida]||'🍽️')+' '+s.nombre;
+  document.getElementById('menuStoreSub').textContent=s.direccion;
+  renderMenuBody();
+  goTo('sc-menu');
+  setNav(4);
+}
+
+function renderMenuBody(){
+  var s=stores.find(function(x){return x.id===currentMenuStore;});
+  var m=getMenu(currentMenuStore);
+  var allP=m.cats.flatMap(function(c){return c.products;});
+  var sc=menuScore(currentMenuStore);
+  var scoreColor=sc.overall>=70?'green':sc.overall>=40?'yellow':'red';
+
+  // Compute filter counts
+  var noPh=allP.filter(function(p){return!p.photo;}).length;
+  var noDe=allP.filter(function(p){return!p.desc||!p.desc.trim();}).length;
+  var noOn=allP.filter(function(p){return!p.on;}).length;
+
+  var html='';
+  // Perfect Store Score
+  html+='<div class="pss-card"><div class="pss-badge">✦ Perfect Store Score</div>';
+  html+='<div class="pss-header"><div class="pss-title"><span>📊</span>Calidad del menú</div>';
+  html+='<span class="pss-score '+scoreColor+'">'+sc.overall+'%</span></div>';
+  html+='<div class="pss-bars">';
+  html+='<div class="pss-bar"><div class="pss-bar-label">Menú Completo</div><div class="pss-bar-track"><div class="pss-bar-fill gf" style="width:100%;"></div></div><div class="pss-bar-pct">100%</div></div>';
+  html+='<div class="pss-bar"><div class="pss-bar-label">Fotos de Calidad</div><div class="pss-bar-track"><div class="pss-bar-fill '+(sc.photo>=70?'gf':sc.photo>=40?'yf':'rf')+'" style="width:'+sc.photo+'%;"></div></div><div class="pss-bar-pct">'+sc.photo+'%</div></div>';
+  html+='<div class="pss-bar"><div class="pss-bar-label">Descripciones</div><div class="pss-bar-track"><div class="pss-bar-fill '+(sc.desc>=70?'gf':sc.desc>=40?'yf':'rf')+'" style="width:'+sc.desc+'%;"></div></div><div class="pss-bar-pct">'+sc.desc+'%</div></div>';
+  html+='</div></div>';
+
+  // Quality filters
+  html+='<div class="q-filters">';
+  html+='<span class="qf ok">✓ Menú completo</span>';
+  html+=(noPh>0?'<span class="qf warn" data-filter="noPhoto">('+noPh+') Sin fotos</span>':'<span class="qf ok">✓ Todas con foto</span>');
+  html+=(noDe>0?'<span class="qf warn" data-filter="noDesc">('+noDe+') Sin descripción</span>':'<span class="qf ok">✓ Todas con descripción</span>');
+  html+=(noOn>0?'<span class="qf warn" data-filter="off">('+noOn+') Apagados</span>':'');
+  html+='</div>';
+
+  // Categories
+  m.cats.forEach(function(cat){
+    var isOpen=openCats[cat.id]!==false;
+    html+='<div class="cat-section">';
+    html+='<div class="cat-header" data-cat="'+cat.id+'">';
+    html+='<span><span class="cat-name">'+cat.name+'</span><span class="cat-count">'+cat.products.length+' productos</span></span>';
+    html+='<span class="cat-chevron'+(isOpen?' open':'')+'">▼</span>';
+    html+='</div>';
+    if(isOpen){
+      html+='<div class="prod-list">';
+      cat.products.forEach(function(p){
+        var missingPhoto=!p.photo;var missingDesc=!p.desc||!p.desc.trim();
+        html+='<div class="prod-row" data-prod="'+p.id+'" data-cat="'+cat.id+'">';
+        html+='<div class="prod-img">'+(p.photo?'<div style="width:38px;height:38px;background:#f97316;border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:16px;">'+EMOJIS[p.comida||s.comida]+'</div>':'<span style="font-size:18px;">📷</span>')+'</div>';
+        html+='<div class="prod-info">';
+        html+='<div class="prod-name" contenteditable="true" data-field="name" data-prod="'+p.id+'" data-cat="'+cat.id+'">'+p.name+'</div>';
+        html+='<div class="prod-desc" contenteditable="true" data-field="desc" data-prod="'+p.id+'" data-cat="'+cat.id+'" style="'+(missingDesc?'color:#cc2200;font-style:italic;':'')+'">'+( missingDesc?'+ Agregar descripción':p.desc)+'</div>';
+        html+='<div class="prod-flags">';
+        html+=(missingPhoto?'<span class="pflag miss">Sin foto</span>':'<span class="pflag ok">Foto ✓</span>');
+        html+=(missingDesc?'<span class="pflag miss">Sin descripción</span>':'');
+        html+='</div></div>';
+        html+='<div style="display:flex;flex-direction:column;align-items:flex-end;gap:6px;">';
+        html+='<div class="prod-price" contenteditable="true" data-field="price" data-prod="'+p.id+'" data-cat="'+cat.id+'">${'+p.price.toLocaleString('es-CO')+'}</div>';
+        html+='<div class="prod-toggle '+(p.on?'on':'off')+'" data-toggle="'+p.id+'" data-cat="'+cat.id+'"><div class="pt-k"></div></div>';
+        html+='</div></div>';
+      });
+      html+='<div class="cat-add-btn" data-add-cat="'+cat.id+'"><span>+</span> Agregar producto</div>';
+      html+='</div>';
+    }
+    html+='</div>';
+  });
+
+  if(m.cats.length===0){html+='<div class="no-prods">📋 No hay categorías todavía. Creá la primera usando el botón de arriba.</div>';}
+
+  document.getElementById('menuBody').innerHTML=html;
+
+  // Wire up events
+  document.querySelectorAll('[data-cat]').forEach(function(el){
+    if(el.classList.contains('cat-header')){
+      el.addEventListener('click',function(){var cid=el.getAttribute('data-cat');openCats[cid]=!openCats[cid];renderMenuBody();});
+    }
+  });
+  document.querySelectorAll('[data-add-cat]').forEach(function(el){
+    el.addEventListener('click',function(e){e.stopPropagation();var cid=el.getAttribute('data-add-cat');addProductTocat(cid);});
+  });
+  document.querySelectorAll('[data-toggle]').forEach(function(el){
+    el.addEventListener('click',function(){var pid=el.getAttribute('data-toggle'),cid=el.getAttribute('data-cat');var m2=getMenu(currentMenuStore);m2.cats.forEach(function(c){if(c.id===cid)c.products.forEach(function(p){if(p.id===pid)p.on=!p.on;});});updateMenuScore();renderMenuBody();});
+  });
+  // Inline editing
+  document.querySelectorAll('[contenteditable="true"]').forEach(function(el){
+    var orig=el.textContent;
+    el.addEventListener('focus',function(){if(el.getAttribute('data-field')==='desc'&&el.textContent==='+ Agregar descripción'){el.textContent='';el.style.color='';el.style.fontStyle='';}});
+    el.addEventListener('blur',function(){saveProdField(el);});
+    el.addEventListener('keydown',function(e){if(e.key==='Enter'){e.preventDefault();el.blur();}if(e.key==='Escape'){el.textContent=orig;el.blur();}});
+  });
+}
+
+function saveProdField(el){
+  var field=el.getAttribute('data-field'),pid=el.getAttribute('data-prod'),cid=el.getAttribute('data-cat');
+  var m=getMenu(currentMenuStore);
+  m.cats.forEach(function(c){if(c.id===cid)c.products.forEach(function(p){
+    if(p.id===pid){
+      if(field==='name'&&el.textContent.trim())p.name=el.textContent.trim();
+      else if(field==='desc')p.desc=el.textContent.trim()==='+ Agregar descripción'?'':el.textContent.trim();
+      else if(field==='price'){var n=parseInt(el.textContent.replace(/\D/g,''));if(!isNaN(n)&&n>0)p.price=n;}
+    }
+  });});
+  updateMenuScore();
+  renderMenuBody();
+}
+
+function addProductTocat(catId){
+  var m=getMenu(currentMenuStore);var nid='p'+(Date.now());
+  m.cats.forEach(function(c){if(c.id===catId)c.products.push({id:nid,name:'Nuevo producto',desc:'',price:15000,photo:false,on:true});});
+  openCats[catId]=true;
+  renderMenuBody();
+  showToast('Producto agregado — editá el nombre y precio');
+}
+
+function updateMenuScore(){
+  var s=stores.find(function(x){return x.id===currentMenuStore;});
+  var sc=menuScore(currentMenuStore);
+  if(sc.overall>30){s.menuDone=true;}
+  updateHomeBadges();
+}
+
+// ─── PANEL ───
+function openPanel(id,tab){
+  var s=stores.find(function(x){return x.id===id;});
+  editId=id;
+  if(!s.horarios)s.horarios=mkH('12:00','22:00',true);
+  tmpH=s.horarios.map(function(h){return Object.assign({},h);});
+  document.getElementById('panelStore').textContent='🏪 '+s.nombre;
+  document.getElementById('pe-n').value=s.nombre;
+  document.getElementById('pe-c').value=s.comida;
+  document.getElementById('pe-d').value=s.direccion;
+  document.getElementById('pe-e').value=s.email||'';
+  document.getElementById('pe-m').value=s.movil||'';
+  var pm=document.getElementById('peMap');
+  if(s.direccion&&s.direccion.length>3)pm.classList.add('vis');else pm.classList.remove('vis');
+  var hasCopy=stores.some(function(x){return x.id!==id&&hSt(x)==='done';});
+  document.getElementById('copyBar').style.display=hasCopy?'flex':'none';
+  renderDias();switchTab(tab||'info');
+  document.getElementById('panelOverlay').style.display='flex';
+}
+function switchTab(tab){
+  document.getElementById('tab-info').style.display=tab==='info'?'block':'none';
+  document.getElementById('tab-horario').style.display=tab==='horario'?'block':'none';
+  document.getElementById('ptab-info').className='ptab'+(tab==='info'?' active':'');
+  document.getElementById('ptab-horario').className='ptab'+(tab==='horario'?' active':'');
+}
+function closePanel(){document.getElementById('panelOverlay').style.display='none';editId=null;tmpH=null;}
+function saveInfo(){
+  var s=stores.find(function(x){return x.id===editId;});
+  var n=document.getElementById('pe-n').value.trim(),d=document.getElementById('pe-d').value.trim();
+  if(!n||!d){showToast('Nombre y dirección son obligatorios');return;}
+  s.nombre=n;s.comida=document.getElementById('pe-c').value;s.direccion=d;
+  s.email=document.getElementById('pe-e').value.trim();s.movil=document.getElementById('pe-m').value.trim();
+  renderTable();closePanel();showToast('✓ Información de "'+n+'" guardada');
+}
+function renderDias(){
+  var tot=calcH(tmpH),el=document.getElementById('hTot');
+  el.textContent=tot;el.style.color=tot>=40?'#166534':'#dc2626';
+  var html='';
+  tmpH.forEach(function(h,i){
+    var off=!h.activo;
+    html+='<div class="dia-row'+(off?' off':'')+'">';
+    html+='<span class="dia-name">'+h.dia+'</span>';
+    html+='<div class="dsel-wrap"><div class="dsel-lbl">Abre</div><select class="dsel" data-i="'+i+'" data-f="abre"'+(off?' disabled':'')+'>'+HORAS.map(function(r){return'<option'+(h.abre===r?' selected':'')+'>'+r+'</option>';}).join('')+'</select></div>';
+    html+='<div class="dsel-wrap"><div class="dsel-lbl">Cierra</div><select class="dsel" data-i="'+i+'" data-f="cierra"'+(off?' disabled':'')+'>'+HORAS.map(function(r){return'<option'+(h.cierra===r?' selected':'')+'>'+r+'</option>';}).join('')+'</select></div>';
+    html+='<div class="tog '+(h.activo?'on':'off')+'" data-ti="'+i+'"><div class="tog-k"></div></div>';
+    html+='</div>';
+  });
+  document.getElementById('diasWrap').innerHTML=html;
+  document.querySelectorAll('.dsel').forEach(function(sel){sel.addEventListener('change',function(){var i=parseInt(sel.getAttribute('data-i')),f=sel.getAttribute('data-f');tmpH[i][f]=sel.value;var t=calcH(tmpH),el=document.getElementById('hTot');el.textContent=t;el.style.color=t>=40?'#166534':'#dc2626';});});
+  document.querySelectorAll('[data-ti]').forEach(function(tog){tog.addEventListener('click',function(){var i=parseInt(tog.getAttribute('data-ti'));tmpH[i].activo=!tmpH[i].activo;renderDias();});});
+}
+function saveHorario(){var s=stores.find(function(x){return x.id===editId;});s.horarios=tmpH.slice();renderTable();closePanel();showToast('✓ Horarios guardados');}
+
+function addStore(){
+  var n=document.getElementById('fN').value.trim(),d=document.getElementById('fD').value.trim(),e=document.getElementById('fE').value.trim();
+  if(!n||!d||!e){showToast('Completá nombre, dirección y correo');return;}
+  var last=stores[stores.length-1];var nid=nextId++;
+  stores.push({id:nid,nombre:n,comida:document.getElementById('fC').value,direccion:d,email:e,movil:document.getElementById('fM').value.trim(),type:'new',horarios:null,menuDone:false});
+  document.getElementById('fC').value=last.comida;document.getElementById('fCTag').style.display='inline';
+  document.getElementById('fN').value='';document.getElementById('fD').value='';document.getElementById('fE').value='';document.getElementById('fM').value='';
+  document.getElementById('fMap').classList.remove('vis');document.getElementById('btnAdd').disabled=true;
+  renderTable();showToast('"'+n+'" agregado');setTimeout(function(){openPanel(nid,'horario');},180);
+}
+
+
+function updateHomeBadges(){
+  updateBadge();
+  var total=stores.length,menuOk=stores.filter(function(s){return s.menuDone;}).length;
+  var mb=document.getElementById('menuBadge'),c3p=document.getElementById('c3prog'),c3=document.getElementById('card3'),c3l=document.getElementById('c3lbl');
+  if(!mb)return;
+  if(menuOk===total&&total>0){mb.textContent='✓ '+total+' menú'+(total===1?'':'s')+' listos';mb.className='sentry-badge b-ok';if(c3p){c3p.style.width='100%';c3p.className='sprog-fill gf';}if(c3)c3.className='scard green';if(c3l)c3l.style.color='#1a7a4a';}
+  else if(menuOk>0){mb.textContent=menuOk+'/'+total+' con menú';mb.className='sentry-badge b-blue';}
+}
+function showToast(msg){var t=document.getElementById('toast');t.textContent=msg;t.classList.add('show');setTimeout(function(){t.classList.remove('show');},2600);}
+
 function showToast(msg){var t=document.getElementById('toast');t.textContent=msg;t.classList.add('show');setTimeout(function(){t.classList.remove('show');},2600);}
 /* Wire up — todo desde addEventListener, cero onclick inline */
 document.getElementById('btnSiguiente1').addEventListener('click',function(){goTo('sc-confirm');setNav(2);});
@@ -437,9 +836,4 @@ document.getElementById('btnSaveH').addEventListener('click',saveHorario);
 document.getElementById('btnCopyH').addEventListener('click',function(){var donor=stores.find(function(s){return s.id!==editId&&hSt(s)==='done';});if(!donor){showToast('No hay otra tienda con horarios completos');return;}tmpH=donor.horarios.map(function(h){return Object.assign({},h);});renderDias();showToast('Horarios copiados');});
 document.getElementById('fN').addEventListener('input',chkForm);
 document.getElementById('fE').addEventListener('input',chkForm);
-document.getElementById('fD').addEventListener('input',function(){dirInput('fD','fMap','fMapSrch');chkForm();});
-document.getElementById('pe-d').addEventListener('input',function(){dirInput('pe-d','peMap','peMapSrch');});
-renderTable();setNav(1);
-</script>
-</body>
-</html>
+document.getElementById('fD').addEvent
