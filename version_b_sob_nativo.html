@@ -597,7 +597,7 @@ function renderMenuSelector(){
     html+='<div class="sc-right">'+badge+'<span style="color:#bbb;font-size:14px;">›</span></div>';
     html+='</div>';
   });
-  document.getElementById('storeGrid').innerHTML=html;
+  document.getElementById('storeSelectGrid').innerHTML=html;
   document.querySelectorAll('[data-sid]').forEach(function(el){
     el.addEventListener('click',function(){openStoreMenu(parseInt(el.getAttribute('data-sid')));});
   });
@@ -611,6 +611,18 @@ function openStoreMenu(sid){
 }
 
 // ── UPLOAD ──
+
+function handleFile(f){
+  var ext=f.name.split('.').pop().toLowerCase();
+  if(!['pdf','jpg','jpeg','png','webp'].includes(ext)){
+    document.getElementById('uploadError').textContent='Solo PDF, JPG, PNG o WEBP';return;
+  }
+  if(f.size>10*1024*1024){
+    document.getElementById('uploadError').textContent='Máximo 10MB';return;
+  }
+  document.getElementById('uploadError').textContent='';
+  startProcessing(f.name);
+}
 function startProcessing(fileName){
   goTo('sc-processing');
   document.getElementById('procFileName').textContent=fileName;
@@ -633,7 +645,7 @@ function startProcessing(fileName){
 function goToProductos(fromUpload){
   getStoreCats(currentStoreId);
   var s=stores.find(function(x){return x.id===currentStoreId;});
-  document.getElementById('menuTitle').textContent='Revisa tu menú';
+  // menuTitle n/a in version B
   document.getElementById('menuSub').textContent='Configuraciones › Revisa tu menú · '+s.name;
   activeFilter=null;searchQ="";searchOpen=false;activeTab="prods";
   document.getElementById('searchBar').style.display='none';
@@ -959,78 +971,11 @@ function renderProductos(){
 function markStoreDone(){
   var s=stores.find(function(x){return x.id===currentStoreId;});
   if(s){s.menuDone=true;updateBadges();}
-  showToast('✓ Menú de "'+s.name+'" guardado');
-  goTo('sc-selector');renderMenuSelector();
+  showToast('✓ Menú de "'+(s.nombre||s.name)+'" guardado');
+  goTo('sc-menu-select');renderMenuSelector();
 }
 
 function showToast(msg){var t=document.getElementById('toast');t.textContent=msg;t.classList.add('show');setTimeout(function(){t.classList.remove('show');},2600);}
-
-// ── WIRE UP ──
-// Selector
-document.getElementById('btnSelBack').addEventListener('click',function(){history.back();});
-document.getElementById('btnDoneAll').addEventListener('click',function(){
-  var pending=stores.filter(function(s){return !s.menuDone;});
-  if(pending.length>0){showToast(pending.length+' restaurante'+(pending.length>1?'s':'')+(pending.length>1?' siguen':' sigue')+' sin menú configurado');return;}
-  showToast('✓ ¡Onboarding completado! Todos los menús están listos.');
-});
-// Upload
-document.getElementById('btnUploadBack').addEventListener('click',function(){goTo('sc-selector');renderMenuSelector();});
-document.getElementById('btnSelectFile').addEventListener('click',function(e){e.stopPropagation();document.getElementById('fileInput').click();});
-document.getElementById('dropZone').addEventListener('click',function(){document.getElementById('fileInput').click();});
-document.getElementById('dropZone').addEventListener('dragover',function(e){e.preventDefault();this.style.background='#eff6ff';});
-document.getElementById('dropZone').addEventListener('dragleave',function(){this.style.background='#fff';});
-document.getElementById('dropZone').addEventListener('drop',function(e){e.preventDefault();this.style.background='#fff';var f=e.dataTransfer.files[0];if(f)handleFile(f);});
-document.getElementById('fileInput').addEventListener('change',function(){if(this.files[0])handleFile(this.files[0]);});
-document.getElementById('btnCreateManual').addEventListener('click',function(){goToProductos(false);});
-
-function handleFile(f){
-  var ext=f.name.split('.').pop().toLowerCase();
-  if(!['pdf','jpg','jpeg','png','webp'].includes(ext)){document.getElementById('uploadError').textContent='Solo PDF, JPG, PNG o WEBP';return;}
-  if(f.size>10*1024*1024){document.getElementById('uploadError').textContent='Máximo 10MB';return;}
-  document.getElementById('uploadError').textContent='';
-  startProcessing(f.name);
-}
-
-// Productos
-document.getElementById('btnProdBack').addEventListener('click',function(){goTo('sc-selector');renderMenuSelector();});
-document.getElementById('btnSearchToggle').addEventListener('click',function(){
-  searchOpen=!searchOpen;
-  document.getElementById('searchBar').style.display=searchOpen?'block':'none';
-  if(searchOpen)document.getElementById('searchInput').focus();
-  else{searchQ='';document.getElementById('searchInput').value='';renderCats();}
-});
-document.getElementById('searchInput').addEventListener('input',function(){searchQ=this.value;renderCats();});
-document.getElementById('btnAddProd').addEventListener('click',function(){
-  var cats=getStoreCats(currentStoreId);var firstCat=cats.find(function(c){return c.id!==UNCAT_ID;});
-  if(firstCat)addProduct(firstCat.id);
-});
-document.getElementById('btnPublish').addEventListener('click',markStoreDone);
-document.getElementById('tab-prods').addEventListener('click',function(){
-  activeTab='prods';
-  this.className='tab active';document.getElementById('tab-custom').className='tab';
-  document.getElementById('tab-prods-body').style.display='block';document.getElementById('tab-custom-body').style.display='none';
-  renderProductos();
-});
-document.getElementById('tab-custom').addEventListener('click',function(){
-  activeTab='custom';
-  this.className='tab active';document.getElementById('tab-prods').className='tab';
-  document.getElementById('tab-prods-body').style.display='none';document.getElementById('tab-custom-body').style.display='block';
-  renderTGs();
-});
-
-// Detail
-document.getElementById('btnDetailBack').addEventListener('click',function(){goToProductos(false);});
-document.getElementById('btnSaveDetail').addEventListener('click',saveDetail);
-document.getElementById('btnDeleteDetail').addEventListener('click',function(){
-  if(!confirm('¿Eliminar este producto?'))return;
-  var pid=editProdId;var cats=storeCats[currentStoreId];
-  cats.forEach(function(c){c.pr=c.pr.filter(function(p){return p.id!==pid;});c.tp=c.pr.length;});
-  delete storeProd[currentStoreId][pid];
-  showToast('Producto eliminado');goToProductos(false);
-});
-
-// Init
-renderMenuSelector();
 
 // ── WIRE UP ──
 // Home
