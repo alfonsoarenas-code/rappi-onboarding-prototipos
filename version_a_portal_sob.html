@@ -204,6 +204,44 @@ tbody td { padding: 8px 11px; color: #1a1a1a; vertical-align: middle; }
 .btn-tbl-save { color: #166534 !important; background: #f0fdf4 !important; border: 1px solid #bbf7d0 !important; }
 .btn-tbl-cancel { color: #6b7280 !important; }
 .acell { display: flex; align-items: center; gap: 3px; }
+.mini-map-wrap { margin-top: 6px; border-radius: 8px; overflow: hidden; border: 1px solid #e8e8e8; display: none; position: relative; }
+.mini-map-wrap.vis { display: block; }
+.overlay { position: fixed; inset: 0; background: rgba(0,0,0,0.42); z-index: 200; display: flex; align-items: flex-end; }
+.panel { background: #fff; border-radius: 16px 16px 0 0; width: 100%; max-height: 90vh; overflow-y: auto; }
+.panel-header { padding: 18px 22px 0; display: flex; align-items: flex-start; justify-content: space-between; margin-bottom: 4px; }
+.panel-title { font-size: 15px; font-weight: 900; color: #1a1a1a; }
+.panel-store { font-size: 12px; color: #ff441b; font-weight: 700; }
+.panel-tabs { display: flex; border-bottom: 2px solid #f0f0f0; margin: 12px 22px 0; }
+.ptab { font-size: 12px; font-weight: 700; padding: 8px 16px; cursor: pointer; border-bottom: 2px solid transparent; margin-bottom: -2px; color: #9ca3af; font-family: inherit; background: none; border-top: none; border-left: none; border-right: none; }
+.ptab.active { color: #ff441b; border-bottom-color: #ff441b; }
+.panel-body { padding: 16px 22px 24px; }
+.pff label { font-size: 9px; font-weight: 700; color: #6b7280; display: block; margin-bottom: 3px; text-transform: uppercase; letter-spacing: 0.03em; }
+.pff input, .pff select { width: 100%; border: 1.5px solid #e8e8e8; border-radius: 7px; padding: 8px 10px; font-size: 12px; color: #1a1a1a; font-family: inherit; background: #fff; outline: none; }
+.pff input:focus, .pff select:focus { border-color: #ff441b; }
+.pfr { display: grid; gap: 9px; margin-bottom: 10px; } .pfr.c2 { grid-template-columns: 1fr 1fr; }
+.pfl { width: 100%; border: 1.5px solid #e8e8e8; border-radius: 7px; padding: 8px 10px; font-size: 12px; background: #f3f4f6; display: flex; align-items: center; justify-content: space-between; }
+.pfl-val { color: #374151; font-weight: 600; } .pfl-tag { font-size: 9px; color: #9ca3af; background: #e5e7eb; padding: 2px 5px; border-radius: 4px; }
+.h-irow { display: flex; align-items: center; justify-content: space-between; margin-bottom: 11px; }
+.h-min { font-size: 12px; color: #374151; background: #f3f4f6; padding: 5px 10px; border-radius: 8px; }
+.h-tot { font-size: 12px; font-weight: 700; color: #374151; }
+.copy-bar { background: #f8faff; border: 1px solid #dbeafe; border-radius: 8px; padding: 8px 12px; margin-bottom: 11px; display: flex; align-items: center; justify-content: space-between; gap: 10px; }
+.dias-wrap { border: 1px solid #e8e8e8; border-radius: 10px; overflow: hidden; margin-bottom: 14px; }
+.dia-row { display: grid; grid-template-columns: 80px 1fr 1fr 32px; align-items: center; gap: 8px; padding: 8px 12px; border-bottom: 1px solid #f3f4f6; }
+.dia-row:last-child { border-bottom: none; } .dia-row.off { background: #fafafa; }
+.dia-name { font-size: 12px; font-weight: 600; color: #374151; } .dia-row.off .dia-name { color: #bbb; }
+.dsel-wrap { display: flex; flex-direction: column; gap: 2px; }
+.dsel-lbl { font-size: 9px; color: #9ca3af; font-weight: 600; text-transform: uppercase; }
+.dsel { border: 1px solid #e5e7eb; border-radius: 6px; padding: 5px 7px; font-size: 11px; color: #1a1a1a; font-family: inherit; background: #fff; outline: none; width: 100%; }
+.dsel:disabled { color: #ccc; background: #fafafa; }
+.tog { width: 30px; height: 16px; border-radius: 9px; position: relative; cursor: pointer; flex-shrink: 0; }
+.tog.on { background: #ff441b; } .tog.off { background: #d1d5db; }
+.tog-k { width: 12px; height: 12px; background: #fff; border-radius: 50%; position: absolute; top: 2px; transition: left 0.15s; }
+.tog.on .tog-k { left: 16px; } .tog.off .tog-k { left: 2px; }
+.btn-blue { background-color: #2563eb !important; border: none !important; color: #fff !important; font-size: 11px !important; font-weight: 700 !important; padding: 5px 11px !important; border-radius: 7px !important; cursor: pointer !important; font-family: inherit !important; white-space: nowrap !important; }
+.btn-blue:hover { background-color: #1d4ed8 !important; }
+.btn-copy { background:#fff !important; border:1px solid #2563eb !important; color:#2563eb !important; font-size:11px !important; font-weight:700 !important; padding:4px 9px !important; border-radius:6px !important; cursor:pointer !important; font-family:inherit !important; }
+.btn-save-panel { background:#ff441b !important; border:none !important; color:#fff !important; font-size:13px !important; font-weight:700 !important; padding:10px !important; border-radius:9px !important; cursor:pointer !important; font-family:inherit !important; width:100% !important; }
+.btn-save-panel:hover { background:#e03a14 !important; }
 .toast { position: fixed; bottom: 18px; left: 50%; transform: translateX(-50%); background: #1a1a1a; color: #fff; font-size: 12px; font-weight: 600; padding: 8px 16px; border-radius: 10px; opacity: 0; transition: opacity 0.25s; pointer-events: none; z-index: 999; white-space: nowrap; font-family: inherit; }
 .toast.show { opacity: 1; }
 </style>
@@ -253,7 +291,7 @@ tbody td { padding: 8px 11px; color: #1a1a1a; vertical-align: middle; }
             <div class="pc-field" style="display:flex;justify-content:space-between;align-items:center;"><div><div class="pc-fl">Prefijo</div><div class="pc-fv">+57</div></div><span style="color:#9ca3af;font-size:10px;">▼</span></div>
             <div class="pc-field"><div class="pc-fl">Teléfono</div><div class="pc-fv">3134350838</div></div>
           </div>
-          <div class="pc-field"><div class="pc-fl">Correo electrónico</div><div class="pc-fv">yolimavargas86@gmail.com</div></div>
+          <div class="pc-field"><div class="pc-fl">Correo electrónico</div><div class="pc-fv"><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="8ff6e0e3e6e2eef9eefde8eefcb7b9cfe8e2eee6e3a1ece0e2">[email&#160;protected]</a></div></div>
           <div class="pc-toggle-row">
             <div class="pc-tog-item"><div class="pc-tog-sw"><div class="pc-tog-k"></div></div><span>Es cocina oculta</span></div>
             <div class="pc-tog-item"><div class="pc-tog-sw"><div class="pc-tog-k"></div></div><span>Centro comercial</span></div>
@@ -350,15 +388,15 @@ tbody td { padding: 8px 11px; color: #1a1a1a; vertical-align: middle; }
   <div class="sw">
     <button class="btn-ghost" id="manageBackBtn">← Volver</button>
     <h2>Mis restaurantes</h2>
-    <div class="sw-sub">La tienda registrada en el Proceso Comercial ya está aquí con horario pre-configurado. Podés agregar sucursales adicionales.</div>
-    <div class="banner blue"><div style="font-size:17px;flex-shrink:0;">🔗</div><div><strong>La Tagoretta Cocina Bar</strong> (Store ID: C0000478225) fue sincronizada desde el Portal Comercial con horarios ya configurados. Editá o agregá sucursales según necesites.</div></div>
+    <div class="sw-sub">Registrá sucursales adicionales y configurá los horarios de cada una de forma independiente.</div>
+
     <div class="legal-bar"><span class="legal-lbl">Datos legales</span><div class="chips"><div class="chip"><span class="chip-lbl">Tipo doc.</span><span class="chip-val">NIT</span><span class="chip-tag">bloqueado</span></div><div class="chip"><span class="chip-lbl">Número</span><span class="chip-val">1030633893</span><span class="chip-tag">bloqueado</span></div></div></div>
-    <div class="t-wrap"><div class="t-head"><span class="t-title">Restaurantes</span><span class="cnt" id="tCnt">1</span></div><table><thead><tr><th>#</th><th>Nombre</th><th>Tipo de comida</th><th>Dirección</th><th>Horario</th><th>Configurar</th><th></th></tr></thead><tbody id="tBody"></tbody></table></div>
+    <div class="t-wrap"><div class="t-head"><span class="t-title">Restaurantes</span><span class="cnt" id="tCnt">1</span></div><table><thead><tr><th>#</th><th>Nombre</th><th>Tipo de comida</th><th>Dirección</th><th>Horario</th><th></th></tr></thead><tbody id="tBody"></tbody></table></div>
     <div class="add-form">
       <div class="add-form-title">Agregar restaurante adicional</div>
       <div class="fr c2"><div class="ff"><label>Nombre del restaurante</label><input id="fN" type="text" placeholder="Ej. La Tagoretta — Zona Norte"></div><div class="ff"><label>Tipo de comida <span class="itag" id="fCTag" style="display:none;">↩ heredado</span></label><select id="fC"><option>Comida rápida</option><option>Desayunos</option><option>Almuerzos</option><option>Cenas</option><option>Postres</option></select></div></div>
       <div class="fr c2"><div class="ff"><label>Tipo de documento</label><div class="fl"><span class="fl-val">NIT</span><span class="fl-tag">Info legal</span></div></div><div class="ff"><label>Número de documento</label><div class="fl"><span class="fl-val">1030633893</span><span class="fl-tag">Info legal</span></div></div></div>
-      <div class="fr c2" style="margin-bottom:0;"><div class="ff"><label>Dirección</label><input id="fD" type="text" placeholder="Ej. Carrera 7 # 45-20, Bogotá"></div><div class="ff"><label>Correo electrónico</label><input id="fE" type="email" placeholder="correo@restaurante.com"></div></div>
+      <div class="fr" style="grid-template-columns:1fr;margin-bottom:9px;"><div class="ff"><label>Dirección <span style="font-size:9px;color:#9ca3af;font-weight:400;text-transform:none;letter-spacing:0;">· geocodificación AWS</span></label><div style="position:relative;"><input id="fD" type="text" placeholder="Ej. Carrera 7 # 45-20, Bogotá" style="padding-right:28px;"><div style="position:absolute;right:9px;top:50%;transform:translateY(-50%);pointer-events:none;"><svg width="13" height="13" viewBox="0 0 16 16" fill="none"><path d="M8 1C5.24 1 3 3.24 3 6c0 3.75 5 9 5 9s5-5.25 5-9c0-2.76-2.24-5-5-5zm0 6.5A1.5 1.5 0 1 1 8 4a1.5 1.5 0 0 1 0 3.5z" fill="#9ca3af"/></svg></div></div><div class="mini-map-wrap" id="fMap"><svg width="100%" height="100" viewBox="0 0 520 100" xmlns="http://www.w3.org/2000/svg" style="display:block;background:#dde4ec;"><rect width="520" height="100" fill="#dde4ec"/><rect x="10" y="7" width="68" height="17" rx="2" fill="#c8d5e8" opacity="0.7"/><rect x="90" y="5" width="50" height="15" rx="2" fill="#c8d5e8" opacity="0.6"/><rect x="155" y="8" width="72" height="16" rx="2" fill="#c8d5e8" opacity="0.6"/><rect x="250" y="4" width="58" height="20" rx="2" fill="#c8d5e8" opacity="0.6"/><rect x="7" y="37" width="80" height="18" rx="2" fill="#c8d5e8" opacity="0.6"/><rect x="98" y="34" width="46" height="16" rx="2" fill="#c8d5e8" opacity="0.6"/><rect x="158" y="37" width="64" height="18" rx="2" fill="#c8d5e8" opacity="0.6"/><rect x="242" y="34" width="76" height="18" rx="2" fill="#c8d5e8" opacity="0.6"/><rect x="10" y="68" width="60" height="15" rx="2" fill="#c8d5e8" opacity="0.6"/><rect x="86" y="65" width="74" height="17" rx="2" fill="#c8d5e8" opacity="0.6"/><rect x="175" y="68" width="50" height="15" rx="2" fill="#c8d5e8" opacity="0.6"/><path d="M0 25 L520 23" stroke="#b8cbe0" stroke-width="6" opacity="0.5" fill="none"/><path d="M0 57 L520 55" stroke="#b8cbe0" stroke-width="8" opacity="0.5" fill="none"/><path d="M138 0 L134 100" stroke="#b8cbe0" stroke-width="5" opacity="0.5" fill="none"/><path d="M305 0 L308 100" stroke="#b8cbe0" stroke-width="8" opacity="0.5" fill="none"/></svg><div style="position:absolute;top:50%;left:50%;transform:translate(-50%,-100%);"><svg width="20" height="27" viewBox="0 0 24 32" fill="none"><path d="M12 0C5.37 0 0 5.37 0 12c0 9 12 20 12 20s12-11 12-20C24 5.37 18.63 0 12 0zm0 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8z" fill="#ff441b"/></svg></div><div style="position:absolute;bottom:4px;right:6px;background:rgba(255,255,255,0.92);font-size:8px;color:#555;padding:2px 5px;border-radius:3px;font-weight:600;">Powered by AWS Location</div><div id="fMapSearch" style="display:none;position:absolute;inset:0;background:rgba(255,255,255,0.8);display:flex;align-items:center;justify-content:center;font-size:11px;color:#888;">Buscando dirección...</div></div></div></div><div class="ff"><label>Correo electrónico</label><input id="fE" type="email" placeholder="correo@restaurante.com"></div></div>
       <div class="fac"><button class="btn-rappi-outline" id="btnAdd" onclick="addStore()" disabled>+ Agregar restaurante</button></div>
     </div>
     <div class="sf"><button class="btn-sec" id="manageFooterBack">Volver</button><button class="btn-rappi" onclick="confirmManage()">Confirmar y continuar →</button></div>
@@ -366,18 +404,28 @@ tbody td { padding: 8px 11px; color: #1a1a1a; vertical-align: middle; }
 </div>
 </div>
 
-<div class="overlay" id="hOverlay" style="display:none;" onclick="closeH(event)">
-  <div class="h-panel" onclick="event.stopPropagation()">
-    <div class="h-phdr"><div><div class="h-ptitle">Horarios de operación</div><div class="h-pstore" id="hStore"></div></div><button class="btn-h-close" onclick="closeH()">✕</button></div>
-    <div class="h-irow"><div class="h-min">Mín. horas semanales: <strong>40</strong></div><div class="h-tot">Horas: <span id="hTot" style="font-size:16px;font-weight:900;color:#2563eb;">0</span></div></div>
-    <div class="copy-bar" id="copyBar" style="display:none;"><span style="font-size:12px;color:#374151;">Copiar horarios de otra sucursal</span><button class="btn-copy" onclick="copyH()">Copiar</button></div>
-    <div class="dias-wrap" id="diasWrap"></div>
-    <button class="btn-save-h" onclick="saveH()">Guardar horarios →</button>
+<div class="overlay" id="panelOverlay" style="display:none;" onclick="closePanelOuter(event)">
+  <div class="panel" onclick="event.stopPropagation()">
+    <div class="panel-header"><div><div class="panel-title">Configurar restaurante</div><div class="panel-store" id="panelStore"></div></div><button class="btn-h-close" onclick="closePanel()">✕</button></div>
+    <div class="panel-tabs"><button class="ptab active" id="ptab-info" onclick="switchTab('info')">📋 Información</button><button class="ptab" id="ptab-horario" onclick="switchTab('horario')">🕐 Horarios</button></div>
+    <div class="panel-body" id="tab-info">
+      <div class="pfr c2"><div class="pff"><label>Nombre del restaurante</label><input id="pe-n" type="text"></div><div class="pff"><label>Tipo de comida</label><select id="pe-c"><option>Comida rápida</option><option>Desayunos</option><option>Almuerzos</option><option>Cenas</option><option>Postres</option></select></div></div>
+      <div class="pfr c2"><div class="pff"><label>Tipo de documento</label><div class="pfl"><span class="pfl-val">NIT</span><span class="pfl-tag">Info legal</span></div></div><div class="pff"><label>Número de documento</label><div class="pfl"><span class="pfl-val">1030633893</span><span class="pfl-tag">Info legal</span></div></div></div>
+      <div class="pfr" style="grid-template-columns:1fr;margin-bottom:10px;"><div class="pff"><label>Dirección <span style="font-size:9px;color:#9ca3af;font-weight:400;text-transform:none;letter-spacing:0;">· geocodificación AWS</span></label><div style="position:relative;"><input id="pe-d" type="text" placeholder="Ej. Carrera 7 # 45-20, Bogotá" style="padding-right:28px;"><div style="position:absolute;right:9px;top:50%;transform:translateY(-50%);pointer-events:none;"><svg width="13" height="13" viewBox="0 0 16 16" fill="none"><path d="M8 1C5.24 1 3 3.24 3 6c0 3.75 5 9 5 9s5-5.25 5-9c0-2.76-2.24-5-5-5zm0 6.5A1.5 1.5 0 1 1 8 4a1.5 1.5 0 0 1 0 3.5z" fill="#9ca3af"/></svg></div></div><div class="mini-map-wrap" id="peMap"><svg width="100%" height="100" viewBox="0 0 520 100" xmlns="http://www.w3.org/2000/svg" style="display:block;background:#dde4ec;"><rect width="520" height="100" fill="#dde4ec"/><rect x="10" y="7" width="68" height="17" rx="2" fill="#c8d5e8" opacity="0.7"/><rect x="90" y="5" width="50" height="15" rx="2" fill="#c8d5e8" opacity="0.6"/><rect x="155" y="8" width="72" height="16" rx="2" fill="#c8d5e8" opacity="0.6"/><rect x="250" y="4" width="58" height="20" rx="2" fill="#c8d5e8" opacity="0.6"/><rect x="7" y="37" width="80" height="18" rx="2" fill="#c8d5e8" opacity="0.6"/><rect x="98" y="34" width="46" height="16" rx="2" fill="#c8d5e8" opacity="0.6"/><rect x="158" y="37" width="64" height="18" rx="2" fill="#c8d5e8" opacity="0.6"/><rect x="242" y="34" width="76" height="18" rx="2" fill="#c8d5e8" opacity="0.6"/><rect x="10" y="68" width="60" height="15" rx="2" fill="#c8d5e8" opacity="0.6"/><rect x="86" y="65" width="74" height="17" rx="2" fill="#c8d5e8" opacity="0.6"/><path d="M0 25 L520 23" stroke="#b8cbe0" stroke-width="6" opacity="0.5" fill="none"/><path d="M0 57 L520 55" stroke="#b8cbe0" stroke-width="8" opacity="0.5" fill="none"/><path d="M138 0 L134 100" stroke="#b8cbe0" stroke-width="5" opacity="0.5" fill="none"/><path d="M305 0 L308 100" stroke="#b8cbe0" stroke-width="8" opacity="0.5" fill="none"/></svg><div style="position:absolute;top:50%;left:50%;transform:translate(-50%,-100%);"><svg width="20" height="27" viewBox="0 0 24 32" fill="none"><path d="M12 0C5.37 0 0 5.37 0 12c0 9 12 20 12 20s12-11 12-20C24 5.37 18.63 0 12 0zm0 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8z" fill="#ff441b"/></svg></div><div style="position:absolute;bottom:4px;right:6px;background:rgba(255,255,255,0.92);font-size:8px;color:#555;padding:2px 5px;border-radius:3px;font-weight:600;">Powered by AWS Location</div><div id="peMapSearch" style="display:none;position:absolute;inset:0;background:rgba(255,255,255,0.8);display:none;align-items:center;justify-content:center;font-size:11px;color:#888;">Buscando...</div></div></div></div>
+      <div class="pfr c2" style="margin-bottom:14px;"><div class="pff"><label>Correo electrónico</label><input id="pe-e" type="email" placeholder="correo@restaurante.com"></div><div class="pff"><label>Móvil</label><input id="pe-m" type="tel" placeholder="Ej. 3134350838"></div></div>
+      <button class="btn-save-panel" onclick="saveInfo()">Guardar información →</button>
+    </div>
+    <div class="panel-body" id="tab-horario" style="display:none;">
+      <div class="h-irow"><div class="h-min">Mín. horas semanales: <strong>40</strong></div><div class="h-tot">Horas: <span id="hTot" style="font-size:16px;font-weight:900;color:#2563eb;">0</span></div></div>
+      <div class="copy-bar" id="copyBar" style="display:none;"><span style="font-size:12px;color:#374151;">Copiar horarios de otra sucursal</span><button class="btn-copy" onclick="copyH()">Copiar</button></div>
+      <div class="dias-wrap" id="diasWrap"></div>
+      <button class="btn-save-panel" onclick="saveHorario()">Guardar horarios →</button>
+    </div>
   </div>
 </div>
 <div class="toast" id="toast"></div>
 
-<script>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
 var HORAS=['06:00','07:00','08:00','09:00','10:00','11:00','12:00','13:00','14:00','15:00','16:00','17:00','18:00','19:00','20:00','21:00','22:00','23:00','00:00'];
 var DIAS=['Lunes','Martes','Miércoles','Jueves','Viernes','Sábado','Domingo'];
 var COMIDA=['Comida rápida','Desayunos','Almuerzos','Cenas','Postres'];
@@ -385,7 +433,7 @@ function mkH(a,c,act){return DIAS.map(function(d){return{dia:d,activo:act,abre:a
 function calcH(h){return h.reduce(function(acc,x){if(!x.activo)return acc;var a=parseInt(x.abre),c=parseInt(x.cierra);if(isNaN(a)||isNaN(c))return acc;if(c<=a)c+=24;return acc+(c-a);},0);}
 function hSt(s){if(!s.horarios)return'pend';var d=s.horarios.filter(function(x){return x.activo;}).length,h=calcH(s.horarios);if(d===0)return'pend';if(h>=40)return'done';return'partial';}
 function hLbl(s){var st=hSt(s);if(st==='pend')return{cls:'pend',txt:'Sin configurar'};var h=calcH(s.horarios),d=s.horarios.filter(function(x){return x.activo;}).length;if(st==='done')return{cls:'done',txt:d+' días · '+h+' hs/sem'};return{cls:'partial',txt:h+' hs — mín 40'};}
-var stores=[{id:1,nombre:'La Tagoretta Cocina Bar',comida:'Comida rápida',direccion:'Calle 6C 9, Valledupar',type:'original',horarios:mkH('12:00','22:00',true)}];
+var stores=[{id:1,nombre:'La Tagoretta Cocina Bar',comida:'Comida rápida',direccion:'Calle 6C 9, Valledupar',email:'yolima@gmail.com',movil:'',type:'original',horarios:mkH('12:00','22:00',true)}];
 var nextId=2,editHId=null,editRId=null,tmpH=null;
 function goTo(id){document.querySelectorAll('.sc').forEach(function(s){s.classList.remove('a');});document.getElementById(id).classList.add('a');}
 function setNav(active){['np1','np2','np3','np4'].forEach(function(id,i){var el=document.getElementById(id);if(i+1<active)el.className='step-pill done';else if(i+1===active)el.className='step-pill active';else el.className='step-pill';});}
@@ -405,7 +453,7 @@ function cancelEdit(){editRId=null;renderTable();}
 function saveRowEdit(id){var s=stores.find(function(x){return x.id===id;});var n=document.getElementById('ei-n-'+id).value.trim(),d=document.getElementById('ei-d-'+id).value.trim();if(!n||!d){showToast('Nombre y dirección son obligatorios');return;}s.nombre=n;s.comida=document.getElementById('ei-c-'+id).value;s.direccion=d;editRId=null;renderTable();showToast('Cambios guardados');}
 function delStore(id){stores=stores.filter(function(x){return x.id!==id;});if(editRId===id)editRId=null;renderTable();showToast('Restaurante eliminado');}
 function chkForm(){var ok=document.getElementById('fN').value.trim()&&document.getElementById('fD').value.trim()&&document.getElementById('fE').value.trim();document.getElementById('btnAdd').disabled=!ok;}
-function addStore(){var n=document.getElementById('fN').value.trim(),d=document.getElementById('fD').value.trim(),e=document.getElementById('fE').value.trim();if(!n||!d||!e){showToast('Completá nombre, dirección y correo');return;}var last=stores[stores.length-1];stores.push({id:nextId++,nombre:n,comida:document.getElementById('fC').value,direccion:d,email:e,type:'new',horarios:null});document.getElementById('fC').value=last.comida;document.getElementById('fCTag').style.display='inline';document.getElementById('fN').value='';document.getElementById('fD').value='';document.getElementById('fE').value='';document.getElementById('btnAdd').disabled=true;renderTable();showToast('"'+n+'" agregado — configurá sus horarios');}
+function addStore(){var n=document.getElementById('fN').value.trim(),d=document.getElementById('fD').value.trim(),e=document.getElementById('fE').value.trim();if(!n||!d||!e){showToast('Completá nombre, dirección y correo');return;}var last=stores[stores.length-1];var newId=nextId++;stores.push({id:newId,nombre:n,comida:document.getElementById('fC').value,direccion:d,email:e,movil:'',type:'new',horarios:null});document.getElementById('fC').value=last.comida;document.getElementById('fCTag').style.display='inline';document.getElementById('fN').value='';document.getElementById('fD').value='';document.getElementById('fE').value='';var fm=document.getElementById('fMap');if(fm)fm.classList.remove('vis');document.getElementById('btnAdd').disabled=true;renderTable();showToast('"'+n+'" agregado');setTimeout(function(){openPanel(newId,'horario');},180);}
 function updateBadge(){var total=stores.length,hOk=stores.filter(function(s){return hSt(s)==='done';}).length;var badge=document.getElementById('sobBadge'),prog=document.getElementById('c2prog');if(hOk===total&&total>0){badge.textContent='✓ '+total+' restaurant'+(total===1?'e':'es');badge.className='sentry-badge b-ok';prog.style.width='100%';prog.style.background='#4CAF50';}else if(hOk>0||total>1){badge.textContent=hOk+'/'+total+' con horario';badge.className='sentry-badge b-blue';prog.style.width=Math.round(((hOk+1)/(total+1))*80+20)+'%';prog.style.background='#2563eb';}}
 function confirmManage(){var pend=stores.filter(function(s){return hSt(s)!=='done';});if(pend.length>0){showToast('Falta configurar horarios en '+pend.length+' tienda'+(pend.length>1?'s':''));return;}updateBadge();goTo('sc-sob-home');setNav(3);showToast('✓ Restaurantes y horarios confirmados');}
 function openH(id){var s=stores.find(function(x){return x.id===id;});if(!s.horarios)s.horarios=mkH('12:00','22:00',true);editHId=id;tmpH=s.horarios.map(function(h){return Object.assign({},h);});document.getElementById('hStore').textContent='🏪 '+s.nombre;var hasCopy=stores.some(function(x){return x.id!==id&&hSt(x)==='done';});document.getElementById('copyBar').style.display=hasCopy?'flex':'none';renderDias();document.getElementById('hOverlay').style.display='flex';}
@@ -417,12 +465,8 @@ function copyH(){var donor=stores.find(function(s){return s.id!==editHId&&hSt(s)
 function saveH(){var s=stores.find(function(x){return x.id===editHId;});s.horarios=tmpH.slice();document.getElementById('hOverlay').style.display='none';editHId=null;tmpH=null;renderTable();updateBadge();showToast('✓ Horarios de "'+s.nombre.split(' — ')[0]+'" guardados');}
 function showToast(msg){var t=document.getElementById('toast');t.textContent=msg;t.classList.add('show');setTimeout(function(){t.classList.remove('show');},2600);}
 document.getElementById('sobEntry').addEventListener('click',function(){goTo('sc-sob-manage');setNav(4);renderTable();});
+document.getElementById('fD').addEventListener('input',function(){dirInput('fD','fMap','fMapSearch');});
+document.getElementById('pe-d').addEventListener('input',function(){dirInput('pe-d','peMap','peMapSearch');});
 document.getElementById('manageBackBtn').onclick=function(){goTo('sc-sob-home');setNav(3);};
 document.getElementById('manageFooterBack').onclick=function(){goTo('sc-sob-home');setNav(3);};
-document.getElementById('fN').addEventListener('input',chkForm);
-document.getElementById('fD').addEventListener('input',chkForm);
-document.getElementById('fE').addEventListener('input',chkForm);
-renderTable();setNav(1);
-</script>
-</body>
-</html>
+document.ge

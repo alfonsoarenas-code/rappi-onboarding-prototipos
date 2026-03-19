@@ -25,13 +25,13 @@ body { font-family: 'Segoe UI', Arial, sans-serif; background: #f5f5f5; }
 .scard.red   { border-color: #ffccc7; background: #fff8f7; }
 .scard.green { border-color: #b7eac8; background: #f4fef7; }
 .scard.plain { background: #fff; border-color: #e8e8e8; }
-.scard-lbl { font-size: 11px; font-weight: 700; margin-bottom: 6px; transition: color 0.3s; }
+.scard-lbl { font-size: 11px; font-weight: 700; margin-bottom: 6px; }
 .scard.red   .scard-lbl { color: #cc2200; }
 .scard.green .scard-lbl { color: #1a7a4a; }
 .scard.plain .scard-lbl { color: #888; }
 .scard-img { position: absolute; top: 10px; right: 10px; font-size: 25px; line-height: 1; }
 .scard-title { font-size: 13px; font-weight: 900; color: #1a1a1a; margin-bottom: 8px; padding-right: 32px; line-height: 1.25; }
-.schk { display: flex; align-items: center; gap: 6px; font-size: 11.5px; margin-bottom: 5px; transition: color 0.3s; }
+.schk { display: flex; align-items: center; gap: 6px; font-size: 11.5px; margin-bottom: 5px; }
 .schk.done { color: #1a7a4a; } .schk.warn { color: #cc2200; } .schk.pend { color: #9ca3af; }
 .sprog { margin-top: 9px; }
 .sprog-track { height: 5px; background: #e8e8e8; border-radius: 3px; overflow: hidden; }
@@ -48,7 +48,6 @@ body { font-family: 'Segoe UI', Arial, sans-serif; background: #f5f5f5; }
 .b-ok   { background: #e8f5e9; color: #2e7d32; }
 .b-blue { background: #eff6ff; color: #1d4ed8; }
 .b-gray { background: #f5f5f5; color: #888; }
-/* CHOICE */
 .choice-wrap { padding: 28px 26px; max-width: 520px; margin: 0 auto; }
 .choice-wrap h2 { font-size: 20px; font-weight: 900; color: #1a1a1a; margin-bottom: 5px; }
 .choice-wrap p { font-size: 13px; color: #666; margin-bottom: 22px; }
@@ -60,14 +59,9 @@ body { font-family: 'Segoe UI', Arial, sans-serif; background: #f5f5f5; }
 .choice-card-title { font-size: 14px; font-weight: 900; color: #1a1a1a; margin-bottom: 5px; }
 .choice-card-sub { font-size: 12px; color: #888; line-height: 1.4; }
 .choice-actions { margin-top: 20px; display: flex; justify-content: flex-end; }
-/* MANAGE */
 .sw { padding: 18px 26px 28px; }
 .sw h2 { font-size: 17px; font-weight: 900; color: #1a1a1a; margin-bottom: 3px; }
 .sw-sub { font-size: 12px; color: #888; margin-bottom: 13px; }
-.banner { border-radius: 10px; padding: 10px 13px; margin-bottom: 13px; display: flex; align-items: flex-start; gap: 9px; font-size: 12px; line-height: 1.5; }
-.banner.green { background: #f0fdf4; border: 1px solid #bbf7d0; color: #166534; }
-.banner-icon { width: 18px; height: 18px; background: #4CAF50; border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 1px; }
-.banner-icon svg { width: 10px; height: 10px; }
 .legal-bar { background: #f8faff; border: 1px solid #dbeafe; border-radius: 10px; padding: 9px 13px; margin-bottom: 13px; display: flex; align-items: center; gap: 11px; flex-wrap: wrap; }
 .legal-lbl { font-size: 10px; font-weight: 700; color: #6b7280; text-transform: uppercase; letter-spacing: 0.04em; }
 .chips { display: flex; gap: 7px; }
@@ -79,7 +73,7 @@ body { font-family: 'Segoe UI', Arial, sans-serif; background: #f5f5f5; }
 .cnt { background: #fff0ec; color: #ff441b; font-size: 11px; font-weight: 700; padding: 2px 8px; border-radius: 20px; }
 table { width: 100%; border-collapse: collapse; font-size: 12px; }
 thead th { text-align: left; padding: 7px 11px; font-size: 10px; font-weight: 700; color: #6b7280; background: #f9fafb; border-bottom: 1px solid #f0f0f0; white-space: nowrap; }
-tbody tr { border-bottom: 1px solid #f3f4f6; } tbody tr:last-child { border-bottom: none; } tbody tr:hover { background: #fafffe; } tbody tr.row-edit { background: #fff9f8; }
+tbody tr { border-bottom: 1px solid #f3f4f6; } tbody tr:last-child { border-bottom: none; } tbody tr:hover { background: #fafffe; }
 tbody td { padding: 8px 11px; color: #1a1a1a; vertical-align: middle; }
 .p-food { background: #f0fdf4; color: #166534; font-size: 10px; font-weight: 700; padding: 1px 7px; border-radius: 4px; }
 .p-orig { background: #dcfce7; color: #166534; font-size: 10px; font-weight: 700; padding: 1px 7px; border-radius: 20px; }
@@ -87,8 +81,6 @@ tbody td { padding: 8px 11px; color: #1a1a1a; vertical-align: middle; }
 .h-st { display: flex; align-items: center; gap: 5px; font-size: 11px; }
 .h-dot { width: 7px; height: 7px; border-radius: 50%; flex-shrink: 0; }
 .h-dot.done { background: #4CAF50; } .h-dot.pend { background: #d1d5db; } .h-dot.partial { background: #f97316; }
-.ii { border: 1.5px solid #ff441b; border-radius: 5px; padding: 4px 7px; font-size: 11px; color: #1a1a1a; font-family: inherit; background: #fff; outline: none; }
-.is { border: 1.5px solid #ff441b; border-radius: 5px; padding: 4px 7px; font-size: 11px; color: #1a1a1a; font-family: inherit; background: #fff; outline: none; }
 .add-form { background: #fff; border: 1px solid #e8e8e8; border-radius: 12px; padding: 14px; margin-bottom: 13px; }
 .add-form-title { font-size: 12px; font-weight: 700; color: #1a1a1a; margin-bottom: 11px; }
 .fr { display: grid; gap: 9px; margin-bottom: 9px; } .fr.c2 { grid-template-columns: 1fr 1fr; }
@@ -100,17 +92,31 @@ tbody td { padding: 8px 11px; color: #1a1a1a; vertical-align: middle; }
 .itag { font-size: 9px; color: #ff441b; background: #fff0ec; padding: 1px 5px; border-radius: 4px; margin-left: 3px; font-weight: 600; }
 .fac { display: flex; justify-content: flex-end; margin-top: 9px; }
 .sf { display: flex; justify-content: space-between; align-items: center; margin-top: 14px; }
-/* HORARIO */
+.mini-map-wrap { margin-top: 6px; border-radius: 8px; overflow: hidden; border: 1px solid #e8e8e8; display: none; position: relative; }
+.mini-map-wrap.vis { display: block; }
+.map-search-overlay { position: absolute; inset: 0; background: rgba(255,255,255,0.8); display: flex; align-items: center; justify-content: center; font-size: 11px; color: #888; }
+.map-aws-badge { position: absolute; bottom: 5px; right: 7px; background: rgba(255,255,255,0.92); font-size: 8px; color: #555; padding: 2px 6px; border-radius: 4px; font-weight: 600; }
+.map-pin-abs { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -100%); }
 .overlay { position: fixed; inset: 0; background: rgba(0,0,0,0.42); z-index: 200; display: flex; align-items: flex-end; }
-.h-panel { background: #fff; border-radius: 16px 16px 0 0; padding: 20px 22px 24px; width: 100%; max-height: 85vh; overflow-y: auto; }
-.h-phdr { display: flex; align-items: flex-start; justify-content: space-between; margin-bottom: 4px; }
-.h-ptitle { font-size: 15px; font-weight: 900; color: #1a1a1a; }
-.h-pstore { font-size: 12px; color: #ff441b; font-weight: 700; margin-bottom: 12px; }
+.panel { background: #fff; border-radius: 16px 16px 0 0; width: 100%; max-height: 90vh; overflow-y: auto; }
+.panel-header { padding: 18px 22px 0; display: flex; align-items: flex-start; justify-content: space-between; margin-bottom: 4px; }
+.panel-title { font-size: 15px; font-weight: 900; color: #1a1a1a; }
+.panel-store { font-size: 12px; color: #ff441b; font-weight: 700; }
+.panel-tabs { display: flex; border-bottom: 2px solid #f0f0f0; margin: 12px 22px 0; }
+.ptab { font-size: 12px; font-weight: 700; padding: 8px 16px; cursor: pointer; border-bottom: 2px solid transparent; margin-bottom: -2px; color: #9ca3af; font-family: inherit; background: none; border-top: none; border-left: none; border-right: none; }
+.ptab.active { color: #ff441b; border-bottom-color: #ff441b; }
+.panel-body { padding: 16px 22px 24px; }
+.pff label { font-size: 9px; font-weight: 700; color: #6b7280; display: block; margin-bottom: 3px; text-transform: uppercase; letter-spacing: 0.03em; }
+.pff input, .pff select { width: 100%; border: 1.5px solid #e8e8e8; border-radius: 7px; padding: 8px 10px; font-size: 12px; color: #1a1a1a; font-family: inherit; background: #fff; outline: none; }
+.pff input:focus, .pff select:focus { border-color: #ff441b; } .pff input::placeholder { color: #c0c4cc; }
+.pfr { display: grid; gap: 9px; margin-bottom: 10px; } .pfr.c2 { grid-template-columns: 1fr 1fr; }
+.pfl { width: 100%; border: 1.5px solid #e8e8e8; border-radius: 7px; padding: 8px 10px; font-size: 12px; background: #f3f4f6; display: flex; align-items: center; justify-content: space-between; }
+.pfl-val { color: #374151; font-weight: 600; } .pfl-tag { font-size: 9px; color: #9ca3af; background: #e5e7eb; padding: 2px 5px; border-radius: 4px; }
 .h-irow { display: flex; align-items: center; justify-content: space-between; margin-bottom: 11px; }
 .h-min { font-size: 12px; color: #374151; background: #f3f4f6; padding: 5px 10px; border-radius: 8px; }
 .h-tot { font-size: 12px; font-weight: 700; color: #374151; }
 .copy-bar { background: #f8faff; border: 1px solid #dbeafe; border-radius: 8px; padding: 8px 12px; margin-bottom: 11px; display: flex; align-items: center; justify-content: space-between; gap: 10px; }
-.dias-wrap { border: 1px solid #e8e8e8; border-radius: 10px; overflow: hidden; margin-bottom: 13px; }
+.dias-wrap { border: 1px solid #e8e8e8; border-radius: 10px; overflow: hidden; margin-bottom: 14px; }
 .dia-row { display: grid; grid-template-columns: 80px 1fr 1fr 32px; align-items: center; gap: 8px; padding: 8px 12px; border-bottom: 1px solid #f3f4f6; }
 .dia-row:last-child { border-bottom: none; } .dia-row.off { background: #fafafa; }
 .dia-name { font-size: 12px; font-weight: 600; color: #374151; } .dia-row.off .dia-name { color: #bbb; }
@@ -122,7 +128,6 @@ tbody td { padding: 8px 11px; color: #1a1a1a; vertical-align: middle; }
 .tog.on { background: #ff441b; } .tog.off { background: #d1d5db; }
 .tog-k { width: 12px; height: 12px; background: #fff; border-radius: 50%; position: absolute; top: 2px; transition: left 0.15s; }
 .tog.on .tog-k { left: 16px; } .tog.off .tog-k { left: 2px; }
-/* BUTTONS */
 .btn-salir { background:#fff !important; border:2px solid #1a1a1a !important; color:#1a1a1a !important; font-size:13px !important; font-weight:700 !important; padding:7px 17px !important; border-radius:8px !important; cursor:pointer !important; font-family:inherit !important; }
 .btn-sob-ini { background:#2563eb !important; border:none !important; color:#fff !important; font-size:11px !important; font-weight:700 !important; padding:7px 14px !important; border-radius:9px !important; cursor:pointer !important; font-family:inherit !important; display:inline-flex !important; margin-top:9px !important; align-self:flex-start !important; }
 .btn-ghost { background:none !important; border:none !important; color:#888 !important; font-size:13px !important; font-weight:600 !important; cursor:pointer !important; font-family:inherit !important; padding:0 !important; margin-bottom:14px !important; display:block !important; }
@@ -135,33 +140,24 @@ tbody td { padding: 8px 11px; color: #1a1a1a; vertical-align: middle; }
 .btn-sec { background:#fff !important; border:1.5px solid #d1d5db !important; color:#374151 !important; font-size:12px !important; font-weight:600 !important; padding:8px 17px !important; border-radius:8px !important; cursor:pointer !important; font-family:inherit !important; }
 .btn-next { background:#ff441b !important; border:none !important; color:#fff !important; font-size:14px !important; font-weight:700 !important; padding:10px 26px !important; border-radius:10px !important; cursor:pointer !important; font-family:inherit !important; }
 .btn-next:disabled { background:#ffccc7 !important; cursor:not-allowed !important; }
-.btn-h-conf { background:#fff !important; border:1.5px solid #f97316 !important; color:#c2410c !important; font-size:11px !important; font-weight:700 !important; padding:4px 9px !important; border-radius:6px !important; cursor:pointer !important; font-family:inherit !important; white-space:nowrap !important; }
-.btn-h-conf.ok { border-color:#4CAF50 !important; color:#166534 !important; }
+.btn-blue { background:#2563eb !important; border:none !important; color:#fff !important; font-size:11px !important; font-weight:700 !important; padding:5px 11px !important; border-radius:7px !important; cursor:pointer !important; font-family:inherit !important; white-space:nowrap !important; }
+.btn-blue:hover { background:#1d4ed8 !important; }
+.btn-del { background:none !important; border:none !important; color:#d1d5db !important; font-size:14px !important; cursor:pointer !important; padding:2px 4px !important; border-radius:4px !important; font-family:inherit !important; }
+.btn-del:hover { color:#ff441b !important; background:#fff0ec !important; }
 .btn-h-close { background:none !important; border:none !important; cursor:pointer !important; font-size:20px !important; color:#aaa !important; padding:0 !important; line-height:1 !important; }
 .btn-copy { background:#fff !important; border:1px solid #2563eb !important; color:#2563eb !important; font-size:11px !important; font-weight:700 !important; padding:4px 9px !important; border-radius:6px !important; cursor:pointer !important; font-family:inherit !important; }
-.btn-save-h { background:#ff441b !important; border:none !important; color:#fff !important; font-size:13px !important; font-weight:700 !important; padding:10px !important; border-radius:9px !important; cursor:pointer !important; font-family:inherit !important; width:100% !important; }
-.btn-save-h:hover { background:#e03a14 !important; }
-.btn-del { background:none !important; border:none !important; color:#d1d5db !important; font-size:13px !important; cursor:pointer !important; padding:2px 4px !important; border-radius:4px !important; font-family:inherit !important; }
-.btn-del:hover { color:#ff441b !important; background:#fff0ec !important; }
-.btn-tbl { background:none !important; border:none !important; cursor:pointer !important; font-size:11px !important; font-weight:600 !important; padding:3px 6px !important; border-radius:4px !important; font-family:inherit !important; white-space:nowrap !important; }
-.btn-tbl-edit { color:#2563eb !important; } .btn-tbl-edit:hover { background:#eff6ff !important; }
-.btn-tbl-save { color:#166534 !important; background:#f0fdf4 !important; border:1px solid #bbf7d0 !important; }
-.btn-tbl-cancel { color:#6b7280 !important; }
-.acell { display:flex; align-items:center; gap:3px; }
-.toast { position:fixed; bottom:18px; left:50%; transform:translateX(-50%); background:#1a1a1a; color:#fff; font-size:12px; font-weight:600; padding:8px 16px; border-radius:10px; opacity:0; transition:opacity 0.25s; pointer-events:none; z-index:999; white-space:nowrap; font-family:inherit; }
+.btn-save-panel { background:#ff441b !important; border:none !important; color:#fff !important; font-size:13px !important; font-weight:700 !important; padding:10px !important; border-radius:9px !important; cursor:pointer !important; font-family:inherit !important; width:100% !important; }
+.btn-save-panel:hover { background:#e03a14 !important; }
+.toast { position:fixed; bottom:18px; left:50%; transform:translateX(-50%); background:#1a1a1a; color:#fff; font-size:12px; font-weight:600; padding:8px 16px; border-radius:10px; opacity:0; transition:opacity 0.25s; pointer-events:none; z-index:999; white-space:nowrap; }
 .toast.show { opacity:1; }
 </style>
 </head>
 <body>
-
 <div class="top-nav">
   <span class="top-nav-label">Versión B — SOB Nativo</span>
-  <span class="step-pill active" id="np1">1 · Home</span>
-  <span class="step-arrow">›</span>
-  <span class="step-pill" id="np2">2 · ¿1 o varias?</span>
-  <span class="step-arrow">›</span>
-  <span class="step-pill" id="np3">3 · Restaurantes y horarios</span>
-  <span class="step-arrow">›</span>
+  <span class="step-pill active" id="np1">1 · Home</span><span class="step-arrow">›</span>
+  <span class="step-pill" id="np2">2 · ¿1 o varias?</span><span class="step-arrow">›</span>
+  <span class="step-pill" id="np3">3 · Restaurantes y horarios</span><span class="step-arrow">›</span>
   <span class="step-pill" id="np4">4 · Confirmado</span>
   <span class="version-tag">SOB Nativo</span>
 </div>
@@ -172,40 +168,11 @@ tbody td { padding: 8px 11px; color: #1a1a1a; vertical-align: middle; }
   <nav class="sob-nav"><span class="sob-logo">Rappi</span><button class="btn-salir">Salir</button></nav>
   <div class="sob-hero"><div style="font-size:56px;line-height:1;">🧢</div><h1>¡Tu información aún no coincide<br>para el registro!</h1></div>
   <div class="sob-cards">
-    <!-- Card 1 — rojo, aliado nuevo -->
-    <div class="scard red">
-      <div class="scard-lbl">Paso 1</div><div class="scard-img">🤌💵</div>
-      <div class="scard-title">Información bancaria, legal y tipo de entrega</div>
-      <div class="schk done">✅ Información legal</div>
-      <div class="schk warn">⚠️ Información bancaria</div>
-      <div class="schk done">✅ Tipo de entrega</div>
-      <div class="sprog"><div class="sprog-track"><div class="sprog-fill gf" style="width:66%;"></div></div></div>
-      <button class="btn-sob-ini">Iniciar →</button>
-    </div>
-    <!-- Card 2 — empieza gris, se actualiza al hacer click en gestionar -->
-    <div class="scard plain" id="card2">
-      <div class="scard-lbl" id="c2lbl">Paso 2</div><div class="scard-img">👨</div>
-      <div class="scard-title">Logo y horario</div>
-      <div class="schk pend" id="c2logo">⬜ Logo</div>
-      <div class="schk pend" id="c2horario">⬜ Horario comercial</div>
-      <div class="sprog"><div class="sprog-track"><div class="sprog-fill gr" id="c2prog" style="width:0%;"></div></div></div>
-      <div class="sentry" id="entryGestionar">
-        <span class="sentry-lbl">Gestionar restaurantes</span>
-        <span class="sentry-badge b-gray" id="manageBadge">Pendiente</span>
-        <span class="sentry-arrow">›</span>
-      </div>
-      <button class="btn-sob-ini">Iniciar →</button>
-    </div>
-    <!-- Card 3 -->
-    <div class="scard plain">
-      <div class="scard-lbl">Último paso</div><div class="scard-img">🍽️</div>
-      <div class="scard-title">Menú y gestión de órdenes</div>
-      <p style="font-size:11.5px;color:#555;margin-bottom:8px;">Crea el menú que van a ver tus consumidores</p>
-      <div class="sextra"><div class="sextra-dot"></div><span class="sextra-link">Usa IA y carga para ahorrar tiempo</span></div>
-      <div class="sextra"><span style="font-size:14px;">💬</span><span>Recibe y gestiona tus órdenes en WhatsApp</span></div>
-      <div class="sprog"><div class="sprog-track"><div class="sprog-fill gr" style="width:5%;"></div></div></div>
-      <button class="btn-sob-ini">Iniciar →</button>
-    </div>
+    <div class="scard red"><div class="scard-lbl">Paso 1</div><div class="scard-img">🤌💵</div><div class="scard-title">Información bancaria, legal y tipo de entrega</div><div class="schk done">✅ Información legal</div><div class="schk warn">⚠️ Información bancaria</div><div class="schk done">✅ Tipo de entrega</div><div class="sprog"><div class="sprog-track"><div class="sprog-fill gf" style="width:66%;"></div></div></div><button class="btn-sob-ini">Iniciar →</button></div>
+    <div class="scard plain" id="card2"><div class="scard-lbl" id="c2lbl">Paso 2</div><div class="scard-img">👨</div><div class="scard-title">Logo y horario</div><div class="schk pend" id="c2logo">⬜ Logo</div><div class="schk pend" id="c2horario">⬜ Horario comercial</div><div class="sprog"><div class="sprog-track"><div class="sprog-fill gr" id="c2prog" style="width:0%;"></div></div></div>
+      <div class="sentry" id="entryGestionar"><span class="sentry-lbl">Gestionar restaurantes</span><span class="sentry-badge b-gray" id="manageBadge">Pendiente</span><span class="sentry-arrow">›</span></div>
+      <button class="btn-sob-ini">Iniciar →</button></div>
+    <div class="scard plain"><div class="scard-lbl">Último paso</div><div class="scard-img">🍽️</div><div class="scard-title">Menú y gestión de órdenes</div><p style="font-size:11.5px;color:#555;margin-bottom:8px;">Crea el menú que van a ver tus consumidores</p><div class="sextra"><div class="sextra-dot"></div><span class="sextra-link">Usa IA y carga para ahorrar tiempo</span></div><div class="sextra"><span style="font-size:14px;">💬</span><span>Recibe y gestiona tus órdenes en WhatsApp</span></div><div class="sprog"><div class="sprog-track"><div class="sprog-fill gr" style="width:5%;"></div></div></div><button class="btn-sob-ini">Iniciar →</button></div>
   </div>
 </div>
 </div>
@@ -217,18 +184,10 @@ tbody td { padding: 8px 11px; color: #1a1a1a; vertical-align: middle; }
   <div class="choice-wrap">
     <button class="btn-ghost" onclick="goTo('sc-home');setNav(1);">← Volver</button>
     <h2>¿Cuántos restaurantes tenés?</h2>
-    <p>Completaste el logo y el horario comercial. Ahora decinos cuántas ubicaciones querés registrar.</p>
+    <p>Completaste el logo y el horario comercial. Decinos cuántas ubicaciones querés registrar.</p>
     <div class="choice-grid">
-      <div class="choice-card" id="ch-single" onclick="selectChoice('single')">
-        <div class="choice-card-icon">🏠</div>
-        <div class="choice-card-title">Solo un restaurante</div>
-        <div class="choice-card-sub">Tengo una única ubicación y quiero configurar su menú</div>
-      </div>
-      <div class="choice-card" id="ch-multi" onclick="selectChoice('multi')">
-        <div class="choice-card-icon">🏘️</div>
-        <div class="choice-card-title">Varios restaurantes</div>
-        <div class="choice-card-sub">Tengo múltiples sucursales y quiero registrarlas todas</div>
-      </div>
+      <div class="choice-card" id="ch-single" onclick="selectChoice('single')"><div class="choice-card-icon">🏠</div><div class="choice-card-title">Solo un restaurante</div><div class="choice-card-sub">Tengo una única ubicación</div></div>
+      <div class="choice-card" id="ch-multi"  onclick="selectChoice('multi')"><div class="choice-card-icon">🏘️</div><div class="choice-card-title">Varios restaurantes</div><div class="choice-card-sub">Tengo múltiples sucursales</div></div>
     </div>
     <div class="choice-actions"><button class="btn-next" id="btnNext" disabled onclick="confirmChoice()">Continuar →</button></div>
   </div>
@@ -258,19 +217,28 @@ tbody td { padding: 8px 11px; color: #1a1a1a; vertical-align: middle; }
   <div class="sw">
     <button class="btn-ghost" onclick="goTo('sc-choice');setNav(2);">← Volver</button>
     <h2>Mis restaurantes</h2>
-    <div class="sw-sub">Tu restaurante principal ya está registrado con logo y horario. Agregá sucursales y configurá sus horarios de forma independiente.</div>
-    <div class="banner green">
-      <div class="banner-icon"><svg viewBox="0 0 12 12" fill="none"><path d="M2 6l3 3 5-5" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
-      <div><strong id="mainStoreName">Tu restaurante principal</strong> ya está registrado con logo y horario configurados. Podés agregar sucursales adicionales abajo.</div>
-    </div>
+    <div class="sw-sub">Registrá sucursales adicionales y configurá los horarios de cada una de forma independiente.</div>
     <div class="legal-bar"><span class="legal-lbl">Datos legales</span><div class="chips"><div class="chip"><span class="chip-lbl">Tipo doc.</span><span class="chip-val">NIT</span><span class="chip-tag">bloqueado</span></div><div class="chip"><span class="chip-lbl">Número</span><span class="chip-val">1030633893</span><span class="chip-tag">bloqueado</span></div></div></div>
     <div class="t-wrap"><div class="t-head"><span class="t-title">Restaurantes</span><span class="cnt" id="tCnt">1</span></div>
-    <table><thead><tr><th>#</th><th>Nombre</th><th>Tipo de comida</th><th>Dirección</th><th>Horario</th><th>Configurar</th><th></th></tr></thead><tbody id="tBody"></tbody></table></div>
+    <table><thead><tr><th>#</th><th>Nombre</th><th>Tipo de comida</th><th>Dirección</th><th>Horario</th><th></th></tr></thead><tbody id="tBody"></tbody></table></div>
     <div class="add-form">
       <div class="add-form-title">Agregar restaurante adicional</div>
-      <div class="fr c2"><div class="ff"><label>Nombre del restaurante</label><input id="fN" type="text" placeholder="Ej. Mi Restaurante — Norte"></div><div class="ff"><label>Tipo de comida <span class="itag" id="fCTag" style="display:none;">↩ heredado</span></label><select id="fC"><option>Comida rápida</option><option>Desayunos</option><option>Almuerzos</option><option>Cenas</option><option>Postres</option></select></div></div>
-      <div class="fr c2"><div class="ff"><label>Tipo de documento</label><div class="fl"><span class="fl-val">NIT</span><span class="fl-tag">Info legal</span></div></div><div class="ff"><label>Número de documento</label><div class="fl"><span class="fl-val">1030633893</span><span class="fl-tag">Info legal</span></div></div></div>
-      <div class="fr c2" style="margin-bottom:0;"><div class="ff"><label>Dirección</label><input id="fD" type="text" placeholder="Ej. Carrera 7 # 45-20, Bogotá"></div><div class="ff"><label>Correo electrónico</label><input id="fE" type="email" placeholder="correo@restaurante.com"></div></div>
+      <div class="fr c2">
+        <div class="ff"><label>Nombre del restaurante</label><input id="fN" type="text" placeholder="Ej. Mi Restaurante — Norte"></div>
+        <div class="ff"><label>Tipo de comida <span class="itag" id="fCTag" style="display:none;">↩ heredado</span></label><select id="fC"><option>Comida rápida</option><option>Desayunos</option><option>Almuerzos</option><option>Cenas</option><option>Postres</option></select></div>
+      </div>
+      <div class="fr c2">
+        <div class="ff"><label>Tipo de documento</label><div class="fl"><span class="fl-val">NIT</span><span class="fl-tag">Info legal</span></div></div>
+        <div class="ff"><label>Número de documento</label><div class="fl"><span class="fl-val">1030633893</span><span class="fl-tag">Info legal</span></div></div>
+      </div>
+      <div class="fr" style="grid-template-columns:1fr;">
+        <div class="ff">
+          <label>Dirección <span style="font-size:9px;color:#9ca3af;font-weight:400;text-transform:none;letter-spacing:0;">· geocodificación AWS</span></label>
+          <div style="position:relative;"><input id="fD" type="text" placeholder="Ej. Carrera 7 # 45-20, Bogotá" style="padding-right:28px;"><div style="position:absolute;right:9px;top:50%;transform:translateY(-50%);pointer-events:none;"><svg width="13" height="13" viewBox="0 0 16 16" fill="none"><path d="M8 1C5.24 1 3 3.24 3 6c0 3.75 5 9 5 9s5-5.25 5-9c0-2.76-2.24-5-5-5zm0 6.5A1.5 1.5 0 1 1 8 4a1.5 1.5 0 0 1 0 3.5z" fill="#9ca3af"/></svg></div></div>
+          <div class="mini-map-wrap" id="fMap"><svg width="100%" height="110" viewBox="0 0 560 110" xmlns="http://www.w3.org/2000/svg" style="display:block;background:#dde4ec;"><rect width="560" height="110" fill="#dde4ec"/><rect x="10" y="8" width="74" height="19" rx="2" fill="#c8d5e8" opacity="0.7"/><rect x="95" y="5" width="54" height="16" rx="2" fill="#c8d5e8" opacity="0.6"/><rect x="162" y="9" width="80" height="18" rx="2" fill="#c8d5e8" opacity="0.6"/><rect x="268" y="4" width="62" height="22" rx="2" fill="#c8d5e8" opacity="0.6"/><rect x="346" y="8" width="48" height="17" rx="2" fill="#c8d5e8" opacity="0.6"/><rect x="7" y="40" width="88" height="20" rx="2" fill="#c8d5e8" opacity="0.6"/><rect x="106" y="37" width="50" height="17" rx="2" fill="#c8d5e8" opacity="0.6"/><rect x="170" y="40" width="70" height="20" rx="2" fill="#c8d5e8" opacity="0.6"/><rect x="260" y="37" width="84" height="20" rx="2" fill="#c8d5e8" opacity="0.6"/><rect x="12" y="74" width="66" height="16" rx="2" fill="#c8d5e8" opacity="0.6"/><rect x="94" y="70" width="82" height="19" rx="2" fill="#c8d5e8" opacity="0.6"/><rect x="192" y="74" width="56" height="16" rx="2" fill="#c8d5e8" opacity="0.6"/><path d="M0 27 L560 25" stroke="#b8cbe0" stroke-width="7" opacity="0.5" fill="none"/><path d="M0 62 L560 60" stroke="#b8cbe0" stroke-width="9" opacity="0.5" fill="none"/><path d="M148 0 L143 110" stroke="#b8cbe0" stroke-width="6" opacity="0.5" fill="none"/><path d="M330 0 L335 110" stroke="#b8cbe0" stroke-width="9" opacity="0.5" fill="none"/></svg><div class="map-pin-abs"><svg width="22" height="30" viewBox="0 0 24 32" fill="none"><path d="M12 0C5.37 0 0 5.37 0 12c0 9 12 20 12 20s12-11 12-20C24 5.37 18.63 0 12 0zm0 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8z" fill="#ff441b"/></svg></div><div class="map-aws-badge">Powered by AWS Location</div><div class="map-search-overlay" id="fMapSearch" style="display:none;">Buscando dirección...</div></div>
+        </div>
+      </div>
+      <div class="fr c2" style="margin-bottom:0;"><div class="ff"><label>Correo electrónico</label><input id="fE" type="email" placeholder="correo@restaurante.com"></div><div class="ff"><label>Móvil <span style="font-size:9px;color:#9ca3af;font-weight:400;text-transform:none;">WhatsApp</span></label><input id="fM" type="tel" placeholder="Ej. 3134350838"></div></div>
       <div class="fac"><button class="btn-rappi-outline" id="btnAdd" onclick="addStore()" disabled>+ Agregar restaurante</button></div>
     </div>
     <div class="sf"><button class="btn-sec" onclick="goTo('sc-choice');setNav(2);">Volver</button><button class="btn-rappi" onclick="confirmManage()">Confirmar y continuar →</button></div>
@@ -278,13 +246,29 @@ tbody td { padding: 8px 11px; color: #1a1a1a; vertical-align: middle; }
 </div>
 </div>
 
-<div class="overlay" id="hOverlay" style="display:none;" onclick="closeH(event)">
-  <div class="h-panel" onclick="event.stopPropagation()">
-    <div class="h-phdr"><div><div class="h-ptitle">Horarios de operación</div><div class="h-pstore" id="hStore"></div></div><button class="btn-h-close" onclick="closeH()">✕</button></div>
-    <div class="h-irow"><div class="h-min">Mín. horas semanales: <strong>40</strong></div><div class="h-tot">Horas: <span id="hTot" style="font-size:16px;font-weight:900;color:#2563eb;">0</span></div></div>
-    <div class="copy-bar" id="copyBar" style="display:none;"><span style="font-size:12px;color:#374151;">Copiar horarios de otra sucursal</span><button class="btn-copy" onclick="copyH()">Copiar</button></div>
-    <div class="dias-wrap" id="diasWrap"></div>
-    <button class="btn-save-h" onclick="saveH()">Guardar horarios →</button>
+<!-- PANEL -->
+<div class="overlay" id="panelOverlay" style="display:none;" onclick="closePanelOuter(event)">
+  <div class="panel" onclick="event.stopPropagation()">
+    <div class="panel-header"><div><div class="panel-title">Configurar restaurante</div><div class="panel-store" id="panelStore"></div></div><button class="btn-h-close" onclick="closePanel()">✕</button></div>
+    <div class="panel-tabs"><button class="ptab active" id="ptab-info" onclick="switchTab('info')">📋 Información</button><button class="ptab" id="ptab-horario" onclick="switchTab('horario')">🕐 Horarios</button></div>
+    <div class="panel-body" id="tab-info">
+      <div class="pfr c2"><div class="pff"><label>Nombre del restaurante</label><input id="pe-n" type="text"></div><div class="pff"><label>Tipo de comida</label><select id="pe-c"><option>Comida rápida</option><option>Desayunos</option><option>Almuerzos</option><option>Cenas</option><option>Postres</option></select></div></div>
+      <div class="pfr c2"><div class="pff"><label>Tipo de documento</label><div class="pfl"><span class="pfl-val">NIT</span><span class="pfl-tag">Info legal</span></div></div><div class="pff"><label>Número de documento</label><div class="pfl"><span class="pfl-val">1030633893</span><span class="pfl-tag">Info legal</span></div></div></div>
+      <div class="pfr" style="grid-template-columns:1fr;margin-bottom:10px;">
+        <div class="pff"><label>Dirección <span style="font-size:9px;color:#9ca3af;font-weight:400;text-transform:none;letter-spacing:0;">· geocodificación AWS</span></label>
+          <div style="position:relative;"><input id="pe-d" type="text" placeholder="Ej. Carrera 7 # 45-20, Bogotá" style="padding-right:28px;"><div style="position:absolute;right:9px;top:50%;transform:translateY(-50%);pointer-events:none;"><svg width="13" height="13" viewBox="0 0 16 16" fill="none"><path d="M8 1C5.24 1 3 3.24 3 6c0 3.75 5 9 5 9s5-5.25 5-9c0-2.76-2.24-5-5-5zm0 6.5A1.5 1.5 0 1 1 8 4a1.5 1.5 0 0 1 0 3.5z" fill="#9ca3af"/></svg></div></div>
+          <div class="mini-map-wrap" id="peMap"><svg width="100%" height="110" viewBox="0 0 560 110" xmlns="http://www.w3.org/2000/svg" style="display:block;background:#dde4ec;"><rect width="560" height="110" fill="#dde4ec"/><rect x="10" y="8" width="74" height="19" rx="2" fill="#c8d5e8" opacity="0.7"/><rect x="95" y="5" width="54" height="16" rx="2" fill="#c8d5e8" opacity="0.6"/><rect x="162" y="9" width="80" height="18" rx="2" fill="#c8d5e8" opacity="0.6"/><rect x="268" y="4" width="62" height="22" rx="2" fill="#c8d5e8" opacity="0.6"/><rect x="7" y="40" width="88" height="20" rx="2" fill="#c8d5e8" opacity="0.6"/><rect x="106" y="37" width="50" height="17" rx="2" fill="#c8d5e8" opacity="0.6"/><rect x="170" y="40" width="70" height="20" rx="2" fill="#c8d5e8" opacity="0.6"/><rect x="260" y="37" width="84" height="20" rx="2" fill="#c8d5e8" opacity="0.6"/><rect x="12" y="74" width="66" height="16" rx="2" fill="#c8d5e8" opacity="0.6"/><rect x="94" y="70" width="82" height="19" rx="2" fill="#c8d5e8" opacity="0.6"/><path d="M0 27 L560 25" stroke="#b8cbe0" stroke-width="7" opacity="0.5" fill="none"/><path d="M0 62 L560 60" stroke="#b8cbe0" stroke-width="9" opacity="0.5" fill="none"/><path d="M148 0 L143 110" stroke="#b8cbe0" stroke-width="6" opacity="0.5" fill="none"/><path d="M330 0 L335 110" stroke="#b8cbe0" stroke-width="9" opacity="0.5" fill="none"/></svg><div class="map-pin-abs"><svg width="22" height="30" viewBox="0 0 24 32" fill="none"><path d="M12 0C5.37 0 0 5.37 0 12c0 9 12 20 12 20s12-11 12-20C24 5.37 18.63 0 12 0zm0 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8z" fill="#ff441b"/></svg></div><div class="map-aws-badge">Powered by AWS Location</div><div class="map-search-overlay" id="peMapSearch" style="display:none;">Buscando dirección...</div></div>
+        </div>
+      </div>
+      <div class="pfr c2" style="margin-bottom:14px;"><div class="pff"><label>Correo electrónico</label><input id="pe-e" type="email" placeholder="correo@restaurante.com"></div><div class="pff"><label>Móvil <span style="font-size:9px;color:#9ca3af;font-weight:400;text-transform:none;">WhatsApp</span></label><input id="pe-m" type="tel" placeholder="Ej. 3134350838"></div></div>
+      <button class="btn-save-panel" onclick="saveInfo()">Guardar información →</button>
+    </div>
+    <div class="panel-body" id="tab-horario" style="display:none;">
+      <div class="h-irow"><div class="h-min">Mín. horas semanales: <strong>40</strong></div><div class="h-tot">Horas: <span id="hTot" style="font-size:16px;font-weight:900;color:#2563eb;">0</span></div></div>
+      <div class="copy-bar" id="copyBar" style="display:none;"><span style="font-size:12px;color:#374151;">Copiar horarios de otra sucursal</span><button class="btn-copy" onclick="copyH()">Copiar</button></div>
+      <div class="dias-wrap" id="diasWrap"></div>
+      <button class="btn-save-panel" onclick="saveHorario()">Guardar horarios →</button>
+    </div>
   </div>
 </div>
 <div class="toast" id="toast"></div>
@@ -297,68 +281,37 @@ function mkH(a,c,act){return DIAS.map(function(d){return{dia:d,activo:act,abre:a
 function calcH(h){return h.reduce(function(acc,x){if(!x.activo)return acc;var a=parseInt(x.abre),c=parseInt(x.cierra);if(isNaN(a)||isNaN(c))return acc;if(c<=a)c+=24;return acc+(c-a);},0);}
 function hSt(s){if(!s.horarios)return'pend';var d=s.horarios.filter(function(x){return x.activo;}).length,h=calcH(s.horarios);if(d===0)return'pend';if(h>=40)return'done';return'partial';}
 function hLbl(s){var st=hSt(s);if(st==='pend')return{cls:'pend',txt:'Sin configurar'};var h=calcH(s.horarios),d=s.horarios.filter(function(x){return x.activo;}).length;if(st==='done')return{cls:'done',txt:d+' días · '+h+' hs/sem'};return{cls:'partial',txt:h+' hs — mín 40'};}
-
-var stores=[{id:1,nombre:'Mi Restaurante Principal',comida:'Comida rápida',direccion:'Carrera 7 # 45-20, Bogotá',type:'original',horarios:mkH('12:00','22:00',true)}];
-var nextId=2,editHId=null,editRId=null,tmpH=null,choice=null;
-
+var stores=[{id:1,nombre:'Mi Restaurante Principal',comida:'Comida rápida',direccion:'Carrera 7 # 45-20, Bogotá',email:'',movil:'',type:'original',horarios:mkH('12:00','22:00',true)}];
+var nextId=2,editId=null,tmpH=null,choice=null,mapTimers={};
 function goTo(id){document.querySelectorAll('.sc').forEach(function(s){s.classList.remove('a');});document.getElementById(id).classList.add('a');}
 function setNav(active){['np1','np2','np3','np4'].forEach(function(id,i){var el=document.getElementById(id);if(i+1<active)el.className='step-pill done';else if(i+1===active)el.className='step-pill active';else el.className='step-pill';});}
-
-function activarCard2(){
-  var c=document.getElementById('card2');
-  c.className='scard green';
-  document.getElementById('c2lbl').style.color='#1a7a4a';
-  document.getElementById('c2logo').className='schk done'; document.getElementById('c2logo').textContent='✅ Logo';
-  document.getElementById('c2horario').className='schk done'; document.getElementById('c2horario').textContent='✅ Horario comercial';
-  var p=document.getElementById('c2prog'); p.style.width='100%'; p.className='sprog-fill gf';
-}
-
+function activarCard2(){var c=document.getElementById('card2');c.className='scard green';document.getElementById('c2lbl').style.color='#1a7a4a';document.getElementById('c2logo').className='schk done';document.getElementById('c2logo').textContent='✅ Logo';document.getElementById('c2horario').className='schk done';document.getElementById('c2horario').textContent='✅ Horario comercial';var p=document.getElementById('c2prog');p.style.width='100%';p.className='sprog-fill gf';}
 function selectChoice(c){choice=c;document.getElementById('ch-single').classList.toggle('sel',c==='single');document.getElementById('ch-multi').classList.toggle('sel',c==='multi');document.getElementById('btnNext').disabled=false;}
 function confirmChoice(){if(choice==='single'){goTo('sc-single');setNav(3);}else{renderTable();goTo('sc-manage');setNav(3);}}
-
-function doneSingle(){
-  document.getElementById('manageBadge').textContent='✓ 1 restaurante';
-  document.getElementById('manageBadge').className='sentry-badge b-ok';
-  goTo('sc-home'); setNav(4);
-  showToast('✓ Restaurante confirmado. ¡Continuá con el menú!');
-}
-
-function renderTable(){
-  document.getElementById('tCnt').textContent=stores.length;
-  document.getElementById('mainStoreName').textContent=stores[0].nombre;
-  var html='';
-  stores.forEach(function(s,i){
-    var hl=hLbl(s),pill=s.type==='original'?'<span class="p-orig">principal</span>':'<span class="p-new">nueva</span>';
-    var hBtnCls=hl.cls==='done'?'btn-h-conf ok':'btn-h-conf',hBtnTxt=hl.cls==='done'?'✓ Editar':'Configurar';
-    var isEdit=(editRId===s.id);
-    html+='<tr'+(isEdit?' class="row-edit"':'')+'>'; html+='<td style="color:#aaa;font-weight:700;">'+(i+1)+'</td>';
-    if(isEdit){html+='<td><input class="ii" id="ei-n-'+s.id+'" value="'+esc(s.nombre)+'" style="width:100px;"></td><td><select class="is" id="ei-c-'+s.id+'">'+COMIDA.map(function(o){return'<option'+(o===s.comida?' selected':'')+'>'+o+'</option>';}).join('')+'</select></td><td><input class="ii" id="ei-d-'+s.id+'" value="'+esc(s.direccion)+'" style="width:100px;"></td><td colspan="2"><div class="acell"><button class="btn-tbl btn-tbl-save" onclick="saveRowEdit('+s.id+')">Guardar</button><button class="btn-tbl btn-tbl-cancel" onclick="cancelEdit()">Cancelar</button></div></td><td></td>';}
-    else{html+='<td><div style="font-weight:700;font-size:12px;">'+s.nombre+'</div>'+pill+'</td><td><span class="p-food">'+s.comida+'</span></td><td style="color:#555;font-size:11px;max-width:100px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;">'+s.direccion+'</td><td><div class="h-st"><div class="h-dot '+hl.cls+'"></div><span style="font-size:11px;color:'+(hl.cls==='done'?'#166534':hl.cls==='partial'?'#c2410c':'#9ca3af')+';">'+hl.txt+'</span></div></td><td><button class="'+hBtnCls+'" onclick="openH('+s.id+')">'+hBtnTxt+'</button></td><td><div class="acell"><button class="btn-tbl btn-tbl-edit" onclick="startRowEdit('+s.id+')">Editar</button>'+(s.type!=='original'?'<button class="btn-del" onclick="delStore('+s.id+')">✕</button>':'')+'</div></td>';}
-    html+='</tr>';});
-  document.getElementById('tBody').innerHTML=html; updateBadge();
-}
-function esc(s){return s?s.replace(/"/g,'&quot;'):'';}
-function startRowEdit(id){editRId=id;renderTable();}
-function cancelEdit(){editRId=null;renderTable();}
-function saveRowEdit(id){var s=stores.find(function(x){return x.id===id;});var n=document.getElementById('ei-n-'+id).value.trim(),d=document.getElementById('ei-d-'+id).value.trim();if(!n||!d){showToast('Nombre y dirección son obligatorios');return;}s.nombre=n;s.comida=document.getElementById('ei-c-'+id).value;s.direccion=d;editRId=null;renderTable();showToast('Cambios guardados');}
-function delStore(id){stores=stores.filter(function(x){return x.id!==id;});if(editRId===id)editRId=null;renderTable();showToast('Restaurante eliminado');}
+function doneSingle(){document.getElementById('manageBadge').textContent='✓ 1 restaurante';document.getElementById('manageBadge').className='sentry-badge b-ok';goTo('sc-home');setNav(4);showToast('✓ Restaurante confirmado. ¡Continuá con el menú!');}
 function chkForm(){var ok=document.getElementById('fN').value.trim()&&document.getElementById('fD').value.trim()&&document.getElementById('fE').value.trim();document.getElementById('btnAdd').disabled=!ok;}
-function addStore(){var n=document.getElementById('fN').value.trim(),d=document.getElementById('fD').value.trim(),e=document.getElementById('fE').value.trim();if(!n||!d||!e){showToast('Completá nombre, dirección y correo');return;}var last=stores[stores.length-1];stores.push({id:nextId++,nombre:n,comida:document.getElementById('fC').value,direccion:d,email:e,type:'new',horarios:null});document.getElementById('fC').value=last.comida;document.getElementById('fCTag').style.display='inline';document.getElementById('fN').value='';document.getElementById('fD').value='';document.getElementById('fE').value='';document.getElementById('btnAdd').disabled=true;renderTable();showToast('"'+n+'" agregado — configurá sus horarios');}
+function dirInput(inputId,mapId,searchId){var val=document.getElementById(inputId).value.trim();var map=document.getElementById(mapId),srch=document.getElementById(searchId);if(val.length<4){map.classList.remove('vis');return;}map.classList.add('vis');srch.style.display='flex';clearTimeout(mapTimers[inputId]);mapTimers[inputId]=setTimeout(function(){srch.style.display='none';},900);if(inputId==='fD')chkForm();}
+function addStore(){var n=document.getElementById('fN').value.trim(),d=document.getElementById('fD').value.trim(),e=document.getElementById('fE').value.trim();if(!n||!d||!e){showToast('Completá nombre, dirección y correo');return;}var last=stores[stores.length-1];var newId=nextId++;stores.push({id:newId,nombre:n,comida:document.getElementById('fC').value,direccion:d,email:e,movil:document.getElementById('fM').value.trim(),type:'new',horarios:null});document.getElementById('fC').value=last.comida;document.getElementById('fCTag').style.display='inline';document.getElementById('fN').value='';document.getElementById('fD').value='';document.getElementById('fE').value='';document.getElementById('fM').value='';document.getElementById('fMap').classList.remove('vis');document.getElementById('btnAdd').disabled=true;renderTable();showToast('"'+n+'" agregado');setTimeout(function(){openPanel(newId,'horario');},180);}
+function renderTable(){document.getElementById('tCnt').textContent=stores.length;var html='';stores.forEach(function(s,i){var hl=hLbl(s);var pill=s.type==='original'?'<span class="p-orig">principal</span>':'<span class="p-new">nueva</span>';var hColor=hl.cls==='done'?'#166534':hl.cls==='partial'?'#c2410c':'#9ca3af';html+='<tr><td style="color:#aaa;font-weight:700;">'+(i+1)+'</td><td><div style="font-weight:700;font-size:12px;">'+s.nombre+'</div>'+pill+'</td><td><span class="p-food">'+s.comida+'</span></td><td style="color:#555;font-size:11px;max-width:110px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;">'+s.direccion+'</td><td><div class="h-st"><div class="h-dot '+hl.cls+'"></div><span style="font-size:11px;color:'+hColor+';">'+hl.txt+'</span></div></td><td><div style="display:flex;align-items:center;gap:5px;"><button class="btn-blue" onclick="openPanel('+s.id+',\'info\')">Editar</button>'+(s.type!=='original'?'<button class="btn-del" onclick="delStore('+s.id+')">✕</button>':'')+'</div></td></tr>';});document.getElementById('tBody').innerHTML=html;updateBadge();}
+function delStore(id){stores=stores.filter(function(x){return x.id!==id;});renderTable();showToast('Restaurante eliminado');}
 function updateBadge(){var total=stores.length,hOk=stores.filter(function(s){return hSt(s)==='done';}).length;var badge=document.getElementById('manageBadge'),prog=document.getElementById('c2prog');if(hOk===total&&total>0){badge.textContent='✓ '+total+' restaurant'+(total===1?'e':'es');badge.className='sentry-badge b-ok';prog.style.width='100%';prog.className='sprog-fill gf';}else if(hOk>0||total>1){badge.textContent=hOk+'/'+total+' con horario';badge.className='sentry-badge b-blue';prog.style.width=Math.round(((hOk+1)/(total+1))*80+20)+'%';prog.className='sprog-fill bf';}}
-function confirmManage(){var pend=stores.filter(function(s){return hSt(s)!=='done';});if(pend.length>0){showToast('Falta configurar horarios en '+pend.length+' tienda'+(pend.length>1?'s':''));return;}updateBadge();goTo('sc-home');setNav(4);showToast('✓ Restaurantes y horarios confirmados. ¡Continuá con el menú!');}
-function openH(id){var s=stores.find(function(x){return x.id===id;});if(!s.horarios)s.horarios=mkH('12:00','22:00',true);editHId=id;tmpH=s.horarios.map(function(h){return Object.assign({},h);});document.getElementById('hStore').textContent='🏪 '+s.nombre;var hasCopy=stores.some(function(x){return x.id!==id&&hSt(x)==='done';});document.getElementById('copyBar').style.display=hasCopy?'flex':'none';renderDias();document.getElementById('hOverlay').style.display='flex';}
-function closeH(e){if(!e||e.target===document.getElementById('hOverlay')){document.getElementById('hOverlay').style.display='none';editHId=null;tmpH=null;}}
-function renderDias(){var tot=calcH(tmpH),el=document.getElementById('hTot');el.textContent=tot;el.style.color=tot>=40?'#166534':'#dc2626';var html='';tmpH.forEach(function(h,i){var off=!h.activo;html+='<div class="dia-row'+(off?' off':'')+'">';html+='<span class="dia-name">'+h.dia+'</span>';html+='<div class="dsel-wrap"><div class="dsel-lbl">Abre</div><select class="dsel" id="a'+i+'" onchange="upH('+i+',\'abre\',this.value)"'+(off?' disabled':'')+'>'+HORAS.map(function(r){return'<option'+(h.abre===r?' selected':'')+'>'+r+'</option>';}).join('')+'</select></div>';html+='<div class="dsel-wrap"><div class="dsel-lbl">Cierra</div><select class="dsel" id="c'+i+'" onchange="upH('+i+',\'cierra\',this.value)"'+(off?' disabled':'')+'>'+HORAS.map(function(r){return'<option'+(h.cierra===r?' selected':'')+'>'+r+'</option>';}).join('')+'</select></div>';html+='<div class="tog '+(h.activo?'on':'off')+'" onclick="togD('+i+')"><div class="tog-k"></div></div>';html+='</div>';});document.getElementById('diasWrap').innerHTML=html;}
+function confirmManage(){var pend=stores.filter(function(s){return hSt(s)!=='done';});if(pend.length>0){showToast('Falta configurar horarios en '+pend.length+' tienda'+(pend.length>1?'s':''));return;}updateBadge();goTo('sc-home');setNav(4);showToast('✓ Restaurantes y horarios confirmados');}
+function openPanel(id,tab){var s=stores.find(function(x){return x.id===id;});editId=id;if(!s.horarios)s.horarios=mkH('12:00','22:00',true);tmpH=s.horarios.map(function(h){return Object.assign({},h);});document.getElementById('panelStore').textContent='🏪 '+s.nombre;document.getElementById('pe-n').value=s.nombre;document.getElementById('pe-c').value=s.comida;document.getElementById('pe-d').value=s.direccion;document.getElementById('pe-e').value=s.email||'';document.getElementById('pe-m').value=s.movil||'';var peMap=document.getElementById('peMap');if(s.direccion&&s.direccion.length>3)peMap.classList.add('vis');else peMap.classList.remove('vis');var hasCopy=stores.some(function(x){return x.id!==id&&hSt(x)==='done';});document.getElementById('copyBar').style.display=hasCopy?'flex':'none';renderDias();switchTab(tab||'info');document.getElementById('panelOverlay').style.display='flex';}
+function switchTab(tab){document.getElementById('tab-info').style.display=tab==='info'?'block':'none';document.getElementById('tab-horario').style.display=tab==='horario'?'block':'none';document.getElementById('ptab-info').className='ptab'+(tab==='info'?' active':'');document.getElementById('ptab-horario').className='ptab'+(tab==='horario'?' active':'');}
+function closePanelOuter(e){if(e.target===document.getElementById('panelOverlay'))closePanel();}
+function closePanel(){document.getElementById('panelOverlay').style.display='none';editId=null;tmpH=null;}
+function saveInfo(){var s=stores.find(function(x){return x.id===editId;});var n=document.getElementById('pe-n').value.trim(),d=document.getElementById('pe-d').value.trim();if(!n||!d){showToast('Nombre y dirección son obligatorios');return;}s.nombre=n;s.comida=document.getElementById('pe-c').value;s.direccion=d;s.email=document.getElementById('pe-e').value.trim();s.movil=document.getElementById('pe-m').value.trim();renderTable();closePanel();showToast('✓ Información de "'+n+'" guardada');}
+function renderDias(){var tot=calcH(tmpH),el=document.getElementById('hTot');el.textContent=tot;el.style.color=tot>=40?'#166534':'#dc2626';var html='';tmpH.forEach(function(h,i){var off=!h.activo;html+='<div class="dia-row'+(off?' off':'')+'">';html+='<span class="dia-name">'+h.dia+'</span>';html+='<div class="dsel-wrap"><div class="dsel-lbl">Abre</div><select class="dsel" id="a'+i+'" onchange="upH('+i+',\'abre\',this.value)"'+(off?' disabled':'')+'>'+HORAS.map(function(r){return'<option'+(h.abre===r?' selected':'')+'>'+r+'</option>';}).join('')+'</select></div>';html+='<div class="dsel-wrap"><div class="dsel-lbl">Cierra</div><select class="dsel" id="c'+i+'" onchange="upH('+i+',\'cierra\',this.value)"'+(off?' disabled':'')+'>'+HORAS.map(function(r){return'<option'+(h.cierra===r?' selected':'')+'>'+r+'</option>';}).join('')+'</select></div>';html+='<div class="tog '+(h.activo?'on':'off')+'" onclick="togD('+i+')"><div class="tog-k"></div></div></div>';});document.getElementById('diasWrap').innerHTML=html;}
 function upH(i,f,v){tmpH[i][f]=v;var t=calcH(tmpH),el=document.getElementById('hTot');el.textContent=t;el.style.color=t>=40?'#166534':'#dc2626';}
 function togD(i){tmpH[i].activo=!tmpH[i].activo;renderDias();}
-function copyH(){var donor=stores.find(function(s){return s.id!==editHId&&hSt(s)==='done';});if(!donor){showToast('No hay otra tienda con horarios completos');return;}tmpH=donor.horarios.map(function(h){return Object.assign({},h);});renderDias();showToast('Horarios copiados');}
-function saveH(){var s=stores.find(function(x){return x.id===editHId;});s.horarios=tmpH.slice();document.getElementById('hOverlay').style.display='none';editHId=null;tmpH=null;renderTable();updateBadge();showToast('✓ Horarios de "'+s.nombre.split(' — ')[0]+'" guardados');}
+function copyH(){var donor=stores.find(function(s){return s.id!==editId&&hSt(s)==='done';});if(!donor){showToast('No hay otra tienda con horarios completos');return;}tmpH=donor.horarios.map(function(h){return Object.assign({},h);});renderDias();showToast('Horarios copiados');}
+function saveHorario(){var s=stores.find(function(x){return x.id===editId;});s.horarios=tmpH.slice();renderTable();closePanel();showToast('✓ Horarios de "'+s.nombre.split(' — ')[0]+'" guardados');}
 function showToast(msg){var t=document.getElementById('toast');t.textContent=msg;t.classList.add('show');setTimeout(function(){t.classList.remove('show');},2600);}
-
 document.getElementById('entryGestionar').addEventListener('click',function(){activarCard2();goTo('sc-choice');setNav(2);});
 document.getElementById('fN').addEventListener('input',chkForm);
-document.getElementById('fD').addEventListener('input',chkForm);
 document.getElementById('fE').addEventListener('input',chkForm);
+document.getElementById('fD').addEventListener('input',function(){dirInput('fD','fMap','fMapSearch');});
+document.getElementById('pe-d').addEventListener('input',function(){dirInput('pe-d','peMap','peMapSearch');});
 setNav(1);
 </script>
 </body>
